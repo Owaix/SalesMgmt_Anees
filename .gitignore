@@ -1,0 +1,59 @@
+# Visual Studio / C# specific files
+# --------------------------------
+
+# User-specific files
+*.suo
+*.user
+*.pdb
+*.suo.lock
+
+# Build/temporary files
+[Bb]in/
+[Oo]bj/
+*.log
+*.ncb
+*.scc
+*.vspscc
+*.vssscc
+_ReSharper.*/
+*.[Cc]ache/
+
+# Visual Studio temporary files
+.vs/
+*.csproj.user
+*.sln.user
+*.csproj.user.bak
+*.suo
+*.user
+*.vspscc
+*.vssscc
+.vs/
+.vspscc
+*.vssscc
+.ncb
+.suo
+.scc
+.vspscc
+.vssscc
+_ReSharper.*/
+[Cc]ache/
+
+# Solution and project-specific files
+packages/
+packages.config
+.vs/
+.vspscc
+.vssscc
+_ReSharper.*/
+*.suo
+*.user
+
+# Project directories
+Lib/bin/
+Lib/obj/
+SalesMngmt/bin/
+SalesMngmt/obj/
+
+# Reporting files
+Reporting/bin/
+Reporting/obj/
