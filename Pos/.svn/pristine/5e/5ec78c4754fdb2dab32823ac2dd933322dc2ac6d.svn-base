@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="EntityFramework" version="6.4.4" targetFramework="net452" />
+  <package id="LiveCharts" version="0.9.7" targetFramework="net452" />
+  <package id="LiveCharts.WinForms" version="0.9.7.1" targetFramework="net452" />
+  <package id="LiveCharts.Wpf" version="0.9.7" targetFramework="net452" />
+  <package id="MetroModernUI" version="1.4.0.0" targetFramework="net452" />
+  <package id="Microsoft.Reporting.WinForms.v11" version="1.0.0.0" targetFramework="net452" />
+  <package id="Microsoft.ReportViewer.Common.v12" version="12.0.0.1" targetFramework="net452" />
+  <package id="Microsoft.SqlServer.Types" version="14.0.314.76" targetFramework="net452" />
+  <package id="Zen.Barcode.Core.Code128" version="3.1.0" targetFramework="net452" />
+</packages>

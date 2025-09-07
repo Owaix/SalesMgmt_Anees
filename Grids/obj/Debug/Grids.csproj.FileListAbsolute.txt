@@ -1,0 +1,9 @@
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\bin\Debug\Grids.dll
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\bin\Debug\Grids.pdb
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\bin\Debug\Lib.dll
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\bin\Debug\EntityFramework.dll
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\bin\Debug\Lib.pdb
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\bin\Debug\EntityFramework.xml
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\obj\Debug\Grids.csprojResolveAssemblyReference.cache
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\obj\Debug\Grids.dll
+C:\Users\champ\OneDrive\Documents\SalesMgmt\Grids\obj\Debug\Grids.pdb

@@ -1,0 +1,2940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaleManagerShahzaibModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adj_D">
+    <Key>
+      <PropertyRef Name="Adj_id" />
+    </Key>
+    <Property Name="RID" Type="Int32" />
+    <Property Name="IID" Type="Int32" />
+    <Property Name="BNID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExpDT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="Qty2" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="Credit" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Adj_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Adj_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Int32" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="WID" Type="Int32" />
+    <Property Name="RefNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Create_User_ID" Type="Double" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Double" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleTypeID" Type="Int32" />
+    <Property Name="StyleID" Type="Int32" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="BranchID" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ArticleTypes">
+    <Key>
+      <PropertyRef Name="ArticleTypeID" />
+    </Key>
+    <Property Name="ArticleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="AC_Code" Type="Int32" Nullable="false" />
+    <Property Name="CID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PType_ID" Type="Int32" />
+    <Property Name="Add" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NTN_No" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Owner_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cell" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Eml" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="ZID" Type="Int32" />
+    <Property Name="AddPer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="Credit" Type="Double" />
+    <Property Name="Black_List" Type="Boolean" />
+    <Property Name="War_Cls" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="War_DT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Prn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InActive" Type="Boolean" />
+    <Property Name="Land" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="Village" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="CollectPerMonth" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MrNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EV_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Double" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="Double" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="AC_Code2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AC_Code3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Create_User_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Edit_User_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Edit_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Del_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Excptions">
+    <Key>
+      <PropertyRef Name="ExpID" />
+    </Key>
+    <Property Name="ExpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExcptionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GL">
+    <Key>
+      <PropertyRef Name="GL_id" />
+    </Key>
+    <Property Name="SRT" Type="Int32" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="RID2" Type="Int32" />
+    <Property Name="TypeCode" Type="Int32" />
+    <Property Name="GLDate" Type="DateTime" Precision="3" />
+    <Property Name="DueDT" Type="DateTime" Precision="3" />
+    <Property Name="CompID" Type="Int32" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="AC_Code2" Type="Int32" />
+    <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MOP_ID" Type="Int32" />
+    <Property Name="ChkNo" Type="Int32" />
+    <Property Name="SlipNo" Type="Int32" />
+    <Property Name="Qty_IN" Type="Double" />
+    <Property Name="Qty_Out" Type="Double" />
+    <Property Name="IPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="DisRs" Type="Double" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="Credit" Type="Double" />
+    <Property Name="VehNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Post_User_ID" Type="Int32" />
+    <Property Name="Post_Date" Type="DateTime" Precision="3" />
+    <Property Name="GL_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="I_Unit">
+    <Key>
+      <PropertyRef Name="unit_id" />
+    </Key>
+    <Property Name="unit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="crtBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="crtDate" Type="DateTime" Precision="3" />
+    <Property Name="modBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IComp_M">
+    <Key>
+      <PropertyRef Name="CompID" />
+    </Key>
+    <Property Name="CompID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CShort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Eml" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isDelete" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Item_Maker">
+    <Key>
+      <PropertyRef Name="MakerId" />
+    </Key>
+    <Property Name="MakerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="IsDelete" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Itemledger">
+    <Key>
+      <PropertyRef Name="LegderId" />
+    </Key>
+    <Property Name="SRT" Type="Int32" />
+    <Property Name="TypeCode" Type="Int32" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_CODE" Type="Int32" />
+    <Property Name="WID" Type="Int32" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="IID" Type="Int32" />
+    <Property Name="BNID" Type="Int32" />
+    <Property Name="ExpDT" Type="DateTime" Precision="3" />
+    <Property Name="CTN" Type="Double" />
+    <Property Name="PCS" Type="Double" />
+    <Property Name="OPN" Type="Double" />
+    <Property Name="PJ" Type="Double" />
+    <Property Name="PRJ" Type="Double" />
+    <Property Name="SJ" Type="Double" />
+    <Property Name="SRJ" Type="Double" />
+    <Property Name="SCH_IN" Type="Double" />
+    <Property Name="SCH_Out" Type="Double" />
+    <Property Name="SCH_Out2" Type="Double" />
+    <Property Name="ADJ_IN" Type="Double" />
+    <Property Name="ADJ_OUT" Type="Double" />
+    <Property Name="TR_IN" Type="Double" />
+    <Property Name="TR_OUT" Type="Double" />
+    <Property Name="MFG_IN" Type="Double" />
+    <Property Name="MFG_OUT" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="SalesPriceP" Type="Double" />
+    <Property Name="AddPer" Type="Double" />
+    <Property Name="AddAmt" Type="Double" />
+    <Property Name="SalesPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="DisRs" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="Amt2" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="LegderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Items_Cat">
+    <Key>
+      <PropertyRef Name="CatID" />
+    </Key>
+    <Property Name="CatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IUnit">
+    <Key>
+      <PropertyRef Name="unit_id" />
+    </Key>
+    <Property Name="unit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IUnit1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="crtBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="crtDate" Type="DateTime" Precision="3" />
+    <Property Name="modBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="IUnit11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit1111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit11111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit1111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit11111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IUnit111111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="JV_D">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="Narr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MOP_ID" Type="Int32" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="AC_Code2" Type="Int32" />
+    <Property Name="InvNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ChkNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SlipNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="SRT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RCancel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Lab_D">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Double" />
+    <Property Name="IID" Type="Double" />
+    <Property Name="BNID" Type="Double" />
+    <Property Name="ExpDT" Type="DateTime" Precision="3" />
+    <Property Name="CTN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PCS" Type="Double" />
+    <Property Name="SCH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="SalesPriceP" Type="Double" />
+    <Property Name="AddPer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SalesPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisRs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Amt2" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="PCK_Det" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="ReportDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Lab_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Double" />
+    <Property Name="RID2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="CAC_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AC_Code" Type="Double" />
+    <Property Name="Ship_To" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ship_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Trans_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BiltyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="WID" Type="Double" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NetAmt2" Type="Double" />
+    <Property Name="DisAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PreBal" Type="Double" />
+    <Property Name="NetAmt" Type="Double" />
+    <Property Name="AC_Code3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CashAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="War_Cls" Type="Double" />
+    <Property Name="Create_User_ID" Type="Double" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Double" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvNo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="InvDT" Type="DateTime" Precision="3" />
+    <Property Name="InvType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CstId" Type="Int32" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="CstInvNo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="VenInvDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TransportExpense" Type="Double" />
+  </EntityType>
+  <EntityType Name="Party_Type">
+    <Key>
+      <PropertyRef Name="PType_ID" />
+    </Key>
+    <Property Name="PType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Party_Type1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="Party_Type11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type1111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type11111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type1111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type11111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Party_Type111111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PO_D">
+    <Key>
+      <PropertyRef Name="Pur_D_ID" />
+    </Key>
+    <Property Name="RID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CTN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PCS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SCH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PurPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisRs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Amt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SRT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RCancel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pur_D_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Pur_D">
+    <Key>
+      <PropertyRef Name="Pur_D_ID" />
+    </Key>
+    <Property Name="RID" Type="Double" />
+    <Property Name="IID" Type="Double" />
+    <Property Name="BNID" Type="Double" />
+    <Property Name="ExpDT" Type="DateTime" Precision="3" />
+    <Property Name="CTN" Type="Double" />
+    <Property Name="PCS" Type="Double" />
+    <Property Name="SCH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="DisRs" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Pur_D_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pur_D_UnitID" Type="Int32" />
+    <Property Name="SAmt" Type="Double" />
+    <Property Name="SRate" Type="Double" />
+  </EntityType>
+  <EntityType Name="PurR_D">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="RID" Type="Double" />
+    <Property Name="IID" Type="Double" />
+    <Property Name="BNID" Type="Double" />
+    <Property Name="ExpDT" Type="DateTime" Precision="3" />
+    <Property Name="CTN" Type="Double" />
+    <Property Name="PCS" Type="Double" />
+    <Property Name="SCH" Type="Double" />
+    <Property Name="Qty1" Type="Double" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="DisRs" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="PurR_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Double" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="Double" />
+    <Property Name="RID2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvDT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BiltyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="WID" Type="Double" />
+    <Property Name="NetAmt" Type="Double" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Create_User_ID" Type="Double" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Double" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="invRNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="invNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PV_D">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="RID" Type="Int32" />
+    <Property Name="Narr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MOP_ID" Type="Int32" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="InvNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ChkNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SlipNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PreAmt" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="BalAmt" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="checkDate" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PV_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Int32" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Int32" />
+    <Property Name="Posted" Type="Int32" />
+    <Property Name="RCancel" Type="Int32" />
+    <Property Name="Create_User_ID" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Int32" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="Int32" />
+    <Property Name="Del_Date" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RV_D">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="RID" Type="Int32" />
+    <Property Name="Narr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MOP_ID" Type="Int32" />
+    <Property Name="AC_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="InvNo" Type="Int32" />
+    <Property Name="ChkNo" Type="Int32" />
+    <Property Name="SlipNo" Type="Int32" />
+    <Property Name="PreAmt" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="BalAmt" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="checkDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RV_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Int32" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Int32" />
+    <Property Name="Posted" Type="Int32" />
+    <Property Name="RCancel" Type="Int32" />
+    <Property Name="Create_User_ID" Type="Int32" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Int32" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="Int32" />
+    <Property Name="Del_Date" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Sale_Pur_D_Pur">
+    <Key>
+      <PropertyRef Name="Pur_ID" />
+    </Key>
+    <Property Name="Pur_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="VendorID" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="UnitID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Pur_Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Pur_Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Comm" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CvenID" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Sale_Pur_D_Sale">
+    <Key>
+      <PropertyRef Name="Sale_ID" />
+    </Key>
+    <Property Name="Sale_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="VillageID" Type="Int32" />
+    <Property Name="VendorID" Type="Int32" />
+    <Property Name="PukhtaBikri" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LongerTadat" Type="Int32" />
+    <Property Name="KhamBikri" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Phaliyan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CustomerExpense" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Sale_Pur_M">
+    <Key>
+      <PropertyRef Name="RId" />
+    </Key>
+    <Property Name="RId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicalNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Rent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pashgi" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="bharai_chatai_kata_kharacha" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Office_khata" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CarAmad_AmadKharcha" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="gari_OfficeKharcha" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Purchase" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="advanceBuilty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OwnBuilty" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Sizes">
+    <Key>
+      <PropertyRef Name="SizeID" />
+    </Key>
+    <Property Name="SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Styles">
+    <Key>
+      <PropertyRef Name="StyleID" />
+    </Key>
+    <Property Name="StyleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StyleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KOTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isComplete" Type="Boolean" />
+    <Property Name="Discount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="TblID" Type="Int32" />
+    <Property Name="WaiterID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_KOT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KotNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="iscomplete" Type="Boolean" />
+    <Property Name="CatID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Opd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="DoctorID" Type="Int32" />
+    <Property Name="PatientID" Type="Int32" />
+    <Property Name="fee" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="discount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="DateTime" Type="DateTime" Precision="3" />
+    <Property Name="PaymentMode" Type="Int32" />
+    <Property Name="TokkenNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_OpeningCash">
+    <Key>
+      <PropertyRef Name="CashOpeningId" />
+    </Key>
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Double" />
+    <Property Name="BankAccount" Type="Double" />
+    <Property Name="CashOpeningId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_OrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="KOTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="itemID" Type="Int32" />
+    <Property Name="Qty" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Rate" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="CatID" Type="Int32" />
+    <Property Name="itemDtl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="disc" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="itemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="companyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Village">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VillageName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbl_Warehouse">
+    <Key>
+      <PropertyRef Name="WID" />
+    </Key>
+    <Property Name="WID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Warehouse" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="WSht" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="isDelete" Type="Boolean" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblStock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="BatchNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expiry" Type="DateTime" Precision="3" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="tblWaiter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vendors">
+    <Key>
+      <PropertyRef Name="VID" />
+    </Key>
+    <Property Name="VID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PType_ID" Type="Int32" />
+    <Property Name="Add" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NTN_No" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cell" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Eml" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ZID" Type="Int32" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="Credit" Type="Double" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="InActive" Type="Boolean" />
+    <Property Name="Land" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="Village" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Zone">
+    <Key>
+      <PropertyRef Name="ZID" />
+    </Key>
+    <Property Name="ZID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Zone1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="is_Deleted" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="Zone11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone1111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone11111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone1111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone11111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone111111111" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="SaleManagerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adj_D" EntityType="Self.Adj_D" />
+    <EntitySet Name="Adj_M" EntityType="Self.Adj_M" />
+    <EntitySet Name="Article" EntityType="Self.Article" />
+    <EntitySet Name="ArticleTypes" EntityType="Self.ArticleTypes" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="Colors" EntityType="Self.Colors" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="EV_M" EntityType="Self.EV_M" />
+    <EntitySet Name="Excptions" EntityType="Self.Excptions" />
+    <EntitySet Name="GL" EntityType="Self.GL" />
+    <EntitySet Name="I_Unit" EntityType="Self.I_Unit" />
+    <EntitySet Name="IComp_M" EntityType="Self.IComp_M" />
+    <EntitySet Name="Item_Maker" EntityType="Self.Item_Maker" />
+    <EntitySet Name="Itemledger" EntityType="Self.Itemledger" />
+    <EntitySet Name="Items_Cat" EntityType="Self.Items_Cat" />
+    <EntitySet Name="IUnit" EntityType="Self.IUnit" />
+    <EntitySet Name="JV_D" EntityType="Self.JV_D" />
+    <EntitySet Name="Lab_D" EntityType="Self.Lab_D" />
+    <EntitySet Name="Lab_M" EntityType="Self.Lab_M" />
+    <EntitySet Name="Party_Type" EntityType="Self.Party_Type" />
+    <EntitySet Name="PO_D" EntityType="Self.PO_D" />
+    <EntitySet Name="Pur_D" EntityType="Self.Pur_D" />
+    <EntitySet Name="PurR_D" EntityType="Self.PurR_D" />
+    <EntitySet Name="PurR_M" EntityType="Self.PurR_M" />
+    <EntitySet Name="PV_D" EntityType="Self.PV_D" />
+    <EntitySet Name="PV_M" EntityType="Self.PV_M" />
+    <EntitySet Name="RV_D" EntityType="Self.RV_D" />
+    <EntitySet Name="RV_M" EntityType="Self.RV_M" />
+    <EntitySet Name="Sale_Pur_D_Pur" EntityType="Self.Sale_Pur_D_Pur" />
+    <EntitySet Name="Sale_Pur_D_Sale" EntityType="Self.Sale_Pur_D_Sale" />
+    <EntitySet Name="Sale_Pur_M" EntityType="Self.Sale_Pur_M" />
+    <EntitySet Name="Sizes" EntityType="Self.Sizes" />
+    <EntitySet Name="Styles" EntityType="Self.Styles" />
+    <EntitySet Name="Table" EntityType="Self.Table" />
+    <EntitySet Name="tbl_KOT" EntityType="Self.tbl_KOT" />
+    <EntitySet Name="tbl_Opd" EntityType="Self.tbl_Opd" />
+    <EntitySet Name="tbl_OpeningCash" EntityType="Self.tbl_OpeningCash" />
+    <EntitySet Name="tbl_OrderDetails" EntityType="Self.tbl_OrderDetails" />
+    <EntitySet Name="tbl_Table" EntityType="Self.tbl_Table" />
+    <EntitySet Name="tbl_Village" EntityType="Self.tbl_Village" />
+    <EntitySet Name="tbl_Warehouse" EntityType="Self.tbl_Warehouse" />
+    <EntitySet Name="tblStock" EntityType="Self.tblStock" />
+    <EntitySet Name="tblWaiter" EntityType="Self.tblWaiter" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendors" />
+    <EntitySet Name="Zone" EntityType="Self.Zone" />
+    <FunctionImport Name="Customer_Select" ReturnType="Collection(SaleManagerShahzaibModel.Customer_Select_Result)">
+      <Parameter Name="customerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ExpenseVoucherCreate" ReturnType="Collection(SaleManagerShahzaibModel.ExpenseVoucherCreate_Result)">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ExpenseVoucherEdit" ReturnType="Collection(SaleManagerShahzaibModel.ExpenseVoucherEdit_Result)">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ExpenseVoucherIndex" ReturnType="Collection(SaleManagerShahzaibModel.ExpenseVoucherIndex_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Gen_NewInvNo" ReturnType="Collection(String)">
+      <Parameter Name="InvType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Gen_NewInvNoLab" ReturnType="Collection(String)">
+      <Parameter Name="InvType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Gen_NewInvNoSale" ReturnType="Collection(String)">
+      <Parameter Name="InvType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GenerateLastNo" ReturnType="Collection(String)" />
+    <FunctionImport Name="GetAc_Code" ReturnType="Collection(Int32)">
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllAc_Code" ReturnType="Collection(SaleManagerShahzaibModel.GetAllAc_Code_Result)" />
+    <FunctionImport Name="getCAshBookByDate" ReturnType="Collection(SaleManagerShahzaibModel.getCAshBookByDate_Result)">
+      <Parameter Name="AcodeMin" Mode="In" Type="Int32" />
+      <Parameter Name="AcodeMax" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getCustomerLedgerBYDate" ReturnType="Collection(SaleManagerShahzaibModel.getCustomerLedgerBYDate_Result)">
+      <Parameter Name="dtfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dtto" Mode="In" Type="DateTime" />
+      <Parameter Name="acCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getcustomerLedgerSummaryByDate" ReturnType="Collection(SaleManagerShahzaibModel.getcustomerLedgerSummaryByDate_Result)">
+      <Parameter Name="dtfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dtto" Mode="In" Type="DateTime" />
+      <Parameter Name="acCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getCustomerPreviousBalance" ReturnType="Collection(SaleManagerShahzaibModel.getCustomerPreviousBalance_Result)">
+      <Parameter Name="dtFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="acCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetExpiredItems" ReturnType="Collection(SaleManagerShahzaibModel.GetExpiredItems_Result)">
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getItemAdjustment" ReturnType="Collection(SaleManagerShahzaibModel.getItemAdjustment_Result)">
+      <Parameter Name="dtfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dtto" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getJournalVoucherRecord" ReturnType="Collection(SaleManagerShahzaibModel.getJournalVoucherRecord_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getMaxACodeById" ReturnType="Collection(Int32)">
+      <Parameter Name="cac_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMinACodeById" ReturnType="Collection(Int32)">
+      <Parameter Name="cac_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMonthDays" ReturnType="Collection(SaleManagerShahzaibModel.getMonthDays_Result)">
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getOpdRecords" ReturnType="Collection(SaleManagerShahzaibModel.getOpdRecords_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getPaidRecordByMonth" ReturnType="Collection(SaleManagerShahzaibModel.getPaidRecordByMonth_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getProfitAndLoss" ReturnType="Collection(SaleManagerShahzaibModel.getProfitAndLoss_Result)">
+      <Parameter Name="AcodeMin" Mode="In" Type="Int32" />
+      <Parameter Name="AcodeMax" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getStockByID" ReturnType="Collection(Double)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getVendorLedgerBYDate" ReturnType="Collection(SaleManagerShahzaibModel.getVendorLedgerBYDate_Result)">
+      <Parameter Name="dtfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dtto" Mode="In" Type="DateTime" />
+      <Parameter Name="acCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getVendorPreviousBalance" ReturnType="Collection(SaleManagerShahzaibModel.getVendorPreviousBalance_Result)">
+      <Parameter Name="dtFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="acCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Item_select" ReturnType="Collection(SaleManagerShahzaibModel.Item_select_Result)" />
+    <FunctionImport Name="Item_Summary" ReturnType="Collection(SaleManagerShahzaibModel.Item_Summary_Result)">
+      <Parameter Name="reportStartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="reportEndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Item" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LabList" ReturnType="Collection(SaleManagerShahzaibModel.LabList_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="PaymentVoucharEdit" ReturnType="Collection(SaleManagerShahzaibModel.PaymentVoucharEdit_Result)">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PaymentVoucharIndex" ReturnType="Collection(SaleManagerShahzaibModel.PaymentVoucharIndex_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="PurchaseEDit" ReturnType="Collection(SaleManagerShahzaibModel.PurchaseEDit_Result)">
+      <Parameter Name="rid" Mode="In" Type="Int32" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PurchaseList" ReturnType="Collection(SaleManagerShahzaibModel.PurchaseList_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="RecivedVoucharEdit" ReturnType="Collection(SaleManagerShahzaibModel.RecivedVoucharEdit_Result)">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RecivedVoucharIndex" ReturnType="Collection(SaleManagerShahzaibModel.RecivedVoucharIndex_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Report_BookingDetailSummary" ReturnType="Collection(SaleManagerShahzaibModel.Report_BookingDetailSummary_Result)">
+      <Parameter Name="reportStartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="reportEndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Report_BookingSummary" ReturnType="Collection(SaleManagerShahzaibModel.Report_BookingSummary_Result)">
+      <Parameter Name="reportStartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="reportEndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Report_BookingSummary_Summary">
+      <Parameter Name="reportStartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="reportEndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Report_CategoryandLabWiseTest">
+      <Parameter Name="reportStartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="reportEndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SaleList" ReturnType="Collection(SaleManagerShahzaibModel.SaleList_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SalePurchaseDetails" ReturnType="Collection(SaleManagerShahzaibModel.SalePurchaseDetails_Result)">
+      <Parameter Name="rid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SalePurchaseIndex" ReturnType="Collection(SaleManagerShahzaibModel.SalePurchaseIndex_Result)">
+      <Parameter Name="dtfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dtto" Mode="In" Type="DateTime" />
+      <Parameter Name="pageNumber" Mode="In" Type="Int32" />
+      <Parameter Name="pageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_AcCode_Insert">
+      <Parameter Name="CAC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Title" Mode="In" Type="String" />
+      <Parameter Name="DR" Mode="In" Type="Double" />
+      <Parameter Name="CR" Mode="In" Type="Double" />
+      <Parameter Name="Qty" Mode="In" Type="Int32" />
+      <Parameter Name="InActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_catergories_Delete">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_catergories_Insert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_catergories_Select" ReturnType="Collection(SaleManagerShahzaibModel.sp_catergories_Select_Result)" />
+    <FunctionImport Name="sp_catergories_SelectByID" ReturnType="Collection(SaleManagerShahzaibModel.sp_catergories_SelectByID_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_catergories_update">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_city_Delete">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_City_insert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_City_Select" ReturnType="Collection(SaleManagerShahzaibModel.sp_City_Select_Result)" />
+    <FunctionImport Name="sp_city_selectByID" ReturnType="Collection(SaleManagerShahzaibModel.sp_city_selectByID_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_City_update">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_COA_D_Delete">
+      <Parameter Name="AC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_coa_d_selectByAcCode" ReturnType="Collection(SaleManagerShahzaibModel.sp_coa_d_selectByAcCode_Result)">
+      <Parameter Name="code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_COA_D_SelectByCode" ReturnType="Collection(SaleManagerShahzaibModel.sp_COA_D_SelectByCode_Result)">
+      <Parameter Name="CAC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_COA_D_Update">
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Title" Mode="In" Type="String" />
+      <Parameter Name="DR" Mode="In" Type="Double" />
+      <Parameter Name="CR" Mode="In" Type="Double" />
+      <Parameter Name="Qty" Mode="In" Type="Int32" />
+      <Parameter Name="InActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_COA_M_Select" ReturnType="Collection(SaleManagerShahzaibModel.sp_COA_M_Select_Result)" />
+    <FunctionImport Name="sp_company_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_company_Insert">
+      <Parameter Name="Comp" Mode="In" Type="String" />
+      <Parameter Name="CShort" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Tel" Mode="In" Type="String" />
+      <Parameter Name="Eml" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_company_Select" ReturnType="Collection(SaleManagerShahzaibModel.Sp_company_Select_Result)" />
+    <FunctionImport Name="Sp_company_SelectByID" ReturnType="Collection(SaleManagerShahzaibModel.Sp_company_SelectByID_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_company_Update">
+      <Parameter Name="Comp" Mode="In" Type="String" />
+      <Parameter Name="CShort" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Tel" Mode="In" Type="String" />
+      <Parameter Name="Eml" Mode="In" Type="String" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Crud_Catergories" ReturnType="Collection(SaleManagerShahzaibModel.Sp_Crud_Catergories_Result)">
+      <Parameter Name="Opertion" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="isDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_customer_COA_D_Update">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Customer_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_customer_Gl_insert">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="RID2" Mode="In" Type="Int32" />
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="GLDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_customer_Gl_Update">
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_customer_Gl_Update_Capital">
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Customer_insert">
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="CusName" Mode="In" Type="String" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Add" Mode="In" Type="String" />
+      <Parameter Name="NTN_No" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="Owner_Name" Mode="In" Type="String" />
+      <Parameter Name="Cell" Mode="In" Type="String" />
+      <Parameter Name="Eml" Mode="In" Type="String" />
+      <Parameter Name="Tel" Mode="In" Type="String" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AddPer" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="Black_List" Mode="In" Type="Boolean" />
+      <Parameter Name="War_Cls" Mode="In" Type="String" />
+      <Parameter Name="War_DT" Mode="In" Type="String" />
+      <Parameter Name="Prn" Mode="In" Type="String" />
+      <Parameter Name="InActive" Mode="In" Type="Boolean" />
+      <Parameter Name="Land" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="Int32" />
+      <Parameter Name="Village" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_customer_selectById" ReturnType="Collection(SaleManagerShahzaibModel.sp_customer_selectById_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Customer_Update">
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="CusName" Mode="In" Type="String" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Add" Mode="In" Type="String" />
+      <Parameter Name="NTN_No" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="Owner_Name" Mode="In" Type="String" />
+      <Parameter Name="Cell" Mode="In" Type="String" />
+      <Parameter Name="Eml" Mode="In" Type="String" />
+      <Parameter Name="Tel" Mode="In" Type="String" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AddPer" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="Black_List" Mode="In" Type="Boolean" />
+      <Parameter Name="War_Cls" Mode="In" Type="String" />
+      <Parameter Name="War_DT" Mode="In" Type="String" />
+      <Parameter Name="Prn" Mode="In" Type="String" />
+      <Parameter Name="InActive" Mode="In" Type="Boolean" />
+      <Parameter Name="Land" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="Int32" />
+      <Parameter Name="Village" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getArticle" ReturnType="Collection(SaleManagerShahzaibModel.sp_getArticle_Result)">
+      <Parameter Name="companyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_COA_D_Cost_of_Sale_Insert">
+      <Parameter Name="CAC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Title" Mode="In" Type="String" />
+      <Parameter Name="DR" Mode="In" Type="Double" />
+      <Parameter Name="CR" Mode="In" Type="Double" />
+      <Parameter Name="Qty" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_COA_D_Cost_of_Sale_Update">
+      <Parameter Name="CostOfSale" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_COA_D_Incomecode_Insert">
+      <Parameter Name="CAC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Title" Mode="In" Type="String" />
+      <Parameter Name="DR" Mode="In" Type="Double" />
+      <Parameter Name="CR" Mode="In" Type="Double" />
+      <Parameter Name="Qty" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_COA_D_Incomecode_Update">
+      <Parameter Name="Incomecode" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_COA_D_InventoryCode_Insert">
+      <Parameter Name="CAC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Title" Mode="In" Type="String" />
+      <Parameter Name="DR" Mode="In" Type="Double" />
+      <Parameter Name="CR" Mode="In" Type="Double" />
+      <Parameter Name="Qty" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_COA_D_Inventorycode_Update">
+      <Parameter Name="Inventorycode" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_Gl_Insert">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="RID2" Mode="In" Type="Int32" />
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="GLDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="OP_Price" Mode="In" Type="Double" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Item_Insert">
+      <Parameter Name="IName" Mode="In" Type="String" />
+      <Parameter Name="Desc" Mode="In" Type="String" />
+      <Parameter Name="Unit_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Inv_YN" Mode="In" Type="Boolean" />
+      <Parameter Name="CompID" Mode="In" Type="Int32" />
+      <Parameter Name="BarCode_ID" Mode="In" Type="String" />
+      <Parameter Name="SCatID" Mode="In" Type="Int32" />
+      <Parameter Name="CTN_PCK" Mode="In" Type="Int32" />
+      <Parameter Name="PurPrice" Mode="In" Type="Double" />
+      <Parameter Name="SalesPrice" Mode="In" Type="Double" />
+      <Parameter Name="RetailPrice" Mode="In" Type="Double" />
+      <Parameter Name="ICP" Mode="In" Type="Int32" />
+      <Parameter Name="OP_Qty" Mode="In" Type="Int32" />
+      <Parameter Name="OP_Price" Mode="In" Type="Int32" />
+      <Parameter Name="DisContinue" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code_Inv" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code_Inc" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code_Cost" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Items" ReturnType="Collection(SaleManagerShahzaibModel.SP_Items_Result)">
+      <Parameter Name="Param" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Items_Update">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Desc" Mode="In" Type="String" />
+      <Parameter Name="Unit_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Inv_YN" Mode="In" Type="Boolean" />
+      <Parameter Name="CompID" Mode="In" Type="Int32" />
+      <Parameter Name="BarCode_ID" Mode="In" Type="String" />
+      <Parameter Name="SCatID" Mode="In" Type="Int32" />
+      <Parameter Name="CTN_PCK" Mode="In" Type="Int32" />
+      <Parameter Name="PurPrice" Mode="In" Type="Double" />
+      <Parameter Name="SalesPrice" Mode="In" Type="Double" />
+      <Parameter Name="RetailPrice" Mode="In" Type="Double" />
+      <Parameter Name="ICP" Mode="In" Type="Int32" />
+      <Parameter Name="OP_Qty" Mode="In" Type="Int32" />
+      <Parameter Name="OP_Price" Mode="In" Type="Int32" />
+      <Parameter Name="DisContinue" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code_Inv" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code_Inc" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code_Cost" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PartyType_Delete">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PartyType_insert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_partyType_Select" ReturnType="Collection(SaleManagerShahzaibModel.Sp_partyType_Select_Result)">
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Party_Type" Mode="In" Type="String" />
+      <Parameter Name="isDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_partyType_SelectById" ReturnType="Collection(SaleManagerShahzaibModel.sp_partyType_SelectById_Result)">
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PartyType_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_D_Insert">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="Narr" Mode="In" Type="String" />
+      <Parameter Name="MOP_ID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="InvNo" Mode="In" Type="Int32" />
+      <Parameter Name="ChkNo" Mode="In" Type="Int32" />
+      <Parameter Name="SlipNo" Mode="In" Type="Int32" />
+      <Parameter Name="PreAmt" Mode="In" Type="Double" />
+      <Parameter Name="Amt" Mode="In" Type="Double" />
+      <Parameter Name="DisAmt" Mode="In" Type="Double" />
+      <Parameter Name="BalAmt" Mode="In" Type="Double" />
+      <Parameter Name="SRT" Mode="In" Type="Double" />
+      <Parameter Name="RCancel" Mode="In" Type="Double" />
+      <Parameter Name="checkDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_D_Update">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="Narr" Mode="In" Type="String" />
+      <Parameter Name="MOP_ID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="InvNo" Mode="In" Type="Int32" />
+      <Parameter Name="ChkNo" Mode="In" Type="Int32" />
+      <Parameter Name="SlipNo" Mode="In" Type="Int32" />
+      <Parameter Name="PreAmt" Mode="In" Type="Double" />
+      <Parameter Name="Amt" Mode="In" Type="Double" />
+      <Parameter Name="DisAmt" Mode="In" Type="Double" />
+      <Parameter Name="BalAmt" Mode="In" Type="Double" />
+      <Parameter Name="SRT" Mode="In" Type="Double" />
+      <Parameter Name="RCancel" Mode="In" Type="Double" />
+      <Parameter Name="checkDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_GL_credit">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gl" Mode="In" Type="DateTime" />
+      <Parameter Name="MOP_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_Gl_Credit_Update">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gldate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_GL_Debit">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gl" Mode="In" Type="DateTime" />
+      <Parameter Name="MOP_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_Gl_Debit_Update">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gldate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_M_Insert" ReturnType="Collection(Decimal)">
+      <Parameter Name="CompID" Mode="In" Type="Int32" />
+      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
+      <Parameter Name="Rem" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PV_M_Update">
+      <Parameter Name="CompID" Mode="In" Type="Int32" />
+      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
+      <Parameter Name="Rem" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_D_Insert">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="Narr" Mode="In" Type="String" />
+      <Parameter Name="MOP_ID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="InvNo" Mode="In" Type="Int32" />
+      <Parameter Name="ChkNo" Mode="In" Type="Int32" />
+      <Parameter Name="SlipNo" Mode="In" Type="Int32" />
+      <Parameter Name="PreAmt" Mode="In" Type="Double" />
+      <Parameter Name="Amt" Mode="In" Type="Double" />
+      <Parameter Name="DisAmt" Mode="In" Type="Double" />
+      <Parameter Name="BalAmt" Mode="In" Type="Double" />
+      <Parameter Name="SRT" Mode="In" Type="Double" />
+      <Parameter Name="RCancel" Mode="In" Type="Double" />
+      <Parameter Name="checkDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_D_Update">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="Narr" Mode="In" Type="String" />
+      <Parameter Name="MOP_ID" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="InvNo" Mode="In" Type="Int32" />
+      <Parameter Name="ChkNo" Mode="In" Type="Int32" />
+      <Parameter Name="SlipNo" Mode="In" Type="Int32" />
+      <Parameter Name="PreAmt" Mode="In" Type="Double" />
+      <Parameter Name="Amt" Mode="In" Type="Double" />
+      <Parameter Name="DisAmt" Mode="In" Type="Double" />
+      <Parameter Name="BalAmt" Mode="In" Type="Double" />
+      <Parameter Name="SRT" Mode="In" Type="Double" />
+      <Parameter Name="RCancel" Mode="In" Type="Double" />
+      <Parameter Name="checkDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_GL_credit">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gl" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_Gl_Credit_Update">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gldate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_GL_Debit">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gl" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_Gl_Debit_Update">
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="gldate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_M_Insert" ReturnType="Collection(Decimal)">
+      <Parameter Name="CompID" Mode="In" Type="Int32" />
+      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
+      <Parameter Name="Rem" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RV_M_Update">
+      <Parameter Name="CompID" Mode="In" Type="Int32" />
+      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
+      <Parameter Name="Rem" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Unit_delete">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_unit_insert">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_unit_select" ReturnType="Collection(SaleManagerShahzaibModel.sp_unit_select_Result)" />
+    <FunctionImport Name="sp_unit_selectById" ReturnType="Collection(SaleManagerShahzaibModel.sp_unit_selectById_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_unit_Update">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_coa_d_update">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Vendor_Gl_insert">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="RID2" Mode="In" Type="Int32" />
+      <Parameter Name="TypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="GLDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="AC_Code2" Mode="In" Type="Int32" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_gl_update">
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_Gl_Update_capital">
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_insert">
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="CusName" Mode="In" Type="String" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Add" Mode="In" Type="String" />
+      <Parameter Name="NTN_No" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="Cell" Mode="In" Type="String" />
+      <Parameter Name="Eml" Mode="In" Type="String" />
+      <Parameter Name="Tel" Mode="In" Type="String" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="InActive" Mode="In" Type="Boolean" />
+      <Parameter Name="Land" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="Int32" />
+      <Parameter Name="Village" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_selectById" ReturnType="Collection(SaleManagerShahzaibModel.sp_vendor_selectById_Result)">
+      <Parameter Name="vendorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_vendor_update">
+      <Parameter Name="AC_Code" Mode="In" Type="Int32" />
+      <Parameter Name="CusName" Mode="In" Type="String" />
+      <Parameter Name="PType_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Add" Mode="In" Type="String" />
+      <Parameter Name="NTN_No" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="Cell" Mode="In" Type="String" />
+      <Parameter Name="Eml" Mode="In" Type="String" />
+      <Parameter Name="Tel" Mode="In" Type="String" />
+      <Parameter Name="ZID" Mode="In" Type="Int32" />
+      <Parameter Name="Debit" Mode="In" Type="Double" />
+      <Parameter Name="Credit" Mode="In" Type="Double" />
+      <Parameter Name="InActive" Mode="In" Type="Boolean" />
+      <Parameter Name="Land" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="Int32" />
+      <Parameter Name="Village" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Village_Delete">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Village_Insert">
+      <Parameter Name="CityID" Mode="In" Type="Int32" />
+      <Parameter Name="VillageName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Village_SelectByID" ReturnType="Collection(SaleManagerShahzaibModel.sp_Village_SelectByID_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_village_Update">
+      <Parameter Name="City" Mode="In" Type="Int32" />
+      <Parameter Name="VillageNAme" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_EV">
+      <Parameter Name="Rid" Mode="In" Type="Int32" />
+      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Ac_code" Mode="In" Type="Double" />
+      <Parameter Name="CustomerCode" Mode="In" Type="String" />
+      <Parameter Name="Amount" Mode="In" Type="Double" />
+      <Parameter Name="checkNO" Mode="In" Type="String" />
+      <Parameter Name="Narr" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateItemTable">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="CatertoryId" Mode="In" Type="String" />
+      <Parameter Name="UnitID" Mode="In" Type="String" />
+      <Parameter Name="ItemID" Mode="In" Type="Int32" />
+      <Parameter Name="Inventorycode" Mode="In" Type="String" />
+      <Parameter Name="Incomecode" Mode="In" Type="String" />
+      <Parameter Name="CostOfSale" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Vendor_Select" ReturnType="Collection(SaleManagerShahzaibModel.Vendor_Select_Result)">
+      <Parameter Name="vendorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Village_Select" ReturnType="Collection(SaleManagerShahzaibModel.Village_Select_Result)" />
+    <EntitySet Name="COA_M" EntityType="SaleManagerShahzaibModel.COA_M" />
+    <EntitySet Name="COA_D" EntityType="SaleManagerShahzaibModel.COA_D" />
+    <EntitySet Name="EV_D" EntityType="SaleManagerShahzaibModel.EV_D" />
+    <EntitySet Name="SalesR_D" EntityType="SaleManagerShahzaibModel.SalesR_D" />
+    <EntitySet Name="SalesR_M" EntityType="SaleManagerShahzaibModel.SalesR_M" />
+    <EntitySet Name="tbl_Receipe" EntityType="SaleManagerShahzaibModel.tbl_Receipe" />
+    <EntitySet Name="tbl_Company" EntityType="SaleManagerShahzaibModel.tbl_Company" />
+    <EntitySet Name="tbl_karahi_Item" EntityType="SaleManagerShahzaibModel.tbl_karahi_Item" />
+    <EntitySet Name="tbl_Karahi_D" EntityType="SaleManagerShahzaibModel.tbl_Karahi_D" />
+    <EntitySet Name="tbl_karahi_M" EntityType="SaleManagerShahzaibModel.tbl_karahi_M" />
+    <EntitySet Name="tbl_Employee" EntityType="SaleManagerShahzaibModel.tbl_Employee" />
+    <EntitySet Name="tbl_Order" EntityType="SaleManagerShahzaibModel.tbl_Order" />
+    <EntitySet Name="Pur_M" EntityType="SaleManagerShahzaibModel.Pur_M" />
+    <EntitySet Name="tbl_city" EntityType="SaleManagerShahzaibModel.tbl_city" />
+    <EntitySet Name="JV_M" EntityType="SaleManagerShahzaibModel.JV_M" />
+    <EntitySet Name="Items" EntityType="SaleManagerShahzaibModel.Items" />
+    <EntitySet Name="Sales_M" EntityType="SaleManagerShahzaibModel.Sales_M" />
+    <EntitySet Name="Sales_D" EntityType="SaleManagerShahzaibModel.Sales_D" />
+  </EntityContainer>
+  <ComplexType Name="Customer_Select_Result">
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+    <Property Type="Int32" Name="CID" Nullable="false" />
+    <Property Type="String" Name="CusName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Owner_Name" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="String" Name="AddPer" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Boolean" Name="Black_List" Nullable="true" />
+    <Property Type="String" Name="War_Cls" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="War_DT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Prn" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="Decimal" Name="CollectPerMonth" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="MrNO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="ExpenseVoucherCreate_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="AC_Code" Nullable="true" />
+    <Property Type="Double" Name="SID" Nullable="true" />
+    <Property Type="String" Name="AC_Code2" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AC_Code3" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Amt" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Posted" Nullable="true" />
+    <Property Type="Double" Name="APost" Nullable="true" />
+    <Property Type="Double" Name="RCancel" Nullable="true" />
+    <Property Type="String" Name="Create_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Create_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Edit_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Edit_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Amt1" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ChkNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="MOP_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SlipNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SRT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="RV_CustomerCode" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ExpenseVoucherEdit_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="AC_Code" Nullable="true" />
+    <Property Type="Double" Name="SID" Nullable="true" />
+    <Property Type="String" Name="AC_Code2" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AC_Code3" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Amt" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Posted" Nullable="true" />
+    <Property Type="Double" Name="APost" Nullable="true" />
+    <Property Type="Double" Name="RCancel" Nullable="true" />
+    <Property Type="String" Name="Create_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Create_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Edit_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Edit_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="amount" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ChkNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="MOP_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SlipNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SRT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="RV_CustomerCode" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ExpenseVoucherIndex_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="AC_Code" Nullable="true" />
+    <Property Type="Double" Name="SID" Nullable="true" />
+    <Property Type="String" Name="AC_Code2" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="AC_Code3" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Amt" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Posted" Nullable="true" />
+    <Property Type="Double" Name="APost" Nullable="true" />
+    <Property Type="Double" Name="RCancel" Nullable="true" />
+    <Property Type="String" Name="Create_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Create_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Edit_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Edit_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="amount" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="customer" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="cashBAnk" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ChkNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="MOP_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SlipNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="SRT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="RV_TransactionCode" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllAc_Code_Result">
+    <Property Type="Int32" Name="CAC_Code" Nullable="true" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="DR" Nullable="true" />
+    <Property Type="Double" Name="CR" Nullable="true" />
+    <Property Type="Double" Name="Qty" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getCAshBookByDate_Result">
+    <Property Type="DateTime" Name="GLDate" Nullable="true" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="String" Name="Narration" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="RpCode" Nullable="false" MaxLength="268" />
+  </ComplexType>
+  <ComplexType Name="getCustomerLedgerBYDate_Result">
+    <Property Type="DateTime" Name="GLDate" Nullable="true" />
+    <Property Type="String" Name="reference" Nullable="false" MaxLength="268" />
+    <Property Type="String" Name="Narration" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="IPrice" Nullable="true" />
+    <Property Type="Double" Name="Qty_IN" Nullable="true" />
+    <Property Type="Double" Name="debit" Nullable="false" />
+    <Property Type="Double" Name="credit" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getcustomerLedgerSummaryByDate_Result">
+    <Property Type="DateTime" Name="GLDate" Nullable="true" />
+    <Property Type="String" Name="reference" Nullable="false" MaxLength="268" />
+    <Property Type="Int32" Name="RID" Nullable="true" />
+    <Property Type="Int32" Name="TypeCode" Nullable="true" />
+    <Property Type="Double" Name="debit" Nullable="true" />
+    <Property Type="Double" Name="credit" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getCustomerPreviousBalance_Result">
+    <Property Type="Double" Name="debit" Nullable="false" />
+    <Property Type="Double" Name="credit" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetExpiredItems_Result">
+    <Property Type="DateTime" Name="ExpDT" Nullable="true" />
+    <Property Type="Double" Name="CTN" Nullable="true" />
+    <Property Type="Double" Name="PCS" Nullable="true" />
+    <Property Type="Double" Name="OPN" Nullable="true" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="getItemAdjustment_Result">
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Account" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="AccountID" Nullable="false" />
+    <Property Type="String" Name="product" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="productCode" Nullable="true" />
+    <Property Type="Int32" Name="productID" Nullable="false" />
+    <Property Type="String" Name="warehouse" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="warehouseID" Nullable="false" />
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="QtyIN" Nullable="true" />
+    <Property Type="Double" Name="QtyOut" Nullable="true" />
+    <Property Type="Double" Name="PurPrice" Nullable="true" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getJournalVoucherRecord_Result">
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code2" Nullable="true" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Amt" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="RID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getMonthDays_Result">
+    <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="getOpdRecords_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="DoctorID" Nullable="true" />
+    <Property Type="Int32" Name="PatientID" Nullable="true" />
+    <Property Type="Decimal" Name="fee" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="discount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="DateTime" Name="DateTime" Nullable="true" />
+    <Property Type="Int32" Name="PaymentMode" Nullable="true" />
+    <Property Type="Int32" Name="TokkenNo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getPaidRecordByMonth_Result">
+    <Property Type="String" Name="CusName" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="TOTAL_AMOUNT" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getProfitAndLoss_Result">
+    <Property Type="Double" Name="debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="getVendorLedgerBYDate_Result">
+    <Property Type="DateTime" Name="GLDate" Nullable="true" />
+    <Property Type="String" Name="reference" Nullable="false" MaxLength="268" />
+    <Property Type="String" Name="Narration" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="IPrice" Nullable="true" />
+    <Property Type="Double" Name="Qty_IN" Nullable="true" />
+    <Property Type="Double" Name="debit" Nullable="false" />
+    <Property Type="Double" Name="credit" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getVendorPreviousBalance_Result">
+    <Property Type="Double" Name="debit" Nullable="false" />
+    <Property Type="Double" Name="credit" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Item_select_Result">
+    <Property Type="Int32" Name="AC_Code_Inv" Nullable="true" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cat" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="IUnit" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Item_Summary_Result">
+    <Property Type="String" Name="OrderNo" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IID" Nullable="false" />
+    <Property Type="Decimal" Name="Qty" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Rate" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="LabList_Result">
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="CompID" Nullable="true" />
+    <Property Type="String" Name="RID2" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CAC_Code" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="AC_Code" Nullable="true" />
+    <Property Type="String" Name="Ship_To" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Ship_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Trans_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BiltyNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="SID" Nullable="true" />
+    <Property Type="Double" Name="WID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="NetAmt2" Nullable="true" />
+    <Property Type="String" Name="DisAmt" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PreBal" Nullable="true" />
+    <Property Type="Double" Name="NetAmt" Nullable="true" />
+    <Property Type="String" Name="AC_Code3" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CashAmt" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="APost" Nullable="true" />
+    <Property Type="Double" Name="Posted" Nullable="true" />
+    <Property Type="Double" Name="RCancel" Nullable="true" />
+    <Property Type="Double" Name="War_Cls" Nullable="true" />
+    <Property Type="Double" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Del_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="InvDT" Nullable="true" Precision="23" />
+    <Property Type="String" Name="InvType" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CstId" Nullable="true" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="String" Name="CstInvNo" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="VenInvDate" Nullable="true" MaxLength="25" />
+    <Property Type="Double" Name="TransportExpense" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PaymentVoucharEdit_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Int32" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="APost" Nullable="true" />
+    <Property Type="Int32" Name="Posted" Nullable="true" />
+    <Property Type="Int32" Name="RCancel" Nullable="true" />
+    <Property Type="Int32" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Del_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Del_Date" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Double" Name="Amt" Nullable="true" />
+    <Property Type="Double" Name="BalAmt" Nullable="true" />
+    <Property Type="DateTime" Name="checkDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ChkNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="DisAmt" Nullable="true" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="MOP_ID" Nullable="true" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PreAmt" Nullable="true" />
+    <Property Type="String" Name="SlipNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="SRT" Nullable="true" />
+    <Property Type="Int32" Name="RV_CustomerCode" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="PaymentVoucharIndex_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Int32" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="APost" Nullable="true" />
+    <Property Type="Int32" Name="Posted" Nullable="true" />
+    <Property Type="Int32" Name="RCancel" Nullable="true" />
+    <Property Type="Int32" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Del_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Del_Date" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Double" Name="Amt" Nullable="true" />
+    <Property Type="String" Name="customer" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="cashBAnk" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="BalAmt" Nullable="true" />
+    <Property Type="DateTime" Name="checkDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ChkNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="DisAmt" Nullable="true" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="MOP_ID" Nullable="true" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PreAmt" Nullable="true" />
+    <Property Type="String" Name="SlipNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="SRT" Nullable="true" />
+    <Property Type="Int32" Name="RV_TransactionCode" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="PurchaseEDit_Result">
+    <Property Type="String" Name="MyJson" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="PurJson" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="Comm" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Total" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="CvenID" Nullable="true" />
+    <Property Type="String" Name="cVendName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SaleVillageID" Nullable="true" />
+    <Property Type="Int32" Name="cusID" Nullable="true" />
+    <Property Type="Int32" Name="SalecityID" Nullable="true" />
+    <Property Type="Decimal" Name="KhamBikri" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="LongerTadat" Nullable="true" />
+    <Property Type="Decimal" Name="Phaliyan" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="PukhtaBikri" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Sale_ID" Nullable="false" />
+    <Property Type="Decimal" Name="CustomerExpense" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="RId" Nullable="false" />
+    <Property Type="String" Name="VehicalNo" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="Decimal" Name="Rent" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="pashgi" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="bharai_chatai_kata_kharacha" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Office_khata" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CarAmad_AmadKharcha" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="gari_OfficeKharcha" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Total_Purchase" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="advanceBuilty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OwnBuilty" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Pur_ID" Nullable="false" />
+    <Property Type="Int32" Name="VendorID" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="Int32" Name="UnitID" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="Pur_Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Pur_Total" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="VID" Nullable="false" />
+    <Property Type="String" Name="VendName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Unites" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PurchaseList_Result">
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="AC_Code" Nullable="true" />
+    <Property Type="String" Name="RID2" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvDT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BiltyNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="SID" Nullable="true" />
+    <Property Type="Double" Name="WID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DisAmt" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cartage" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="NetAmt" Nullable="true" />
+    <Property Type="Double" Name="APost" Nullable="true" />
+    <Property Type="Double" Name="Posted" Nullable="true" />
+    <Property Type="Double" Name="RCancel" Nullable="true" />
+    <Property Type="Double" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Del_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="VehicalNo" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="VendorId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Double" Name="Rent" Nullable="true" />
+    <Property Type="Double" Name="pashgi" Nullable="true" />
+    <Property Type="Double" Name="Bharai_chahti_chunai_khata_kharcha" Nullable="true" />
+    <Property Type="Double" Name="OfficeKhata" Nullable="true" />
+    <Property Type="Double" Name="Karamat_amat_khata" Nullable="true" />
+    <Property Type="Double" Name="gari_Office_kharcha" Nullable="true" />
+    <Property Type="Double" Name="TotalAmount" Nullable="true" />
+    <Property Type="String" Name="VenInvNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="VenInvDate" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="InvType" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="RecivedVoucharEdit_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Int32" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AC_Code" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="APost" Nullable="true" />
+    <Property Type="Int32" Name="Posted" Nullable="true" />
+    <Property Type="Int32" Name="RCancel" Nullable="true" />
+    <Property Type="Int32" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Del_User_ID" Nullable="true" />
+    <Property Type="Int32" Name="Del_Date" Nullable="true" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Double" Name="Amt" Nullable="true" />
+    <Property Type="Double" Name="BalAmt" Nullable="true" />
+    <Property Type="DateTime" Name="checkDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ChkNo" Nullable="true" />
+    <Property Type="Double" Name="DisAmt" Nullable="true" />
+    <Property Type="Int32" Name="InvNo" Nullable="true" />
+    <Property Type="Int32" Name="MOP_ID" Nullable="true" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PreAmt" Nullable="true" />
+    <Property Type="Int32" Name="SlipNo" Nullable="true" />
+    <Property Type="Double" Name="SRT" Nullable="true" />
+    <Property Type="String" Name="RV_CustomerCode" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="RecivedVoucharIndex_Result">
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Int32" Name="CompID" Nullable="true" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AC_Code" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="APost" Nullable="true" />
+    <Property Type="Int32" Name="Posted" Nullable="true" />
+    <Property Type="Int32" Name="RCancel" Nullable="true" />
+    <Property Type="Int32" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Del_User_ID" Nullable="true" />
+    <Property Type="Int32" Name="Del_Date" Nullable="true" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Double" Name="Amt" Nullable="true" />
+    <Property Type="String" Name="customer" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="cashBAnk" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="BalAmt" Nullable="true" />
+    <Property Type="DateTime" Name="checkDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ChkNo" Nullable="true" />
+    <Property Type="Double" Name="DisAmt" Nullable="true" />
+    <Property Type="Int32" Name="InvNo" Nullable="true" />
+    <Property Type="Int32" Name="MOP_ID" Nullable="true" />
+    <Property Type="String" Name="Narr" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PreAmt" Nullable="true" />
+    <Property Type="Int32" Name="SlipNo" Nullable="true" />
+    <Property Type="Double" Name="SRT" Nullable="true" />
+    <Property Type="String" Name="RV_TransactionCode" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Report_BookingDetailSummary_Result">
+    <Property Type="String" Name="OrderNo" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="OrderType" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="KOTID" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="Decimal" Name="GST" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="Decimal" Name="Discount" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+    <Property Type="Decimal" Name="Qty" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="Decimal" Name="Rate" Nullable="true" Precision="20" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="Report_BookingSummary_Result">
+    <Property Type="String" Name="OrderNo" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="OrderType" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="KOTID" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="Decimal" Name="GST" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="Decimal" Name="Discount" Nullable="true" Precision="20" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SaleList_Result">
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="RID" Nullable="false" />
+    <Property Type="Double" Name="CompID" Nullable="true" />
+    <Property Type="String" Name="RID2" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="EDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CAC_Code" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="AC_Code" Nullable="true" />
+    <Property Type="String" Name="Ship_To" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Ship_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Trans_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BiltyNo" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="SID" Nullable="true" />
+    <Property Type="Double" Name="WID" Nullable="true" />
+    <Property Type="String" Name="Rem" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="NetAmt2" Nullable="true" />
+    <Property Type="String" Name="DisAmt" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="PreBal" Nullable="true" />
+    <Property Type="Double" Name="NetAmt" Nullable="true" />
+    <Property Type="String" Name="AC_Code3" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CashAmt" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="APost" Nullable="true" />
+    <Property Type="Double" Name="Posted" Nullable="true" />
+    <Property Type="Double" Name="RCancel" Nullable="true" />
+    <Property Type="Double" Name="War_Cls" Nullable="true" />
+    <Property Type="Double" Name="Create_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="Edit_User_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Edit_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Del_User_ID" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Del_Date" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="InvNo" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="InvDT" Nullable="true" Precision="23" />
+    <Property Type="String" Name="InvType" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CstId" Nullable="true" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="String" Name="CstInvNo" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="VenInvDate" Nullable="true" MaxLength="25" />
+    <Property Type="Double" Name="TransportExpense" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SalePurchaseDetails_Result">
+    <Property Type="Int32" Name="Pur_ID" Nullable="false" />
+    <Property Type="Int32" Name="VendorID" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="Int32" Name="UnitID" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="Pur_Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Pur_Total" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="VID" Nullable="true" />
+    <Property Type="String" Name="VendName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CVendName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="Decimal" Name="Comm" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="SalePurchaseIndex_Result">
+    <Property Type="Int32" Name="Sale_ID" Nullable="false" />
+    <Property Type="Int32" Name="RID" Nullable="true" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="VillageID" Nullable="true" />
+    <Property Type="Int32" Name="VendorID" Nullable="true" />
+    <Property Type="Decimal" Name="PukhtaBikri" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="LongerTadat" Nullable="true" />
+    <Property Type="Decimal" Name="KhamBikri" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Phaliyan" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="CustomerExpense" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="DateTime" Name="dtfrom" Nullable="true" />
+    <Property Type="DateTime" Name="dtto" Nullable="true" />
+    <Property Type="String" Name="VehicalNo" Nullable="true" />
+    <Property Type="Decimal" Name="Rent" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Total_Purchase" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+    <Property Type="Int32" Name="CID" Nullable="false" />
+    <Property Type="String" Name="CusName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Owner_Name" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="String" Name="AddPer" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Boolean" Name="Black_List" Nullable="true" />
+    <Property Type="String" Name="War_Cls" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="War_DT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Prn" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="Decimal" Name="CollectPerMonth" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="MrNO" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PageNumber" Nullable="true" />
+    <Property Type="Int32" Name="PageSize" Nullable="true" />
+    <Property Type="Int32" Name="PageCount" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_catergories_Select_Result">
+    <Property Type="Int32" Name="CatID" Nullable="false" />
+    <Property Type="String" Name="Cat" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="img" Nullable="true" />
+    <Property Type="String" Name="Images" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_catergories_SelectByID_Result">
+    <Property Type="Int32" Name="CatID" Nullable="false" />
+    <Property Type="String" Name="Cat" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="img" Nullable="true" />
+    <Property Type="String" Name="Images" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_City_Select_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_city_selectByID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_coa_d_selectByAcCode_Result">
+    <Property Type="Int32" Name="CAC_Code" Nullable="true" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="DR" Nullable="true" />
+    <Property Type="Double" Name="CR" Nullable="true" />
+    <Property Type="Double" Name="Qty" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_COA_D_SelectByCode_Result">
+    <Property Type="Int32" Name="CAC_Code" Nullable="true" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+    <Property Type="String" Name="AC_Title" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="DR" Nullable="true" />
+    <Property Type="Double" Name="CR" Nullable="true" />
+    <Property Type="Double" Name="Qty" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_COA_M_Select_Result">
+    <Property Type="Double" Name="MAC_Code" Nullable="true" />
+    <Property Type="String" Name="MTitle" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="SubAC_Code" Nullable="true" />
+    <Property Type="String" Name="SubTitle" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="CAC_Code" Nullable="false" />
+    <Property Type="String" Name="CATitle" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="Sp_company_Select_Result">
+    <Property Type="Int32" Name="CompID" Nullable="false" />
+    <Property Type="String" Name="Comp" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CShort" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="isDelete" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_company_SelectByID_Result">
+    <Property Type="Int32" Name="CompID" Nullable="false" />
+    <Property Type="String" Name="Comp" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CShort" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="isDelete" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_Crud_Catergories_Result">
+    <Property Type="Int32" Name="CatID" Nullable="false" />
+    <Property Type="String" Name="Cat" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="img" Nullable="true" />
+    <Property Type="String" Name="Images" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_customer_selectById_Result">
+    <Property Type="Int32" Name="AC_Code" Nullable="false" />
+    <Property Type="Int32" Name="CID" Nullable="false" />
+    <Property Type="String" Name="CusName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Owner_Name" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="SID" Nullable="true" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="String" Name="AddPer" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Boolean" Name="Black_List" Nullable="true" />
+    <Property Type="String" Name="War_Cls" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="War_DT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Prn" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="Decimal" Name="CollectPerMonth" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="MrNO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getArticle_Result">
+    <Property Type="Int32" Name="ArticleTypeID" Nullable="false" />
+    <Property Type="Int32" Name="StyleID" Nullable="false" />
+    <Property Type="String" Name="StyleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ArticleTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ArticleNo" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
+    <Property Type="Int32" Name="ProductID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_Items_Result">
+    <Property Type="Int32" Name="IID" Nullable="false" />
+    <Property Type="String" Name="ArticleNo" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="IName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="Color" Nullable="false" />
+    <Property Type="Int32" Name="Size" Nullable="false" />
+    <Property Type="String" Name="Comp" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Formula" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="Sp_partyType_Select_Result">
+    <Property Type="Int32" Name="PType_ID" Nullable="false" />
+    <Property Type="String" Name="Party_Type" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_partyType_SelectById_Result">
+    <Property Type="Int32" Name="PType_ID" Nullable="false" />
+    <Property Type="String" Name="Party_Type" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_unit_select_Result">
+    <Property Type="Int32" Name="unit_id" Nullable="false" />
+    <Property Type="String" Name="IUnit" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="crtBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="crtDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="modBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="modDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_unit_selectById_Result">
+    <Property Type="Int32" Name="unit_id" Nullable="false" />
+    <Property Type="String" Name="IUnit" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="crtBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="crtDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="modBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="modDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_vendor_selectById_Result">
+    <Property Type="Int32" Name="VID" Nullable="false" />
+    <Property Type="String" Name="VendName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_Village_SelectByID_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Vendor_Select_Result">
+    <Property Type="Int32" Name="VID" Nullable="false" />
+    <Property Type="String" Name="VendName" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="PType_ID" Nullable="true" />
+    <Property Type="String" Name="Add" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NTN_No" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Cell" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Eml" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Tel" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ZID" Nullable="true" />
+    <Property Type="Double" Name="Debit" Nullable="true" />
+    <Property Type="Double" Name="Credit" Nullable="true" />
+    <Property Type="Int32" Name="AC_Code" Nullable="true" />
+    <Property Type="Boolean" Name="InActive" Nullable="true" />
+    <Property Type="String" Name="Land" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="Int32" Name="Village" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="Village_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="VillageName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <EntityType Name="COA_M">
+    <Key>
+      <PropertyRef Name="CAC_Code" />
+    </Key>
+    <Property Name="CAC_Code" Type="Int32" Nullable="false" />
+    <Property Name="MAC_Code" Type="Double" />
+    <Property Name="MTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SubAC_Code" Type="Double" />
+    <Property Name="SubTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CATitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="COA_D">
+    <Key>
+      <PropertyRef Name="CDID" />
+    </Key>
+    <Property Name="CDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="CAC_Code" Type="Int32" />
+    <Property Name="PType_ID" Type="Int32" />
+    <Property Name="ZID" Type="Int32" />
+    <Property Name="AC_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DR" Type="Double" />
+    <Property Name="CR" Type="Double" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="InActive" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EV_D">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="Narr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MOP_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AC_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InvNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ChkNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SlipNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SRT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RCancel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SalesR_D">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Double" />
+    <Property Name="IID" Type="Double" />
+    <Property Name="BNID" Type="Double" />
+    <Property Name="ExpDT" Type="DateTime" Precision="3" />
+    <Property Name="CTN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PCS" Type="Double" />
+    <Property Name="SCH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="SalesPriceP" Type="Double" />
+    <Property Name="AddPer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SalesPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisRs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Amt2" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="PCK_Det" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+  </EntityType>
+  <EntityType Name="SalesR_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Int32" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="Int32" />
+    <Property Name="Ship_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ship_To" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RID2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Trans_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BiltyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="WID" Type="Double" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NetAmt2" Type="Double" />
+    <Property Name="PreBal" Type="Double" />
+    <Property Name="DisAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NetAmt" Type="Double" />
+    <Property Name="AC_Code3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CashAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Create_User_ID" Type="Double" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Double" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Receipe">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="qty" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="setup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RecipceItemId" Type="Int32" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="compy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Company">
+    <Key>
+      <PropertyRef Name="CompID" />
+    </Key>
+    <Property Name="CompID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CShort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Tel" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Eml" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isDelete" Type="Boolean" />
+    <Property Name="companyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_karahi_Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Company" Type="Int32" />
+    <Property Name="Rid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Karahi_D">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="itemId" Type="Int32" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="karahiNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Rid" Type="Int32" />
+    <Property Name="Compy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_karahi_M">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Company" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PyteTypeID" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="ACCode" Type="Int32" />
+    <Property Name="companyID" Type="Int32" />
+    <Property Name="AllowTable" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KOTID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isComplete" Type="Boolean" />
+    <Property Name="Discount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="TblID" Type="Int32" />
+    <Property Name="WaiterID" Type="Int32" />
+    <Property Name="OrderType" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="GST" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="Cat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ItemDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="dueAmt" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="Pur_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Double" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="AC_Code" Type="Double" />
+    <Property Name="RID2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvDT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BiltyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="WID" Type="Double" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="Cartage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NetAmt" Type="Double" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Create_User_ID" Type="Double" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Double" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="VehicalNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VendorId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Rent" Type="Double" />
+    <Property Name="pashgi" Type="Double" />
+    <Property Name="Bharai_chahti_chunai_khata_kharcha" Type="Double" />
+    <Property Name="OfficeKhata" Type="Double" />
+    <Property Name="Karamat_amat_khata" Type="Double" />
+    <Property Name="gari_Office_kharcha" Type="Double" />
+    <Property Name="TotalAmount" Type="Double" />
+    <Property Name="VenInvNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VenInvDate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InvType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_city">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CompyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="JV_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" />
+    <Property Name="CompID" Type="Double" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="Create_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Create_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Edit_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Edit_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ForSale" Type="Boolean" />
+    <Property Name="images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="IID" />
+    </Key>
+    <Property Name="IID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_ID" Type="Int32" />
+    <Property Name="Inv_YN" Type="Boolean" />
+    <Property Name="CompID" Type="Int32" />
+    <Property Name="BarCode_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SCatID" Type="Int32" />
+    <Property Name="CTN_PCK" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="SalesPrice" Type="Double" />
+    <Property Name="RetailPrice" Type="Double" />
+    <Property Name="ICP" Type="Int32" />
+    <Property Name="OP_Qty" Type="Double" />
+    <Property Name="OP_Price" Type="Double" />
+    <Property Name="DisContinue" Type="Double" />
+    <Property Name="AC_Code_Inv" Type="Int32" />
+    <Property Name="AC_Code_Inc" Type="Int32" />
+    <Property Name="AC_Code_Cost" Type="Int32" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="saleTax" Type="Int32" />
+    <Property Name="Color" Type="Int32" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="ArticleNoID" Type="Int32" />
+    <Property Name="BarcodeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DisP" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="DisR" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="AveragePrice" Type="Double" />
+    <Property Name="Demand" Type="Double" />
+    <Property Name="ArticleTypeId" Type="Int32" />
+    <Property Name="Style" Type="Int32" />
+    <Property Name="RetailPOne" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="RetailPTwo" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="RetailPThree" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Formula" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="WholeSale" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="itemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WareHouseID" Type="Int32" />
+    <Property Name="Weight" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="CustomBarcode" Type="Boolean" />
+    <Property Name="Cabinet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Meter" Type="Double" />
+  </EntityType>
+  <EntityType Name="Sales_M">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompID" Type="Double" />
+    <Property Name="RID2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EDate" Type="DateTime" Precision="3" />
+    <Property Name="CAC_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AC_Code" Type="Double" />
+    <Property Name="Ship_To" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ship_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Trans_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BiltyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="Double" />
+    <Property Name="WID" Type="Double" />
+    <Property Name="Rem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NetAmt2" Type="Double" />
+    <Property Name="DisAmt" Type="Double" />
+    <Property Name="PreBal" Type="Double" />
+    <Property Name="NetAmt" Type="Double" />
+    <Property Name="AC_Code3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CashAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="APost" Type="Double" />
+    <Property Name="Posted" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="War_Cls" Type="Double" />
+    <Property Name="Create_User_ID" Type="Double" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_User_ID" Type="Double" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Del_User_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Del_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvNo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="InvDT" Type="DateTime" Precision="3" />
+    <Property Name="InvType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CstId" Type="Int32" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="CstInvNo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="VenInvDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TransportExpense" Type="Double" />
+    <Property Name="ReferenceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CashCustomer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="diffCompany" Type="Int32" />
+    <Property Name="diffCompanyStatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Sales_D">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RID" Type="Double" />
+    <Property Name="IID" Type="Double" />
+    <Property Name="BNID" Type="Double" />
+    <Property Name="ExpDT" Type="DateTime" Precision="3" />
+    <Property Name="CTN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PCS" Type="Double" />
+    <Property Name="SCH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="PurPrice" Type="Double" />
+    <Property Name="SalesPriceP" Type="Double" />
+    <Property Name="AddPer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SalesPrice" Type="Double" />
+    <Property Name="PAmt" Type="Double" />
+    <Property Name="DisP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisRs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Amt2" Type="Double" />
+    <Property Name="Amt" Type="Double" />
+    <Property Name="PCK_Det" Type="Double" />
+    <Property Name="SRT" Type="Double" />
+    <Property Name="RCancel" Type="Double" />
+    <Property Name="ExpireDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pur_D_UnitID" Type="Int32" />
+  </EntityType>
+</Schema>

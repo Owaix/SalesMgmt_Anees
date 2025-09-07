@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0c464402e18c4ac096562171b6f52f20" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Adj_D" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Adj_M" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Article" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.ArticleTypes" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.AspNetRoles" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.AspNetUserClaims" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.AspNetUserLogins" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.AspNetUserRoles" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.AspNetUsers" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Colors" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Customers" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.EV_M" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Excptions" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.GL" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.I_Unit" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.IComp_M" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Item_Maker" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Itemledger" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Items_Cat" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.IUnit" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.JV_D" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Lab_D" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Lab_M" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Party_Type" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.PO_D" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Pur_D" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.PurR_D" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.PurR_M" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.PV_D" Width="1.5" PointX="18.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.PV_M" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.RV_D" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.RV_M" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Sale_Pur_D_Pur" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Sale_Pur_D_Sale" Width="1.5" PointX="20.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Sale_Pur_M" Width="1.5" PointX="6.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Sizes" Width="1.5" PointX="12.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Styles" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Table" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_KOT" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Opd" Width="1.5" PointX="22.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_OpeningCash" Width="1.5" PointX="22.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_OrderDetails" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Table" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Village" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Warehouse" Width="1.5" PointX="2.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tblStock" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tblWaiter" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Vendors" Width="1.5" PointX="24.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Zone" Width="1.5" PointX="24.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.COA_M" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.COA_D" Width="1.5" PointX="5.375" PointY="25.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.EV_D" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.SalesR_D" Width="1.5" PointX="11.375" PointY="25.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.SalesR_M" Width="1.5" PointX="13.375" PointY="25.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Receipe" Width="1.5" PointX="7.375" PointY="25.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Company" Width="1.5" PointX="25.375" PointY="19.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_karahi_Item" Width="1.5" PointX="11.375" PointY="16.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Karahi_D" Width="1.5" PointX="9.375" PointY="19.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_karahi_M" Width="1.5" PointX="25.375" PointY="23.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Employee" Width="1.5" PointX="23.375" PointY="26.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_Order" Width="1.5" PointX="25.375" PointY="26.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Pur_M" Width="1.5" PointX="27.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.tbl_city" Width="1.5" PointX="21.375" PointY="16.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.JV_M" Width="1.5" PointX="27.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Items" Width="1.5" PointX="27.375" PointY="15.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Sales_M" Width="1.5" PointX="15.375" PointY="25.75" />
+        <EntityTypeShape EntityType="SaleManagerShahzaibModel.Sales_D" Width="1.5" PointX="19.375" PointY="21.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
