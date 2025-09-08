@@ -187,7 +187,7 @@ namespace SalesMngmt.Invoice
                 radioButton4.Checked = true;
 
                 cmbxWareHouse.SelectedIndex = 1;
-                cmbxAccID.SelectedIndex = 2;
+                cmbxAccID.SelectedIndex = 1;
             }
 
 

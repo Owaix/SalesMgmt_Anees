@@ -53,6 +53,7 @@ Lib/bin/
 Lib/obj/
 SalesMngmt/bin/
 SalesMngmt/obj/
+SalesMngmt/.vs/
 
 # Reporting files
 Reporting/bin/
