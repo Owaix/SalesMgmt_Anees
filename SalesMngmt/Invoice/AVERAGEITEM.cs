@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -55,7 +56,12 @@ namespace SalesMngmt.Invoice
 
             foreach (Lib.Entity.Items item in items)
             {
-                this.IIDAverageSET(item.IID);
+                int AC_Code_Inv = Convert.ToInt32(item.AC_Code_Inv);
+                int AC_Code_Cost = Convert.ToInt32( item.AC_Code_Cost);
+
+
+
+                this.IIDAverageSET(item.IID, AC_Code_Inv, AC_Code_Cost);
                 progressBar1.Value += 1;
                 Application.DoEvents();
             }
@@ -70,7 +76,7 @@ namespace SalesMngmt.Invoice
         {
 
         }
-        public void IIDAverageSET(int IID)
+        public void IIDAverageSET(int IID, int ac_code_inv, int Ac_code_cost)
         {
             List<LedgerAverage> results = new List<LedgerAverage>();
 
@@ -136,33 +142,62 @@ ORDER BY IL.CompanyID, IL.IID;
                        cmd.Parameters.Add("@IID", SqlDbType.Int).Value = IID;
               var rows = SqlHelper.ExecuteDataset(cmd).Tables[0];
             var items = rows.ToList<LedgerAverage>();
-            //    using (SqlConnection conn = new SqlConnection(Query,SqlHelper.DefaultSqlConnection))
-            //    {
-            //        conn.Open();
 
-            //        using (SqlCommand cmd = new SqlCommand(Query, conn))
-            //        {
-            //            cmd.CommandType = CommandType.Text;
-            //            cmd.Parameters.Add("@IID", SqlDbType.Int).Value = IID;
+            int iid = items[0].ItemID;
+            double avgPrice = items[0].AvgPrice;
+            using (var context = new SaleManagerEntities())
+            {
+                var item = context.Items.FirstOrDefault(i => i.IID == iid);
+                if (item != null)
+                {
+                    item.AveragePrice = avgPrice;
+                    context.SaveChanges();
+                }
+            }
 
-            //            using (SqlDataReader reader = cmd.ExecuteReader())
-            //            {
-            //                while (reader.Read())
-            //                {
-            //                    LedgerAverage item = new LedgerAverage
-            //                    {
-            //                        CompanyID = reader.GetInt32(reader.GetOrdinal("CompanyID")),
-            //                        ItemID = reader.GetInt32(reader.GetOrdinal("ItemID")),
-            //                        TotalAmount = reader.IsDBNull(reader.GetOrdinal("TotalAmount")) ? 0 : reader.GetDecimal(reader.GetOrdinal("TotalAmount")),
-            //                        TotalQty = reader.IsDBNull(reader.GetOrdinal("TotalQty")) ? 0 : reader.GetDecimal(reader.GetOrdinal("TotalQty")),
-            //                        AvgPrice = reader.IsDBNull(reader.GetOrdinal("AvgPrice")) ? 0 : reader.GetDecimal(reader.GetOrdinal("AvgPrice"))
-            //                    };
 
-            //                    results.Add(item);
-            //                }
-            //            }
-            //        }
-            //    }
+            var saleItems = db.Sales_D
+     .Where(i => i.IID== iid)
+     .ToList();
+
+            foreach (var dbItem in saleItems)
+            {
+                dbItem.Amt2 = avgPrice * dbItem.Qty;
+                dbItem.PurPrice = avgPrice;
+            }
+
+            db.SaveChanges();
+
+
+            var GlInventory = db.GL
+    .Where(i => i.AC_Code == ac_code_inv)
+    .ToList();
+
+            foreach (var dbItem in GlInventory)
+            {
+                dbItem.IPrice = avgPrice;
+                dbItem.PAmt = avgPrice * dbItem.Qty_Out;
+                dbItem.Credit = avgPrice * dbItem.Qty_Out;
+                dbItem.Debit = 0;
+            }
+
+            db.SaveChanges();
+
+
+            var GlCost = db.GL
+  .Where(i => i.AC_Code == Ac_code_cost)
+  .ToList();
+
+            foreach (var dbItem in GlCost)
+            {
+                dbItem.IPrice = avgPrice;
+                dbItem.PAmt = avgPrice * dbItem.Qty_Out;
+                dbItem.Debit = avgPrice * dbItem.Qty_Out;
+                dbItem.Credit = 0;
+
+            }
+
+            db.SaveChanges();
 
 
         }
