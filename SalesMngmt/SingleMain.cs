@@ -663,5 +663,10 @@ namespace SalesMngmt
             inv.MdiParent = this;
             inv.Show();
         }
+
+        private void SingleMain_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            Environment.Exit(0); // Exits the application with exit code 0
+        }
     }
 }

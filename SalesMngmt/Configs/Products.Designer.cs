@@ -744,7 +744,7 @@ namespace SalesMngmt.Configs
             this.txtDemand.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtDemand.Lines = new string[] {
         "0"};
-            this.txtDemand.Location = new System.Drawing.Point(677, 736);
+            this.txtDemand.Location = new System.Drawing.Point(679, 313);
             this.txtDemand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDemand.MaxLength = 32767;
             this.txtDemand.Multiline = true;
@@ -768,7 +768,7 @@ namespace SalesMngmt.Configs
             this.lblDemand.AutoSize = true;
             this.lblDemand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDemand.Location = new System.Drawing.Point(673, 702);
+            this.lblDemand.Location = new System.Drawing.Point(675, 279);
             this.lblDemand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDemand.Name = "lblDemand";
             this.lblDemand.Size = new System.Drawing.Size(70, 18);
@@ -929,7 +929,7 @@ namespace SalesMngmt.Configs
             this.txtPurchase.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPurchase.Lines = new string[] {
         "0"};
-            this.txtPurchase.Location = new System.Drawing.Point(996, 222);
+            this.txtPurchase.Location = new System.Drawing.Point(994, 222);
             this.txtPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPurchase.MaxLength = 32767;
             this.txtPurchase.Multiline = true;
@@ -954,7 +954,7 @@ namespace SalesMngmt.Configs
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(992, 186);
+            this.label16.Location = new System.Drawing.Point(990, 186);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 18);
@@ -1392,7 +1392,7 @@ namespace SalesMngmt.Configs
             this.txtDisP.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtDisP.Lines = new string[] {
         "0"};
-            this.txtDisP.Location = new System.Drawing.Point(683, 313);
+            this.txtDisP.Location = new System.Drawing.Point(653, 732);
             this.txtDisP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDisP.MaxLength = 32767;
             this.txtDisP.Multiline = true;
@@ -1431,10 +1431,10 @@ namespace SalesMngmt.Configs
             this.cmbcUni.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbcUni.FormattingEnabled = true;
             this.cmbcUni.ItemHeight = 29;
-            this.cmbcUni.Location = new System.Drawing.Point(324, 222);
+            this.cmbcUni.Location = new System.Drawing.Point(329, 222);
             this.cmbcUni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbcUni.Name = "cmbcUni";
-            this.cmbcUni.Size = new System.Drawing.Size(237, 35);
+            this.cmbcUni.Size = new System.Drawing.Size(265, 35);
             this.cmbcUni.TabIndex = 2;
             this.cmbcUni.UseSelectable = true;
             this.cmbcUni.SelectedIndexChanged += new System.EventHandler(this.cmbcUni_SelectedIndexChanged);
@@ -1561,7 +1561,7 @@ namespace SalesMngmt.Configs
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(679, 279);
+            this.label11.Location = new System.Drawing.Point(649, 698);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 18);
@@ -1626,7 +1626,7 @@ namespace SalesMngmt.Configs
             this.cmbxMak.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbxMak.FormattingEnabled = true;
             this.cmbxMak.ItemHeight = 29;
-            this.cmbxMak.Location = new System.Drawing.Point(677, 222);
+            this.cmbxMak.Location = new System.Drawing.Point(666, 222);
             this.cmbxMak.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbxMak.Name = "cmbxMak";
             this.cmbxMak.Size = new System.Drawing.Size(267, 35);
@@ -1652,7 +1652,7 @@ namespace SalesMngmt.Configs
             this.cmbxMaker.AutoSize = true;
             this.cmbxMaker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cmbxMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbxMaker.Location = new System.Drawing.Point(751, 186);
+            this.cmbxMaker.Location = new System.Drawing.Point(665, 186);
             this.cmbxMaker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmbxMaker.Name = "cmbxMaker";
             this.cmbxMaker.Size = new System.Drawing.Size(60, 18);
@@ -1678,7 +1678,7 @@ namespace SalesMngmt.Configs
             this.cmbxUnit.AutoSize = true;
             this.cmbxUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cmbxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbxUnit.Location = new System.Drawing.Point(324, 186);
+            this.cmbxUnit.Location = new System.Drawing.Point(338, 186);
             this.cmbxUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmbxUnit.Name = "cmbxUnit";
             this.cmbxUnit.Size = new System.Drawing.Size(38, 18);

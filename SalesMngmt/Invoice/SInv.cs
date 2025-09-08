@@ -1778,8 +1778,6 @@ namespace SalesMngmt.Invoice
 
                     orderHeader.Add(orders1);
 
-
-
                     // add multiple company
                     var Companies = new Companies().GetCompanyID(compID);
                     orderList.ForEach(x =>
