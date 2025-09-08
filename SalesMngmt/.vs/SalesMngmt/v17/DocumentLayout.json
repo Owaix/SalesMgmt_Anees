@@ -3,7 +3,97 @@
   "WorkspaceRootPath": "D:\\SalesMgmt_Anees\\SalesMngmt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|d:\\salesmgmt_anees\\salesmngmt\\reporting\\demand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FDE8BF32-11A3-4E6A-9388-A6F203C0AFCA}|..\\Lib\\Lib.csproj|d:\\salesmgmt_anees\\lib\\companies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|d:\\salesmgmt_anees\\salesmngmt\\reporting\\orderdetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:reporting\\orderdetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE8BF32-11A3-4E6A-9388-A6F203C0AFCA}|..\\Lib\\Lib.csproj|d:\\salesmgmt_anees\\lib\\model\\companymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|d:\\salesmgmt_anees\\salesmngmt\\configs\\partytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\partytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\invoice\\patientregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:invoice\\patientregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\configs\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\configs\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\configs\\colour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\colour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\configs\\partytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\partytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\configs\\vandor_fr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\vandor_fr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\singlemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:singlemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\singlemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:singlemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\invoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:invoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\configs\\vandor_fr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:configs\\vandor_fr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\reporting\\ordersummaryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:reporting\\ordersummaryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\reporting\\demand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:reporting\\demand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,20 +101,8 @@
       "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:reporting\\demand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\reporting\\profitandloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:reporting\\profitandloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|solutionrelative:invoice\\sinv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACED42A4-7B4E-4639-975E-BF689B3F3BCC}|SalesMngmt.csproj|D:\\SalesMgmt_Anees\\SalesMngmt\\reporting\\profitandloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -58,7 +136,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,7 +176,249 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PartyType.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\PartyType.cs",
+              "RelativeDocumentMoniker": "Configs\\PartyType.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\PartyType.cs [Design]",
+              "RelativeToolTip": "Configs\\PartyType.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:52:12.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SingleMain.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\SingleMain.cs",
+              "RelativeDocumentMoniker": "SingleMain.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\SingleMain.cs",
+              "RelativeToolTip": "SingleMain.cs",
+              "ViewState": "AgIAAOkAAAAAAAAAAAAWwPEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:51.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SingleMain.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\SingleMain.cs",
+              "RelativeDocumentMoniker": "SingleMain.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\SingleMain.cs [Design]",
+              "RelativeToolTip": "SingleMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:53.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Signin.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Signin.cs",
+              "RelativeDocumentMoniker": "Signin.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Signin.cs",
+              "RelativeToolTip": "Signin.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAnwCUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:49.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Signin.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Signin.cs",
+              "RelativeDocumentMoniker": "Signin.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Signin.cs [Design]",
+              "RelativeToolTip": "Signin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:48.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SInv.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs",
+              "RelativeDocumentMoniker": "Invoice\\SInv.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs",
+              "RelativeToolTip": "Invoice\\SInv.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAADgv4QAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:19:18.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Employee.cs",
+              "RelativeDocumentMoniker": "Configs\\Employee.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Employee.cs",
+              "RelativeToolTip": "Configs\\Employee.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAjwHcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T16:11:06.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Companies.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\Lib\\Companies.cs",
+              "RelativeDocumentMoniker": "..\\Lib\\Companies.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\Lib\\Companies.cs",
+              "RelativeToolTip": "..\\Lib\\Companies.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAewCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:31:31.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CompanyModel.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\Lib\\Model\\CompanyModel.cs",
+              "RelativeDocumentMoniker": "..\\Lib\\Model\\CompanyModel.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\Lib\\Model\\CompanyModel.cs",
+              "RelativeToolTip": "..\\Lib\\Model\\CompanyModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:31:19.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "OrderDetailForm.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\OrderDetailForm.cs",
+              "RelativeDocumentMoniker": "Reporting\\OrderDetailForm.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\OrderDetailForm.cs",
+              "RelativeToolTip": "Reporting\\OrderDetailForm.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwEQAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T16:38:25.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PartyType.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\PartyType.cs",
+              "RelativeDocumentMoniker": "Configs\\PartyType.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\PartyType.cs",
+              "RelativeToolTip": "Configs\\PartyType.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAIA+wEwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:52:13.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "patientRegistration.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\patientRegistration.cs",
+              "RelativeDocumentMoniker": "Invoice\\patientRegistration.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\patientRegistration.cs",
+              "RelativeToolTip": "Invoice\\patientRegistration.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADwvy8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T16:10:04.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Customer.cs",
+              "RelativeDocumentMoniker": "Configs\\Customer.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Customer.cs",
+              "RelativeToolTip": "Configs\\Customer.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAewFUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T16:10:16.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Colour.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Colour.cs",
+              "RelativeDocumentMoniker": "Configs\\Colour.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Colour.cs",
+              "RelativeToolTip": "Configs\\Colour.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAjwKsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T16:11:04.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Invoices.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoices.cs",
+              "RelativeDocumentMoniker": "Invoices.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoices.cs [Design]",
+              "RelativeToolTip": "Invoices.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:44.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Main.cs",
+              "RelativeDocumentMoniker": "Main.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Main.cs [Design]",
+              "RelativeToolTip": "Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:42.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:41.698Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Config.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Config.cs",
+              "RelativeDocumentMoniker": "Config.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Config.cs [Design]",
+              "RelativeToolTip": "Config.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:50:31.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Vandor_Fr.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Vandor_Fr.cs",
+              "RelativeDocumentMoniker": "Configs\\Vandor_Fr.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Vandor_Fr.cs",
+              "RelativeToolTip": "Configs\\Vandor_Fr.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:48:25.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Vandor_Fr.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Vandor_Fr.cs",
+              "RelativeDocumentMoniker": "Configs\\Vandor_Fr.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Configs\\Vandor_Fr.cs [Design]",
+              "RelativeToolTip": "Configs\\Vandor_Fr.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:48:18.642Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Demand.cs [Design]",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\Demand.cs",
               "RelativeDocumentMoniker": "Reporting\\Demand.cs",
@@ -110,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 25,
               "Title": "ProfitAndLoss.cs",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\ProfitAndLoss.cs",
               "RelativeDocumentMoniker": "Reporting\\ProfitAndLoss.cs",
@@ -122,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 26,
               "Title": "ProfitAndLoss.cs [Design]",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\ProfitAndLoss.cs",
               "RelativeDocumentMoniker": "Reporting\\ProfitAndLoss.cs",
@@ -133,7 +453,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
+              "Title": "OrderSummaryForm.cs",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\OrderSummaryForm.cs",
+              "RelativeDocumentMoniker": "Reporting\\OrderSummaryForm.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\OrderSummaryForm.cs",
+              "RelativeToolTip": "Reporting\\OrderSummaryForm.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAADwv1kAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T15:31:29.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "RuntimeType.cs",
               "DocumentMoniker": "C:\\Users\\hp\\AppData\\Local\\Temp\\.vsdbgsrc\\0c127a365c8211b835a6e272639aca6b30d12698fabcaeb2687b791ca6edcba1\\RuntimeType.cs",
               "ToolTip": "C:\\Users\\hp\\AppData\\Local\\Temp\\.vsdbgsrc\\0c127a365c8211b835a6e272639aca6b30d12698fabcaeb2687b791ca6edcba1\\RuntimeType.cs [Read Only]",
@@ -144,7 +476,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
+              "Title": "SInv.cs [Design]",
+              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs",
+              "RelativeDocumentMoniker": "Invoice\\SInv.cs",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs [Design]",
+              "RelativeToolTip": "Invoice\\SInv.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:19:05.256Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "SQLHelper.cs",
               "DocumentMoniker": "D:\\POS SOFTWARE\\ShahzaibPOS\\Lib\\Utilities\\SQLHelper.cs",
               "RelativeDocumentMoniker": "..\\..\\POS SOFTWARE\\ShahzaibPOS\\Lib\\Utilities\\SQLHelper.cs",
@@ -156,97 +500,73 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 23,
               "Title": "Demand.cs",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\Demand.cs",
               "RelativeDocumentMoniker": "Reporting\\Demand.cs",
               "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Reporting\\Demand.cs",
               "RelativeToolTip": "Reporting\\Demand.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAxwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-04T11:54:20.134Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 29,
               "Title": "DbConnectionOptions.cs",
               "DocumentMoniker": "C:\\Users\\hp\\AppData\\Local\\Temp\\.vsdbgsrc\\b41adcd98110c327811f21f3ad97362dfc0557c72324c18734a7f0d0538134f2\\DbConnectionOptions.cs",
-              "ToolTip": "C:\\Users\\hp\\AppData\\Local\\Temp\\.vsdbgsrc\\b41adcd98110c327811f21f3ad97362dfc0557c72324c18734a7f0d0538134f2\\DbConnectionOptions.cs [Read Only]",
-              "ViewState": "AQIAAKMCAAAAAAAAAAAAAKoCAAAFAAAA",
+              "ToolTip": "C:\\Users\\hp\\AppData\\Local\\Temp\\.vsdbgsrc\\b41adcd98110c327811f21f3ad97362dfc0557c72324c18734a7f0d0538134f2\\DbConnectionOptions.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:42:50.52Z",
-              "EditorCaption": " [Read Only]"
+              "WhenOpened": "2025-09-05T08:42:50.52Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAAB4AAAABAAAA",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-04T11:52:41.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 32,
               "Title": "SP_Exec.cs",
               "DocumentMoniker": "D:\\POS SOFTWARE\\ShahzaibPOS\\Lib\\SP_Exec.cs",
               "RelativeDocumentMoniker": "..\\..\\POS SOFTWARE\\ShahzaibPOS\\Lib\\SP_Exec.cs",
               "ToolTip": "D:\\POS SOFTWARE\\ShahzaibPOS\\Lib\\SP_Exec.cs",
               "RelativeToolTip": "..\\..\\POS SOFTWARE\\ShahzaibPOS\\Lib\\SP_Exec.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAiwEcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-04T11:50:53.398Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SInv.cs",
-              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs",
-              "RelativeDocumentMoniker": "Invoice\\SInv.cs",
-              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs",
-              "RelativeToolTip": "Invoice\\SInv.cs",
-              "ViewState": "AQIAAOwEAAAAAAAAAAAQwAYFAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T11:19:18.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SInv.cs [Design]",
-              "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\SInv.cs",
-              "RelativeDocumentMoniker": "Invoice\\SInv.cs",
-              "ToolTip": "D:\\POS SOFTWARE\\ShahzaibPOS\\SalesMngmt\\Invoice\\SInv.cs [Design]",
-              "RelativeToolTip": "..\\..\\POS SOFTWARE\\ShahzaibPOS\\SalesMngmt\\Invoice\\SInv.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T11:19:05.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 27,
               "Title": "AVERAGEITEM.cs",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\AVERAGEITEM.cs",
               "RelativeDocumentMoniker": "Invoice\\AVERAGEITEM.cs",
               "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\AVERAGEITEM.cs",
               "RelativeToolTip": "Invoice\\AVERAGEITEM.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAiwEoAAAA7AAAA",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAiwEoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T11:12:18.813Z"
+              "WhenOpened": "2025-09-04T11:12:18.813Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 30,
               "Title": "AVERAGEITEM.cs [Design]",
               "DocumentMoniker": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\AVERAGEITEM.cs",
               "RelativeDocumentMoniker": "Invoice\\AVERAGEITEM.cs",
-              "ToolTip": "D:\\POS SOFTWARE\\ShahzaibPOS\\SalesMngmt\\Invoice\\AVERAGEITEM.cs [Design]",
-              "RelativeToolTip": "..\\..\\POS SOFTWARE\\ShahzaibPOS\\SalesMngmt\\Invoice\\AVERAGEITEM.cs [Design]",
+              "ToolTip": "D:\\SalesMgmt_Anees\\SalesMngmt\\Invoice\\AVERAGEITEM.cs [Design]",
+              "RelativeToolTip": "Invoice\\AVERAGEITEM.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T11:11:33.895Z"
+              "WhenOpened": "2025-09-04T11:11:33.895Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
