@@ -220,6 +220,12 @@
     <Compile Include="Invoice\AVERAGEITEM.Designer.cs">
       <DependentUpon>AVERAGEITEM.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordPrompt.Designer.cs">
+      <DependentUpon>PasswordPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\jv_sale_pic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -749,6 +755,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice\AVERAGEITEM.resx">
       <DependentUpon>AVERAGEITEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordPrompt.resx">
+      <DependentUpon>PasswordPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporting\jv_sale_pic.resx">
       <DependentUpon>jv_sale_pic.cs</DependentUpon>
