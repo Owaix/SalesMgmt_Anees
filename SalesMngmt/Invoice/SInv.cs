@@ -95,8 +95,9 @@ namespace SalesMngmt.Invoice
         {
             //account headrif
             List<I_Unit> unitList;
-            if (compID ==1024) {
-               unitList = new List<I_Unit>
+            if (compID == 1024)
+            {
+                unitList = new List<I_Unit>
         {
             new I_Unit { IUnit = "PCS", unit_id = 1 },
             new I_Unit { IUnit = "SET", unit_id = 2 }
@@ -105,9 +106,10 @@ namespace SalesMngmt.Invoice
             }
 
 
-            else {
+            else
+            {
 
-               unitList = new List<I_Unit>
+                unitList = new List<I_Unit>
         {
             new I_Unit { IUnit = "PCS", unit_id = 1 },
             new I_Unit { IUnit = "CTN", unit_id = 2 }
@@ -117,7 +119,7 @@ namespace SalesMngmt.Invoice
 
 
 
-     
+
 
             FillCombo(cmbxPackaging, unitList, "IUnit", "unit_id", 1);
             cmbxPackaging.SelectedIndex = 0;
@@ -801,7 +803,7 @@ namespace SalesMngmt.Invoice
 
 
 
-                        this.invGrid.Rows.Add(item.IID, itemName.IName, item.CTN, item.PCS, item.SalesPriceP, TotalPcs, item.DisP, item.DisRs, item.Amt, "", "", "Remove", itemName.ArticleNoID, item.BatchNo, item.ExpireDate,item.Pur_D_UnitID==null?0: item.Pur_D_UnitID);
+                        this.invGrid.Rows.Add(item.IID, itemName.IName, item.CTN, item.PCS, item.SalesPriceP, TotalPcs, item.DisP, item.DisRs, item.Amt, "", "", "Remove", itemName.ArticleNoID, item.BatchNo, item.ExpireDate, item.Pur_D_UnitID == null ? 0 : item.Pur_D_UnitID);
                         invGrid_SelectionChanged(null, null);
                     }
                 }
@@ -1076,7 +1078,7 @@ namespace SalesMngmt.Invoice
                 {
                     db.Sales_M.Add(sale);
                 }
-           
+
                 if (InvoiceNo != "0")
                 {
                     db.Entry(sale).State = EntityState.Modified;
@@ -1108,9 +1110,9 @@ namespace SalesMngmt.Invoice
                         detail.DisRs = (row.Cells[7].Value ?? "0").ToString();
                         detail.BatchNo = (row.Cells[13].Value ?? "").ToString();
                         detail.ExpireDate = (row.Cells[14].Value ?? "").ToString();
-                       
+
                         detail.Pur_D_UnitID = Convert.ToInt32((row.Cells["Unit"].Value ?? "0"));
-                        double ctn; 
+                        double ctn;
                         if (Convert.ToInt32(item.CTN_PCK.DefaultZero()) == 0)
                         {
                             ctn = Convert.ToDouble(row.Cells[2].Value.DefaultZero());
@@ -1127,7 +1129,7 @@ namespace SalesMngmt.Invoice
                         //Quantity Caton+Pices
                         detail.Amt = Convert.ToDouble(row.Cells[8].Value.ToString().DefaultZero());
                         detail.Amt2 = Convert.ToDouble(item.AveragePrice.DefaultZero()) * detail.Qty;
-                       
+
                         //DisAmount   percentage in rupess
                         //Amt         after complete discount
                         db.Sales_D.Add(detail);
@@ -1348,7 +1350,7 @@ namespace SalesMngmt.Invoice
                             db.GL.Add(gl1);
                             db.SaveChanges();
                         }
-                     
+
                     }
                 }
 
@@ -1685,7 +1687,7 @@ namespace SalesMngmt.Invoice
 
 
                         }
-              
+
 
 
 
@@ -3126,7 +3128,8 @@ namespace SalesMngmt.Invoice
                     {
                         txtRate.Text = item.SalesPrice.DefaultZero();
                     }
-                    if (ddlWSR.SelectedValue.ToString() == "2") {
+                    if (ddlWSR.SelectedValue.ToString() == "2")
+                    {
                         txtRate.Text = item.WholeSale.DefaultZero();
                     }
 
@@ -3135,7 +3138,7 @@ namespace SalesMngmt.Invoice
                         txtRate.Text = item.RetailPOne.DefaultZero();
                     }
 
-                 
+
 
 
                 }
@@ -3374,9 +3377,9 @@ namespace SalesMngmt.Invoice
             txtSaleP.Text = dataGridViewRow.Cells[9].Value.DefaultZero();
         }
 
-    
 
-    
+
+
 
         private void Items_Leave(Lib.Entity.Items item, MetroFramework.Controls.MetroTextBox txtbox = null)
         {
@@ -3404,7 +3407,8 @@ namespace SalesMngmt.Invoice
                     {
                         txtRate.Text = item.SalesPrice.DefaultZero();
                     }
-                    else if (ddlWSR.SelectedValue.ToString() == "3") {
+                    else if (ddlWSR.SelectedValue.ToString() == "3")
+                    {
                         txtRate.Text = item.RetailPOne.DefaultZero();
 
                     }
@@ -3488,7 +3492,9 @@ namespace SalesMngmt.Invoice
                     //{
                     //    txtpcs.Focus();
                     //}
-                    txtctn.Focus();
+                    txtctn.Text = "0";
+                    txtpcs.Text = "1";
+                    txtpcs.Focus();
                     txtbox = null;
                 }
                 catch (Exception ex)
@@ -3607,7 +3613,7 @@ namespace SalesMngmt.Invoice
             }
         }
 
-       
+
 
         public void customerLedger()
         {
@@ -3964,13 +3970,14 @@ namespace SalesMngmt.Invoice
             int itemID = Convert.ToInt32(lblItemID.Text);
 
 
-                var obj = listItems.Where(x => x.IID == itemID).FirstOrDefault();
+            var obj = listItems.Where(x => x.IID == itemID).FirstOrDefault();
             if (ddlWSR.SelectedValue.ToString() == "2")
             {
                 label4.Text = "Whole Sale";
                 label12.Text = "WholeSale Price";
             }
-            else if (ddlWSR.SelectedValue.ToString() == "3") {
+            else if (ddlWSR.SelectedValue.ToString() == "3")
+            {
                 label4.Text = "Distribution";
                 label12.Text = "Distribution Price";
 
@@ -3981,11 +3988,11 @@ namespace SalesMngmt.Invoice
                 label4.Text = "Retail Rate";
             }
 
-                if (obj != null)
-                {
-                    Items_Leave(obj, null);
-                }
-            
+            if (obj != null)
+            {
+                Items_Leave(obj, null);
+            }
+
         }
 
         private void Accountvalidation()
@@ -4630,15 +4637,16 @@ namespace SalesMngmt.Invoice
                 return;
             }
 
-            else {
+            else
+            {
 
                 double totalAmount = 0;
                 foreach (DataGridViewRow row in invGrid.Rows)
                 {
                     if (row.Cells[0].Value != null)
                     {
-                        int IID =Convert.ToInt32( row.Cells[0].Value.DefaultZero());
-                     string ctnValue    = row.Cells[2].Value.ToString();
+                        int IID = Convert.ToInt32(row.Cells[0].Value.DefaultZero());
+                        string ctnValue = row.Cells[2].Value.ToString();
                         string PcsValus = row.Cells[3].Value.ToString();
 
                         var items = db.Items.AsNoTracking().Where(x => x.IID == IID).FirstOrDefault();
@@ -4655,7 +4663,7 @@ namespace SalesMngmt.Invoice
                             ctn = (Convert.ToDouble(ctnValue.DefaultZero()) * Convert.ToDouble(items.CTN_PCK.DefaultZero()));
                         }
                         //  ctn = (Convert.ToDouble(txtctn.Text.DefaultZero()) * Convert.ToDouble(item.CTN_PCK.DefaultZero()));
-                       double totalQty = ctn + value ;
+                        double totalQty = ctn + value;
                         totalAmount = totalQty * Convert.ToDouble(items.AveragePrice.DefaultZero());
 
                         // txtRate.Text = row.Cells[4].Value.ToString();
@@ -4666,10 +4674,10 @@ namespace SalesMngmt.Invoice
                         // txtNet.Text = totalAmount.ToString();
                     }
                 }
-                
 
 
-                    MessageBox.Show("Total COST = "+ totalAmount, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                MessageBox.Show("Total COST = " + totalAmount, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
 
             }
