@@ -184,6 +184,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backup.cs" />
     <Compile Include="Configs\City.cs">
       <SubType>Form</SubType>
     </Compile>

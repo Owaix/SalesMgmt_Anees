@@ -7,6 +7,7 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows;
+using System.IO;
 
 namespace SalesMngmt
 {
@@ -21,9 +22,10 @@ namespace SalesMngmt
             CompanyID = cmpID;
             User = user;
 
-            if (cmpID == 1024) {
+            if (cmpID == 1024)
+            {
 
-                receiptToolStripMenuItem.Visible=false;
+                receiptToolStripMenuItem.Visible = false;
                 receiptToolStripMenuItem.Visible = false;
 
                 tableToolStripMenuItem.Visible = false;
@@ -55,12 +57,12 @@ namespace SalesMngmt
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void itemsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void Config_Shown(object sender, EventArgs e)
@@ -111,7 +113,7 @@ namespace SalesMngmt
 
         private void itemsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-          
+
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -127,7 +129,7 @@ namespace SalesMngmt
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             Products products = new Products(CompanyID);
-          //  products.MdiParent = this;
+            //  products.MdiParent = this;
             products.Show();
         }
 
@@ -225,7 +227,7 @@ namespace SalesMngmt
         {
             Receipe syncClientDB = new Receipe(CompanyID);
 
-         //   Users syncClientDB = new Users(CompanyID);
+            //   Users syncClientDB = new Users(CompanyID);
             syncClientDB.MdiParent = this;
             syncClientDB.Show();
         }
@@ -283,7 +285,7 @@ namespace SalesMngmt
         private void productToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Products products = new Products(CompanyID);
-          products.MdiParent = this;
+            products.MdiParent = this;
             products.Show();
         }
 
@@ -537,74 +539,24 @@ namespace SalesMngmt
 
         private void customerCurrentBalanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void vendorrCurrentBalanceListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void databaseBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            BackupDb backupDb = new BackupDb();
             String DestPath = @"D:\Backup";
-            String DbName = "SaleManagerShahzaib";
-            try
-            {
-                string databaseName = DbName;//dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
-
-                //Define a Backup object variable.
-                Backup sqlBackup = new Backup();
-
-                ////Specify the type of backup, the description, the name, and the database to be backed up.
-                sqlBackup.Action = BackupActionType.Database;
-                sqlBackup.BackupSetDescription = "BackUp of:" + databaseName + "on" + DateTime.Now.ToShortDateString();
-                sqlBackup.BackupSetName = "FullBackUp";
-                sqlBackup.Database = databaseName;
-
-                ////Declare a BackupDeviceItem
-                string destinationPath = DestPath;
-                Random _rdm = new Random();
-                var rand = _rdm.Next(100000, 999999);
-                string backupfileName = rand + DbName + ".bak";
-                BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath + "\\" + backupfileName, DeviceType.File);
-                ////Define Server connection
-
-                //ServerConnection connection = new ServerConnection(frm.serverName, frm.userName, frm.password);
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-                ServerConnection connection = new ServerConnection(con);
-                ////To Avoid TimeOut Exception
-                Server sqlServer = new Server(connection);
-                sqlServer.ConnectionContext.StatementTimeout = 60 * 60;
-                Database db = sqlServer.Databases[databaseName];
-
-                sqlBackup.Initialize = true;
-                sqlBackup.Checksum = true;
-                sqlBackup.ContinueAfterError = true;
-
-                ////Add the device to the Backup object.
-                sqlBackup.Devices.Add(deviceItem);
-                ////Set the Incremental property to False to specify that this is a full database backup.
-                sqlBackup.Incremental = false;
-
-                sqlBackup.ExpirationDate = DateTime.Now.AddDays(3);
-                ////Specify that the log must be truncated after the backup is complete.
-                sqlBackup.LogTruncation = BackupTruncateLogType.Truncate;
-
-                sqlBackup.FormatMedia = false;
-                ////Run SqlBackup to perform the full database backup on the instance of SQL Server.
-                sqlBackup.SqlBackup(sqlServer);
-                ////Remove the backup device from the Backup object.
-                sqlBackup.Devices.Remove(deviceItem);
-                MessageBox.Show("Backup successfully Created In " + destinationPath + "\\" + backupfileName);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                // MessageBox.Show(ex.Message);
-            }
-
-
+            Random _rdm = new Random();
+            var rand = _rdm.Next(100, 999);
+            string backupfileName = $"{DateTime.Now:yyyy-MM-dd}.bak";
+            backupfileName = rand + backupfileName;
+            string fullPath = Path.Combine(DestPath, backupfileName);
+            MessageBox.Show(backupDb.backupdata(DestPath, backupfileName, true));
         }
 
         private void productListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -626,7 +578,7 @@ namespace SalesMngmt
         private void itemWiseSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemSummary sum = new ItemSummary(CompanyID, 2);
-            sum.MdiParent=this;
+            sum.MdiParent = this;
             sum.Show();
         }
 

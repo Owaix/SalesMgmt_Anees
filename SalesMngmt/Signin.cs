@@ -86,6 +86,14 @@ namespace SalesMngmt
                     var user = db.AspNetUsers.Where(x => x.UserName == UsrName && x.PasswordHash == Pass).FirstOrDefault();
                     if (user != null)
                     {
+                        String DestPath = @"D:\Backup";
+                        string backupfileName = $"{DateTime.Now:yyyy-MM-dd}.bak";
+                        string fullPath = Path.Combine(DestPath, backupfileName);
+                        if (!File.Exists(fullPath))
+                        {
+                            BackupDb backupDb = new BackupDb();
+                            backupDb.backupdata(DestPath, backupfileName);
+                        }
                         this.Hide();
                         SingleMain main = new SingleMain(user.AccessFailedCount, user);
                         main.Show();
