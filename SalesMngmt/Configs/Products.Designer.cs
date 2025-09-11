@@ -151,7 +151,7 @@ namespace SalesMngmt.Configs
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 12;
             this.metroPanel1.Location = new System.Drawing.Point(27, 74);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(1506, 546);
             this.metroPanel1.TabIndex = 0;
@@ -239,7 +239,7 @@ namespace SalesMngmt.Configs
             this.pnlMain.Controls.Add(this.cmbxCostongType);
             this.pnlMain.Controls.Add(this.txtRetail);
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1507, 546);
             this.pnlMain.TabIndex = 5;
@@ -251,10 +251,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtDistribution.CustomButton.Image = null;
-            this.txtDistribution.CustomButton.Location = new System.Drawing.Point(277, 2);
-            this.txtDistribution.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDistribution.CustomButton.Location = new System.Drawing.Point(208, 2);
+            this.txtDistribution.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDistribution.CustomButton.Name = "";
-            this.txtDistribution.CustomButton.Size = new System.Drawing.Size(49, 46);
+            this.txtDistribution.CustomButton.Size = new System.Drawing.Size(37, 37);
             this.txtDistribution.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDistribution.CustomButton.TabIndex = 1;
             this.txtDistribution.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -265,7 +265,7 @@ namespace SalesMngmt.Configs
             this.txtDistribution.Lines = new string[] {
         "0"};
             this.txtDistribution.Location = new System.Drawing.Point(324, 847);
-            this.txtDistribution.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDistribution.Margin = new System.Windows.Forms.Padding(4);
             this.txtDistribution.MaxLength = 32767;
             this.txtDistribution.Multiline = true;
             this.txtDistribution.Name = "txtDistribution";
@@ -304,7 +304,7 @@ namespace SalesMngmt.Configs
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1480, 74);
             this.panel1.TabIndex = 93;
@@ -329,10 +329,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtMeter.CustomButton.Image = null;
-            this.txtMeter.CustomButton.Location = new System.Drawing.Point(292, 2);
-            this.txtMeter.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMeter.CustomButton.Location = new System.Drawing.Point(219, 2);
+            this.txtMeter.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtMeter.CustomButton.Name = "";
-            this.txtMeter.CustomButton.Size = new System.Drawing.Size(57, 53);
+            this.txtMeter.CustomButton.Size = new System.Drawing.Size(43, 43);
             this.txtMeter.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtMeter.CustomButton.TabIndex = 1;
             this.txtMeter.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -343,7 +343,7 @@ namespace SalesMngmt.Configs
             this.txtMeter.Lines = new string[] {
         "0"};
             this.txtMeter.Location = new System.Drawing.Point(324, 736);
-            this.txtMeter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMeter.Margin = new System.Windows.Forms.Padding(4);
             this.txtMeter.MaxLength = 32767;
             this.txtMeter.Multiline = true;
             this.txtMeter.Name = "txtMeter";
@@ -381,10 +381,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtCabinet.CustomButton.Image = null;
-            this.txtCabinet.CustomButton.Location = new System.Drawing.Point(220, 2);
-            this.txtCabinet.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCabinet.CustomButton.Location = new System.Drawing.Point(165, 2);
+            this.txtCabinet.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCabinet.CustomButton.Name = "";
-            this.txtCabinet.CustomButton.Size = new System.Drawing.Size(49, 46);
+            this.txtCabinet.CustomButton.Size = new System.Drawing.Size(37, 37);
             this.txtCabinet.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCabinet.CustomButton.TabIndex = 1;
             this.txtCabinet.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -395,7 +395,7 @@ namespace SalesMngmt.Configs
             this.txtCabinet.Lines = new string[] {
         "0"};
             this.txtCabinet.Location = new System.Drawing.Point(996, 512);
-            this.txtCabinet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCabinet.Margin = new System.Windows.Forms.Padding(4);
             this.txtCabinet.MaxLength = 32767;
             this.txtCabinet.Multiline = true;
             this.txtCabinet.Name = "txtCabinet";
@@ -433,7 +433,7 @@ namespace SalesMngmt.Configs
             this.cmbxWareHouse.FormattingEnabled = true;
             this.cmbxWareHouse.ItemHeight = 29;
             this.cmbxWareHouse.Location = new System.Drawing.Point(677, 512);
-            this.cmbxWareHouse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxWareHouse.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxWareHouse.Name = "cmbxWareHouse";
             this.cmbxWareHouse.Size = new System.Drawing.Size(267, 35);
             this.cmbxWareHouse.TabIndex = 119;
@@ -446,10 +446,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtWeight.CustomButton.Image = null;
-            this.txtWeight.CustomButton.Location = new System.Drawing.Point(297, 2);
-            this.txtWeight.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWeight.CustomButton.Location = new System.Drawing.Point(223, 2);
+            this.txtWeight.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtWeight.CustomButton.Name = "";
-            this.txtWeight.CustomButton.Size = new System.Drawing.Size(60, 55);
+            this.txtWeight.CustomButton.Size = new System.Drawing.Size(45, 45);
             this.txtWeight.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtWeight.CustomButton.TabIndex = 1;
             this.txtWeight.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -460,7 +460,7 @@ namespace SalesMngmt.Configs
             this.txtWeight.Lines = new string[] {
         "0"};
             this.txtWeight.Location = new System.Drawing.Point(324, 615);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtWeight.MaxLength = 32767;
             this.txtWeight.Multiline = true;
             this.txtWeight.Name = "txtWeight";
@@ -510,10 +510,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtWholeSale.CustomButton.Image = null;
-            this.txtWholeSale.CustomButton.Location = new System.Drawing.Point(300, 2);
-            this.txtWholeSale.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWholeSale.CustomButton.Location = new System.Drawing.Point(225, 2);
+            this.txtWholeSale.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtWholeSale.CustomButton.Name = "";
-            this.txtWholeSale.CustomButton.Size = new System.Drawing.Size(49, 46);
+            this.txtWholeSale.CustomButton.Size = new System.Drawing.Size(37, 37);
             this.txtWholeSale.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtWholeSale.CustomButton.TabIndex = 1;
             this.txtWholeSale.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -524,7 +524,7 @@ namespace SalesMngmt.Configs
             this.txtWholeSale.Lines = new string[] {
         "0"};
             this.txtWholeSale.Location = new System.Drawing.Point(324, 512);
-            this.txtWholeSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWholeSale.Margin = new System.Windows.Forms.Padding(4);
             this.txtWholeSale.MaxLength = 32767;
             this.txtWholeSale.Multiline = true;
             this.txtWholeSale.Name = "txtWholeSale";
@@ -561,10 +561,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtFormula.CustomButton.Image = null;
-            this.txtFormula.CustomButton.Location = new System.Drawing.Point(319, 2);
-            this.txtFormula.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFormula.CustomButton.Location = new System.Drawing.Point(239, 2);
+            this.txtFormula.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtFormula.CustomButton.Name = "";
-            this.txtFormula.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtFormula.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtFormula.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtFormula.CustomButton.TabIndex = 1;
             this.txtFormula.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -575,7 +575,7 @@ namespace SalesMngmt.Configs
             this.txtFormula.Lines = new string[] {
         "0"};
             this.txtFormula.Location = new System.Drawing.Point(677, 615);
-            this.txtFormula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFormula.Margin = new System.Windows.Forms.Padding(4);
             this.txtFormula.MaxLength = 32767;
             this.txtFormula.Name = "txtFormula";
             this.txtFormula.PasswordChar = '\0';
@@ -620,7 +620,7 @@ namespace SalesMngmt.Configs
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(1217, 116);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(229, 257);
             this.pictureBox1.TabIndex = 109;
@@ -633,7 +633,7 @@ namespace SalesMngmt.Configs
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.ForeColor = System.Drawing.Color.White;
             this.metroButton1.Location = new System.Drawing.Point(1217, 388);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(229, 57);
             this.metroButton1.TabIndex = 108;
@@ -664,7 +664,7 @@ namespace SalesMngmt.Configs
             this.CmbxStylr.FormattingEnabled = true;
             this.CmbxStylr.ItemHeight = 29;
             this.CmbxStylr.Location = new System.Drawing.Point(29, 847);
-            this.CmbxStylr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbxStylr.Margin = new System.Windows.Forms.Padding(4);
             this.CmbxStylr.Name = "CmbxStylr";
             this.CmbxStylr.Size = new System.Drawing.Size(205, 35);
             this.CmbxStylr.TabIndex = 106;
@@ -678,7 +678,7 @@ namespace SalesMngmt.Configs
             this.cmbxSizes.FormattingEnabled = true;
             this.cmbxSizes.ItemHeight = 29;
             this.cmbxSizes.Location = new System.Drawing.Point(996, 417);
-            this.cmbxSizes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxSizes.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxSizes.Name = "cmbxSizes";
             this.cmbxSizes.Size = new System.Drawing.Size(204, 35);
             this.cmbxSizes.TabIndex = 105;
@@ -691,7 +691,7 @@ namespace SalesMngmt.Configs
             this.cmbxColor.FormattingEnabled = true;
             this.cmbxColor.ItemHeight = 29;
             this.cmbxColor.Location = new System.Drawing.Point(324, 417);
-            this.cmbxColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxColor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxColor.Name = "cmbxColor";
             this.cmbxColor.Size = new System.Drawing.Size(267, 35);
             this.cmbxColor.TabIndex = 104;
@@ -718,7 +718,7 @@ namespace SalesMngmt.Configs
             this.cmbxArticalType.FormattingEnabled = true;
             this.cmbxArticalType.ItemHeight = 29;
             this.cmbxArticalType.Location = new System.Drawing.Point(996, 736);
-            this.cmbxArticalType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxArticalType.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxArticalType.Name = "cmbxArticalType";
             this.cmbxArticalType.Size = new System.Drawing.Size(205, 35);
             this.cmbxArticalType.TabIndex = 100;
@@ -731,10 +731,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtDemand.CustomButton.Image = null;
-            this.txtDemand.CustomButton.Location = new System.Drawing.Point(292, 2);
-            this.txtDemand.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDemand.CustomButton.Location = new System.Drawing.Point(219, 2);
+            this.txtDemand.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDemand.CustomButton.Name = "";
-            this.txtDemand.CustomButton.Size = new System.Drawing.Size(57, 53);
+            this.txtDemand.CustomButton.Size = new System.Drawing.Size(43, 43);
             this.txtDemand.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDemand.CustomButton.TabIndex = 1;
             this.txtDemand.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -745,7 +745,7 @@ namespace SalesMngmt.Configs
             this.txtDemand.Lines = new string[] {
         "0"};
             this.txtDemand.Location = new System.Drawing.Point(679, 313);
-            this.txtDemand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDemand.Margin = new System.Windows.Forms.Padding(4);
             this.txtDemand.MaxLength = 32767;
             this.txtDemand.Multiline = true;
             this.txtDemand.Name = "txtDemand";
@@ -782,10 +782,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtAveragePrice.CustomButton.Image = null;
-            this.txtAveragePrice.CustomButton.Location = new System.Drawing.Point(185, 2);
-            this.txtAveragePrice.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAveragePrice.CustomButton.Location = new System.Drawing.Point(139, 2);
+            this.txtAveragePrice.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtAveragePrice.CustomButton.Name = "";
-            this.txtAveragePrice.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtAveragePrice.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtAveragePrice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAveragePrice.CustomButton.TabIndex = 1;
             this.txtAveragePrice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -795,7 +795,7 @@ namespace SalesMngmt.Configs
             this.txtAveragePrice.Lines = new string[] {
         "0"};
             this.txtAveragePrice.Location = new System.Drawing.Point(137, 1007);
-            this.txtAveragePrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAveragePrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtAveragePrice.MaxLength = 32767;
             this.txtAveragePrice.Name = "txtAveragePrice";
             this.txtAveragePrice.PasswordChar = '\0';
@@ -832,10 +832,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(211, 2);
-            this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(158, 2);
+            this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -843,7 +843,7 @@ namespace SalesMngmt.Configs
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
             this.metroTextBox2.Location = new System.Drawing.Point(515, 1099);
-            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -866,10 +866,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtDes.CustomButton.Image = null;
-            this.txtDes.CustomButton.Location = new System.Drawing.Point(269, 2);
-            this.txtDes.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDes.CustomButton.Location = new System.Drawing.Point(202, 2);
+            this.txtDes.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDes.CustomButton.Name = "";
-            this.txtDes.CustomButton.Size = new System.Drawing.Size(57, 53);
+            this.txtDes.CustomButton.Size = new System.Drawing.Size(43, 43);
             this.txtDes.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDes.CustomButton.TabIndex = 1;
             this.txtDes.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -879,7 +879,7 @@ namespace SalesMngmt.Configs
             this.txtDes.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtDes.Lines = new string[0];
             this.txtDes.Location = new System.Drawing.Point(29, 736);
-            this.txtDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDes.Margin = new System.Windows.Forms.Padding(4);
             this.txtDes.MaxLength = 32767;
             this.txtDes.Multiline = true;
             this.txtDes.Name = "txtDes";
@@ -916,10 +916,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtPurchase.CustomButton.Image = null;
-            this.txtPurchase.CustomButton.Location = new System.Drawing.Point(217, 2);
-            this.txtPurchase.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPurchase.CustomButton.Location = new System.Drawing.Point(163, 2);
+            this.txtPurchase.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtPurchase.CustomButton.Name = "";
-            this.txtPurchase.CustomButton.Size = new System.Drawing.Size(52, 48);
+            this.txtPurchase.CustomButton.Size = new System.Drawing.Size(39, 39);
             this.txtPurchase.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPurchase.CustomButton.TabIndex = 1;
             this.txtPurchase.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -930,7 +930,7 @@ namespace SalesMngmt.Configs
             this.txtPurchase.Lines = new string[] {
         "0"};
             this.txtPurchase.Location = new System.Drawing.Point(994, 222);
-            this.txtPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.txtPurchase.MaxLength = 32767;
             this.txtPurchase.Multiline = true;
             this.txtPurchase.Name = "txtPurchase";
@@ -998,7 +998,7 @@ namespace SalesMngmt.Configs
             this.cmbxCat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbxCat.ItemHeight = 29;
             this.cmbxCat.Location = new System.Drawing.Point(23, 222);
-            this.cmbxCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxCat.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxCat.Name = "cmbxCat";
             this.cmbxCat.Size = new System.Drawing.Size(256, 35);
             this.cmbxCat.TabIndex = 1;
@@ -1025,10 +1025,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtProdName.CustomButton.Image = null;
-            this.txtProdName.CustomButton.Location = new System.Drawing.Point(1505, 2);
-            this.txtProdName.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProdName.CustomButton.Location = new System.Drawing.Point(1129, 2);
+            this.txtProdName.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtProdName.CustomButton.Name = "";
-            this.txtProdName.CustomButton.Size = new System.Drawing.Size(65, 60);
+            this.txtProdName.CustomButton.Size = new System.Drawing.Size(49, 49);
             this.txtProdName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtProdName.CustomButton.TabIndex = 1;
             this.txtProdName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1038,7 +1038,7 @@ namespace SalesMngmt.Configs
             this.txtProdName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtProdName.Lines = new string[0];
             this.txtProdName.Location = new System.Drawing.Point(20, 116);
-            this.txtProdName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProdName.Margin = new System.Windows.Forms.Padding(4);
             this.txtProdName.MaxLength = 32767;
             this.txtProdName.Multiline = true;
             this.txtProdName.Name = "txtProdName";
@@ -1060,7 +1060,7 @@ namespace SalesMngmt.Configs
             this.chkNonInventory.AutoSize = true;
             this.chkNonInventory.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.ProdBindingSource, "Inv_YN", true));
             this.chkNonInventory.Location = new System.Drawing.Point(29, 615);
-            this.chkNonInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkNonInventory.Margin = new System.Windows.Forms.Padding(4);
             this.chkNonInventory.Name = "chkNonInventory";
             this.chkNonInventory.Size = new System.Drawing.Size(18, 17);
             this.chkNonInventory.TabIndex = 14;
@@ -1087,7 +1087,7 @@ namespace SalesMngmt.Configs
             this.cmbxArticle.FormattingEnabled = true;
             this.cmbxArticle.ItemHeight = 29;
             this.cmbxArticle.Location = new System.Drawing.Point(677, 417);
-            this.cmbxArticle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxArticle.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxArticle.Name = "cmbxArticle";
             this.cmbxArticle.Size = new System.Drawing.Size(267, 35);
             this.cmbxArticle.TabIndex = 10;
@@ -1100,7 +1100,7 @@ namespace SalesMngmt.Configs
             this.btnCancel.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(1217, 597);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(229, 84);
             this.btnCancel.TabIndex = 92;
@@ -1117,7 +1117,7 @@ namespace SalesMngmt.Configs
             this.btnSave.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1217, 500);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(229, 78);
             this.btnSave.TabIndex = 18;
@@ -1134,10 +1134,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtpacking.CustomButton.Image = null;
-            this.txtpacking.CustomButton.Location = new System.Drawing.Point(277, 2);
-            this.txtpacking.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpacking.CustomButton.Location = new System.Drawing.Point(208, 2);
+            this.txtpacking.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtpacking.CustomButton.Name = "";
-            this.txtpacking.CustomButton.Size = new System.Drawing.Size(49, 46);
+            this.txtpacking.CustomButton.Size = new System.Drawing.Size(37, 37);
             this.txtpacking.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtpacking.CustomButton.TabIndex = 1;
             this.txtpacking.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1148,7 +1148,7 @@ namespace SalesMngmt.Configs
             this.txtpacking.Lines = new string[] {
         "0"};
             this.txtpacking.Location = new System.Drawing.Point(29, 512);
-            this.txtpacking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpacking.Margin = new System.Windows.Forms.Padding(4);
             this.txtpacking.MaxLength = 32767;
             this.txtpacking.Multiline = true;
             this.txtpacking.Name = "txtpacking";
@@ -1199,10 +1199,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtBarCode.CustomButton.Image = null;
-            this.txtBarCode.CustomButton.Location = new System.Drawing.Point(272, 2);
-            this.txtBarCode.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBarCode.CustomButton.Location = new System.Drawing.Point(204, 2);
+            this.txtBarCode.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarCode.CustomButton.Name = "";
-            this.txtBarCode.CustomButton.Size = new System.Drawing.Size(55, 50);
+            this.txtBarCode.CustomButton.Size = new System.Drawing.Size(41, 41);
             this.txtBarCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBarCode.CustomButton.TabIndex = 1;
             this.txtBarCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1212,7 +1212,7 @@ namespace SalesMngmt.Configs
             this.txtBarCode.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtBarCode.Lines = new string[0];
             this.txtBarCode.Location = new System.Drawing.Point(29, 417);
-            this.txtBarCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBarCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarCode.MaxLength = 32767;
             this.txtBarCode.Multiline = true;
             this.txtBarCode.Name = "txtBarCode";
@@ -1248,10 +1248,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtOpenP.CustomButton.Image = null;
-            this.txtOpenP.CustomButton.Location = new System.Drawing.Point(201, 2);
-            this.txtOpenP.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOpenP.CustomButton.Location = new System.Drawing.Point(151, 2);
+            this.txtOpenP.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtOpenP.CustomButton.Name = "";
-            this.txtOpenP.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtOpenP.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtOpenP.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtOpenP.CustomButton.TabIndex = 1;
             this.txtOpenP.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1261,7 +1261,7 @@ namespace SalesMngmt.Configs
             this.txtOpenP.Lines = new string[] {
         "0"};
             this.txtOpenP.Location = new System.Drawing.Point(507, 1077);
-            this.txtOpenP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOpenP.Margin = new System.Windows.Forms.Padding(4);
             this.txtOpenP.MaxLength = 32767;
             this.txtOpenP.Name = "txtOpenP";
             this.txtOpenP.PasswordChar = '\0';
@@ -1300,10 +1300,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtPurOPen.CustomButton.Image = null;
-            this.txtPurOPen.CustomButton.Location = new System.Drawing.Point(201, 2);
-            this.txtPurOPen.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPurOPen.CustomButton.Location = new System.Drawing.Point(151, 2);
+            this.txtPurOPen.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtPurOPen.CustomButton.Name = "";
-            this.txtPurOPen.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtPurOPen.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtPurOPen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPurOPen.CustomButton.TabIndex = 1;
             this.txtPurOPen.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1313,7 +1313,7 @@ namespace SalesMngmt.Configs
             this.txtPurOPen.Lines = new string[] {
         "0"};
             this.txtPurOPen.Location = new System.Drawing.Point(507, 1049);
-            this.txtPurOPen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPurOPen.Margin = new System.Windows.Forms.Padding(4);
             this.txtPurOPen.MaxLength = 32767;
             this.txtPurOPen.Name = "txtPurOPen";
             this.txtPurOPen.PasswordChar = '\0';
@@ -1351,7 +1351,7 @@ namespace SalesMngmt.Configs
             this.cmbxSid.FormattingEnabled = true;
             this.cmbxSid.ItemHeight = 24;
             this.cmbxSid.Location = new System.Drawing.Point(147, 1076);
-            this.cmbxSid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxSid.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxSid.Name = "cmbxSid";
             this.cmbxSid.Size = new System.Drawing.Size(192, 30);
             this.cmbxSid.TabIndex = 80;
@@ -1379,10 +1379,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtDisP.CustomButton.Image = null;
-            this.txtDisP.CustomButton.Location = new System.Drawing.Point(280, 2);
-            this.txtDisP.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDisP.CustomButton.Location = new System.Drawing.Point(210, 2);
+            this.txtDisP.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDisP.CustomButton.Name = "";
-            this.txtDisP.CustomButton.Size = new System.Drawing.Size(63, 58);
+            this.txtDisP.CustomButton.Size = new System.Drawing.Size(47, 47);
             this.txtDisP.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDisP.CustomButton.TabIndex = 1;
             this.txtDisP.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1393,7 +1393,7 @@ namespace SalesMngmt.Configs
             this.txtDisP.Lines = new string[] {
         "0"};
             this.txtDisP.Location = new System.Drawing.Point(653, 732);
-            this.txtDisP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDisP.Margin = new System.Windows.Forms.Padding(4);
             this.txtDisP.MaxLength = 32767;
             this.txtDisP.Multiline = true;
             this.txtDisP.Name = "txtDisP";
@@ -1432,7 +1432,7 @@ namespace SalesMngmt.Configs
             this.cmbcUni.FormattingEnabled = true;
             this.cmbcUni.ItemHeight = 29;
             this.cmbcUni.Location = new System.Drawing.Point(329, 222);
-            this.cmbcUni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbcUni.Margin = new System.Windows.Forms.Padding(4);
             this.cmbcUni.Name = "cmbcUni";
             this.cmbcUni.Size = new System.Drawing.Size(265, 35);
             this.cmbcUni.TabIndex = 2;
@@ -1471,10 +1471,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtSale.CustomButton.Image = null;
-            this.txtSale.CustomButton.Location = new System.Drawing.Point(287, 2);
-            this.txtSale.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSale.CustomButton.Location = new System.Drawing.Point(215, 2);
+            this.txtSale.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtSale.CustomButton.Name = "";
-            this.txtSale.CustomButton.Size = new System.Drawing.Size(63, 58);
+            this.txtSale.CustomButton.Size = new System.Drawing.Size(47, 47);
             this.txtSale.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSale.CustomButton.TabIndex = 1;
             this.txtSale.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1485,7 +1485,7 @@ namespace SalesMngmt.Configs
             this.txtSale.Lines = new string[] {
         "0"};
             this.txtSale.Location = new System.Drawing.Point(324, 313);
-            this.txtSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSale.Margin = new System.Windows.Forms.Padding(4);
             this.txtSale.MaxLength = 32767;
             this.txtSale.Multiline = true;
             this.txtSale.Name = "txtSale";
@@ -1510,10 +1510,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(207, 2);
-            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(155, 2);
+            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(63, 58);
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(47, 47);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox3.CustomButton.TabIndex = 1;
             this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1524,7 +1524,7 @@ namespace SalesMngmt.Configs
             this.metroTextBox3.Lines = new string[] {
         "0"};
             this.metroTextBox3.Location = new System.Drawing.Point(996, 313);
-            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Multiline = true;
             this.metroTextBox3.Name = "metroTextBox3";
@@ -1574,7 +1574,7 @@ namespace SalesMngmt.Configs
             this.chkIsActive.AutoSize = true;
             this.chkIsActive.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.ProdBindingSource, "isDeleted", true));
             this.chkIsActive.Location = new System.Drawing.Point(996, 615);
-            this.chkIsActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(4);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(18, 17);
             this.chkIsActive.TabIndex = 15;
@@ -1587,10 +1587,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtOpenQ.CustomButton.Image = null;
-            this.txtOpenQ.CustomButton.Location = new System.Drawing.Point(264, 2);
-            this.txtOpenQ.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOpenQ.CustomButton.Location = new System.Drawing.Point(198, 2);
+            this.txtOpenQ.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtOpenQ.CustomButton.Name = "";
-            this.txtOpenQ.CustomButton.Size = new System.Drawing.Size(63, 58);
+            this.txtOpenQ.CustomButton.Size = new System.Drawing.Size(47, 47);
             this.txtOpenQ.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtOpenQ.CustomButton.TabIndex = 1;
             this.txtOpenQ.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1601,7 +1601,7 @@ namespace SalesMngmt.Configs
             this.txtOpenQ.Lines = new string[] {
         "0"};
             this.txtOpenQ.Location = new System.Drawing.Point(29, 313);
-            this.txtOpenQ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOpenQ.Margin = new System.Windows.Forms.Padding(4);
             this.txtOpenQ.MaxLength = 32767;
             this.txtOpenQ.Multiline = true;
             this.txtOpenQ.Name = "txtOpenQ";
@@ -1627,7 +1627,7 @@ namespace SalesMngmt.Configs
             this.cmbxMak.FormattingEnabled = true;
             this.cmbxMak.ItemHeight = 29;
             this.cmbxMak.Location = new System.Drawing.Point(666, 222);
-            this.cmbxMak.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxMak.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxMak.Name = "cmbxMak";
             this.cmbxMak.Size = new System.Drawing.Size(267, 35);
             this.cmbxMak.TabIndex = 3;
@@ -1668,9 +1668,9 @@ namespace SalesMngmt.Configs
             this.label17.Location = new System.Drawing.Point(992, 581);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 18);
+            this.label17.Size = new System.Drawing.Size(83, 18);
             this.label17.TabIndex = 52;
-            this.label17.Text = "Is Active";
+            this.label17.Text = "Is Deleted";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // cmbxUnit
@@ -1690,7 +1690,7 @@ namespace SalesMngmt.Configs
             // 
             this.cmbxCostingType.ItemHeight = 24;
             this.cmbxCostingType.Location = new System.Drawing.Point(147, 1042);
-            this.cmbxCostingType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxCostingType.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxCostingType.Name = "cmbxCostingType";
             this.cmbxCostingType.Size = new System.Drawing.Size(191, 30);
             this.cmbxCostingType.TabIndex = 59;
@@ -1704,10 +1704,10 @@ namespace SalesMngmt.Configs
             // 
             // 
             this.txtTell.CustomButton.Image = null;
-            this.txtTell.CustomButton.Location = new System.Drawing.Point(223, 2);
-            this.txtTell.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTell.CustomButton.Location = new System.Drawing.Point(167, 2);
+            this.txtTell.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtTell.CustomButton.Name = "";
-            this.txtTell.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtTell.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtTell.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTell.CustomButton.TabIndex = 1;
             this.txtTell.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1717,7 +1717,7 @@ namespace SalesMngmt.Configs
             this.txtTell.Lines = new string[] {
         "0"};
             this.txtTell.Location = new System.Drawing.Point(145, 1113);
-            this.txtTell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTell.Margin = new System.Windows.Forms.Padding(4);
             this.txtTell.MaxLength = 32767;
             this.txtTell.Name = "txtTell";
             this.txtTell.PasswordChar = '\0';
@@ -1779,7 +1779,7 @@ namespace SalesMngmt.Configs
             this.salesPriceDataGridViewTextBoxColumn});
             this.ProductsDataGridView.DataSource = this.ProdBindingSource;
             this.ProductsDataGridView.Location = new System.Drawing.Point(0, 48);
-            this.ProductsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductsDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.ProductsDataGridView.MultiSelect = false;
             this.ProductsDataGridView.Name = "ProductsDataGridView";
             this.ProductsDataGridView.ReadOnly = true;
@@ -1983,7 +1983,7 @@ namespace SalesMngmt.Configs
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 649);
             this.Controls.Add(this.metroPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Products";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Products";

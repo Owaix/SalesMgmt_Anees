@@ -485,7 +485,7 @@ namespace SalesMngmt.Configs
                     else
                     {
                       
-                        var gl = db.GL.SingleOrDefault(x => x.AC_Code == obj.AC_Code_Inv && x.TypeCode == 0 && x.CompID == compID);
+                        var gl = db.GL.FirstOrDefault(x => x.AC_Code == obj.AC_Code_Inv && x.TypeCode == 0 && x.CompID == compID);
                         // comment kr hy ishae     
 
 
@@ -496,7 +496,7 @@ namespace SalesMngmt.Configs
                             gl.Credit = 0;
 
                         }
-                        var glCapital = db.GL.SingleOrDefault(x => x.AC_Code2 == obj.AC_Code_Inv && x.TypeCode == 0 && x.CompID == compID);
+                        var glCapital = db.GL.FirstOrDefault(x => x.AC_Code2 == obj.AC_Code_Inv && x.TypeCode == 0 && x.CompID == compID);
                         gl.Narration = "Opening Entry";
                         glCapital.Narration = "opening Item :" + txtProdName.Text.Trim();
 

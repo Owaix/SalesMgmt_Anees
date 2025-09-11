@@ -4374,41 +4374,20 @@ namespace SalesMngmt.Invoice
                         lblAccountBalance.Text = balance.ToString();
 
                         vebdorid = Convert.ToInt32(customer.AC_Code);
-
-
-
                     }
-
-
-
                 }
                 if (account == 1)
                 {
-
                     var customer = db.COA_D.AsNoTracking().Where(x => x.CAC_Code == 1 && x.AC_Title == cmbxvendor.Text && x.CompanyID == compID).FirstOrDefault();
-
-                    if (customer == null)
-                    {
-                        MessageBox.Show("you selected wrong cash");
-
-                        cmbxvendor.Focus();
-
-
-                    }
-
-                    else
+                    if (customer != null)
                     {
                         vebdorid = Convert.ToInt32(customer.AC_Code);
-
-
                     }
-
                 }
 
                 if (account == 0)
                 {
                     lblGrandTotal.Text = "0";
-
                 }
                 else
                 {
