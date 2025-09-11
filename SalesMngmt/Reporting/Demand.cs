@@ -1,4 +1,5 @@
 ﻿using Lib.Entity;
+using SalesMngmt.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -145,51 +146,67 @@ namespace SalesMngmt.Reporting
 
         }
 
+
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             CategorysDataGridView.Rows.Clear();
 
+            // Fetch only the required items in one query
+            var items = db.Items
+                          .Where(x => x.isDeleted==false && x.Inv_YN==false && x.CompanyID == compID)
+                          .ToList();
 
-            var item = db.Items.Where(x => x.isDeleted == false && x.CompanyID==compID).ToList();
-            var itemcount = item.Count;
-            int Sno = 1;
-            for (int a = 0; a < itemcount; a++) {
+            int serialNo = 1;
 
-
-                double demandQuantity = Convert.ToDouble (item[a].CTN_PCK) * Convert.ToDouble(item[a].Demand);
-                var stockQuantity = db.getStockByID(item[a].IID).FirstOrDefault();
-
-                if (demandQuantity == 0) { }
-               else if (demandQuantity <= stockQuantity) {
-                    var ctn = Convert.ToDouble(item[a].CTN_PCK);
-                    var countCtn = 0;
-
-
-                    for (double b = ctn; b <= stockQuantity; b+= ctn) {
-
-                        countCtn++;
-
-
-                    }
-
-                    var quantity = stockQuantity - (countCtn * Convert.ToDouble(item[a].CTN_PCK));
-                    CategorysDataGridView.Rows.Add(Sno, item[a].IName, countCtn, quantity, item[a].CTN_PCK);
-
-                    Sno++;
+            foreach (var item in items)
+            {
+                // Parse carton pack safely
+                double cartonPack = 1; // default = 1 (pcs)
+                if (double.TryParse(item.CTN_PCK?.ToString(), out double parsedCtn))
+                {
+                    cartonPack = parsedCtn <= 0 ? 1 : parsedCtn;
                 }
-
-            }
-
-     
-
-                  
-
+                // Parse demand safely, default = 1 if empty or invalid
+                double demand = 1;
+                if (double.TryParse(item.Demand?.ToString(), out double parsedDemand))
+                {
+                    demand = parsedDemand <= 0 ? 1 : parsedDemand;
                 }
+                // Parse demand safely
+               
 
+                double demandQuantity = cartonPack * demand;
 
+                if (demandQuantity == 0)
+                    continue;
 
+                // Get stock safely
+                double stockQuantity = Convert.ToDouble(db.getStockByID(item.IID).FirstOrDefault() ?? 0);
+                if (stockQuantity <= 0)
+                    continue;
+
+                // If demand is more  than or not equal  to stock, skip
+                if (demandQuantity <= stockQuantity)
+                    continue;
+
+             
+                 // Add row in grid
+                CategorysDataGridView.Rows.Add(
+                    serialNo,
+                    item.IName,
+                    demandQuantity,
+                    stockQuantity
+                );
+
+                serialNo++;
             }
         }
+
+
+
+    }
+}
      
     
 

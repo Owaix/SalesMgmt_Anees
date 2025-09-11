@@ -382,7 +382,7 @@ namespace SalesMngmt.Reporting
                     //decimal DiscountDifference = Convert.ToDecimal(TotalGross) - Convert.ToDecimal(Amount);
                     orders.TotalDiscount = Convert.ToDecimal(TotalDiscount);  //(Convert.ToDecimal(itemName.SalesPriceP) * Convert.ToDecimal( TOtalValue))- Convert.ToDecimal(itemName.Amt);
                     orders.PREVBALANNCE = Convert.ToDecimal( order.PreBal);
-                    orders.RCVDBALANCE = Convert.ToDecimal(order.CashAmt.DefaultZero());
+                    orders.RCVDBALANCE = Convert.ToDecimal(order.CashAmt);
                     orderList.Add(orders);
                 }
                 SaleInvoice orders1 = new SaleInvoice();

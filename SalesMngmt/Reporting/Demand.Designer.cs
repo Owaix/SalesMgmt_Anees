@@ -66,14 +66,15 @@
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(20, 60);
+            this.metroPanel1.HorizontalScrollbarSize = 15;
+            this.metroPanel1.Location = new System.Drawing.Point(30, 92);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(760, 370);
+            this.metroPanel1.Size = new System.Drawing.Size(1140, 569);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroPanel1.VerticalScrollbarSize = 15;
             // 
             // CategorysDataGridView
             // 
@@ -107,32 +108,35 @@
             this.CategorysDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CategorysDataGridView.EnableHeadersVisualStyles = false;
             this.CategorysDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.CategorysDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CategorysDataGridView.Name = "CategorysDataGridView";
             this.CategorysDataGridView.ReadOnly = true;
             this.CategorysDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.CategorysDataGridView.RowHeadersVisible = false;
             this.CategorysDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.CategorysDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CategorysDataGridView.Size = new System.Drawing.Size(760, 370);
+            this.CategorysDataGridView.Size = new System.Drawing.Size(1140, 569);
             this.CategorysDataGridView.TabIndex = 6;
             this.CategorysDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategorysDataGridView_CellClick);
             this.CategorysDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategorysDataGridView_CellContentClick);
             // 
             // dtTo
             // 
-            this.dtTo.Location = new System.Drawing.Point(230, 25);
+            this.dtTo.Location = new System.Drawing.Point(345, 38);
+            this.dtTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtTo.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(98, 29);
+            this.dtTo.Size = new System.Drawing.Size(145, 29);
             this.dtTo.TabIndex = 10;
             this.dtTo.Visible = false;
             // 
             // dtFrom
             // 
-            this.dtFrom.Location = new System.Drawing.Point(384, 25);
+            this.dtFrom.Location = new System.Drawing.Point(576, 38);
+            this.dtFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtFrom.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(92, 29);
+            this.dtFrom.Size = new System.Drawing.Size(136, 29);
             this.dtFrom.TabIndex = 11;
             this.dtFrom.Visible = false;
             // 
@@ -140,9 +144,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(196, 28);
+            this.label5.Location = new System.Drawing.Point(294, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 15);
+            this.label5.Size = new System.Drawing.Size(34, 22);
             this.label5.TabIndex = 12;
             this.label5.Text = "To";
             this.label5.Visible = false;
@@ -151,9 +156,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(339, 28);
+            this.label6.Location = new System.Drawing.Point(508, 43);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 15);
+            this.label6.Size = new System.Drawing.Size(55, 22);
             this.label6.TabIndex = 13;
             this.label6.Text = "From";
             this.label6.Visible = false;
@@ -163,9 +169,10 @@
             this.btnSearch.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSearch.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(700, 24);
+            this.btnSearch.Location = new System.Drawing.Point(1050, 37);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 32);
+            this.btnSearch.Size = new System.Drawing.Size(141, 49);
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "Search";
             this.btnSearch.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -178,9 +185,10 @@
             // 
             this.cmbxVendor.FormattingEnabled = true;
             this.cmbxVendor.ItemHeight = 23;
-            this.cmbxVendor.Location = new System.Drawing.Point(541, 27);
+            this.cmbxVendor.Location = new System.Drawing.Point(812, 42);
+            this.cmbxVendor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbxVendor.Name = "cmbxVendor";
-            this.cmbxVendor.Size = new System.Drawing.Size(153, 29);
+            this.cmbxVendor.Size = new System.Drawing.Size(228, 29);
             this.cmbxVendor.TabIndex = 59;
             this.cmbxVendor.UseSelectable = true;
             this.cmbxVendor.Visible = false;
@@ -190,9 +198,10 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(481, 28);
+            this.label10.Location = new System.Drawing.Point(722, 43);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 15);
+            this.label10.Size = new System.Drawing.Size(74, 22);
             this.label10.TabIndex = 58;
             this.label10.Text = "Vendor";
             this.label10.Visible = false;
@@ -228,38 +237,49 @@
             // SNO
             // 
             this.SNO.HeaderText = "SNO";
+            this.SNO.MinimumWidth = 8;
             this.SNO.Name = "SNO";
             this.SNO.ReadOnly = true;
+            this.SNO.Width = 150;
             // 
             // ProductName
             // 
             this.ProductName.HeaderText = "ProductName";
+            this.ProductName.MinimumWidth = 8;
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 350;
             // 
             // Ctn
             // 
-            this.Ctn.HeaderText = "Ctn";
+            this.Ctn.HeaderText = "Demand QTY";
+            this.Ctn.MinimumWidth = 8;
             this.Ctn.Name = "Ctn";
             this.Ctn.ReadOnly = true;
+            this.Ctn.Width = 150;
             // 
             // Pieces
             // 
-            this.Pieces.HeaderText = "Pieces";
+            this.Pieces.HeaderText = "Available QTY";
+            this.Pieces.MinimumWidth = 8;
             this.Pieces.Name = "Pieces";
             this.Pieces.ReadOnly = true;
+            this.Pieces.Width = 150;
             // 
             // ExpireDate
             // 
             this.ExpireDate.HeaderText = "perCtnPieces";
+            this.ExpireDate.MinimumWidth = 8;
             this.ExpireDate.Name = "ExpireDate";
             this.ExpireDate.ReadOnly = true;
+            this.ExpireDate.Visible = false;
+            this.ExpireDate.Width = 150;
             // 
             // Demand
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.cmbxVendor);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnSearch);
@@ -268,7 +288,9 @@
             this.Controls.Add(this.dtFrom);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.dtTo);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Demand";
+            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.Text = "Demand Items";
             this.Load += new System.EventHandler(this.Category_Load);
             this.metroPanel1.ResumeLayout(false);
