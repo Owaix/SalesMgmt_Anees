@@ -12,6 +12,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalesMngmt.Invoice
@@ -19,109 +20,155 @@ namespace SalesMngmt.Invoice
     public partial class PInv : MetroFramework.Forms.MetroForm
     {
         SaleManagerEntities db = null;
-        List<Lib.Entity.Items> listItems = null;
+        List<Lib.Entity.Items> listItems = new List<Lib.Entity.Items>();   // ✅ always initialized
         int compID = 0;
         bool account = false;
         int vebdorid = 0;
-        List<tblStock> stock = null;
-
+        List<tblStock> stock = new List<tblStock>();  // ✅ always initialized
         int itemIDValue = 0;
         public PInv PInvoice { get; set; }
-        public PInv(int Company)
+
+        public PInv(int company)
         {
             InitializeComponent();
+            db = new SaleManagerEntities();
+            compID = company;
+            this.Shown += PInv_Shown;
 
             lblItemID.Text = "";
-            db = new SaleManagerEntities();
-            compID = Company;
             PInvoice = this;
-            stock = new List<tblStock>();
-            listItems = db.Items.AsNoTracking().Where(x => x.CompanyID == compID && x.isDeleted == false).ToList();
-            if (Company == 1015)
+
+            if (company == 1015)
             {
                 txtBatch.Visible = false;
                 dtExpirt.Visible = false;
                 label5.Visible = false;
                 sad.Visible = false;
                 cmbxItems.Width = 350;
-                this.Column3.Visible = false;
-                this.Column2.Visible = false;
-
+                Column3.Visible = false;
+                Column2.Visible = false;
             }
-
         }
 
         private void PInv_Load(object sender, EventArgs e)
         {
-            List<I_Unit> unitList;
-            if (compID == 1024)
-            {
-                unitList = new List<I_Unit>
-        {
-            new I_Unit { IUnit = "PCS", unit_id = 1 },
-            new I_Unit { IUnit = "SET", unit_id = 2 }
-        };
-
-            }
-
-
-            else
-            {
-
-                unitList = new List<I_Unit>
-        {
-            new I_Unit { IUnit = "PCS", unit_id = 1 },
-            new I_Unit { IUnit = "CTN", unit_id = 2 }
-        };
-
-            }
-
-
-
-
-
-
-            FillCombo(cmbxPackaging, unitList, "IUnit", "unit_id", 1);
-
-
-            cmbxPackaging.SelectedIndex = 0;
-
+            SetupUnits();
             dtExpirt.Value = new DateTime(1900, 01, 01);
-            var Account = db.COA_M.Where(x => x.CAC_Code == 1 || x.CAC_Code == 3 || x.CAC_Code == 9).ToList();
+        }
 
+        private async void PInv_Shown(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            await LoadDataAsync();
+            this.Enabled = true;
+        }
 
-            var vendor = db.COA_D.Where(x => x.CAC_Code == 1 && x.CompanyID == compID && x.InActive == false).ToList();
+        private void SetupUnits()
+        {
+            var unitList = (compID == 1024)
+                ? new List<I_Unit>
+                {
+                    new I_Unit { IUnit = "PCS", unit_id = 1 },
+                    new I_Unit { IUnit = "SET", unit_id = 2 }
+                }
+                : new List<I_Unit>
+                {
+                    new I_Unit { IUnit = "PCS", unit_id = 1 },
+                    new I_Unit { IUnit = "CTN", unit_id = 2 }
+                };
 
-            //FillCombo(cmbxvendor, vendor, "AC_Title", "CAC_Code", 0);
-            //FillCombo(cmbxAccID, Account, "CATitle", "CAC_Code", 0);
+            // insert default option
+            unitList.Insert(0, new I_Unit { IUnit = "--Select--", unit_id = 0 });
 
-            List<COA_M> article = new List<COA_M>();
-            article.Add(new COA_M { CAC_Code = 0, CATitle = "--SELECT--" });
-            article.AddRange(db.COA_M.Where(x => x.CAC_Code == 1 || x.CAC_Code == 3 || x.CAC_Code == 9).ToList());
-            FillCombo(cmbxAccID, article, "CATitle", "CAC_Code", 0);
+            FillCombo(cmbxPackaging, unitList, "IUnit", "unit_id", 0);
+        }
 
+        private async Task LoadDataAsync()
+        {
+            var accounts = await db.COA_M
+                .Where(x => x.CAC_Code == 1 || x.CAC_Code == 3 || x.CAC_Code == 9)
+                .ToListAsync() ?? new List<COA_M>();
 
-            List<COA_D> cash = new List<COA_D>();
-            cash.Add(new COA_D { AC_Code = 0, AC_Title = "--Credit--" });
-            cash.AddRange(db.COA_D.Where(x => x.CAC_Code == 1 && x.CompanyID == compID && x.InActive == false).ToList());
-            FillCombo(cmbxPaymentMode, cash, "AC_Title", "AC_Code", 0);
+            var vendors = await db.COA_D
+                .Where(x => x.CAC_Code == 1 && x.CompanyID == compID && x.InActive == false)
+                .ToListAsync() ?? new List<COA_D>();
 
-            List<tbl_Warehouse> Warehouse = new List<tbl_Warehouse>();
-            Warehouse.Add(new tbl_Warehouse { WID = 0, Warehouse = "--Select--" });
-            Warehouse.AddRange(db.tbl_Warehouse.Where(x => x.CompanyID == compID && x.isDelete == false).ToList());
-            FillCombo(cmbxWareHouse, Warehouse, "Warehouse", "WID", 0);
+            var warehouses = await db.tbl_Warehouse
+                .Where(x => x.CompanyID == compID && x.isDelete == false)
+                .ToListAsync() ?? new List<tbl_Warehouse>();
 
+            var items = await db.Items
+                .AsNoTracking()
+                .Where(x => x.CompanyID == compID && x.isDeleted == false)
+                .ToListAsync() ?? new List<Lib.Entity.Items>();
 
+            listItems = items;
+
+            // fill combos with safe defaults
+            accounts.Insert(0, new COA_M { CAC_Code = 0, CATitle = "--Select--" });
+            vendors.Insert(0, new COA_D { AC_Code = 0, AC_Title = "--Select Vendor--" });
+            warehouses.Insert(0, new tbl_Warehouse { WID = 0, Warehouse = "--Select Warehouse--" });
+
+            FillCombo(cmbxAccID, accounts, "CATitle", "CAC_Code", 0);
+            FillCombo(cmbxPaymentMode, vendors, "AC_Title", "AC_Code", 0);
+            FillCombo(cmbxWareHouse, warehouses, "Warehouse", "WID", 0);
 
             if (compID == 1022)
             {
-
-
-                cmbxWareHouse.SelectedIndex = 1;
-                cmbxAccID.SelectedIndex = 3;
+                cmbxWareHouse.SelectedIndex = Math.Min(1, cmbxWareHouse.Items.Count - 1);
+                cmbxAccID.SelectedIndex = Math.Min(3, cmbxAccID.Items.Count - 1);
             }
-
         }
+
+        // ✅ safe FillCombo
+        public void FillCombo<T>(ComboBox comboBox, IEnumerable<T> obj, string display, string value, int selected = 0)
+        {
+            if (comboBox == null) return;
+
+            // temporarily detach SelectedIndexChanged
+            //var handlers = comboBox.SelectedIndexChanged=0;
+            //if (handlers != null)
+            //{
+            //    foreach (var d in handlers.GetInvocationList())
+            //        comboBox.SelectedIndexChanged -= (EventHandler)d;
+            //}
+
+            try
+            {
+                if (obj == null)
+                {
+                    comboBox.DataSource = null;
+                    return;
+                }
+
+                var list = obj.ToList();
+                if (list.Count == 0)
+                {
+                    comboBox.DataSource = null;
+                    return;
+                }
+
+                comboBox.DataSource = list;
+                comboBox.DisplayMember = display;
+                comboBox.ValueMember = value;
+                comboBox.SelectedIndex = (selected >= 0 && selected < list.Count) ? selected : 0;
+            }
+            finally
+            {
+                // re-attach handlers
+                //if (handlers != null)
+                //{
+                //    foreach (var d in handlers.GetInvocationList())
+                //        comboBox.SelectedIndexChanged += (EventHandler)d;
+                //}
+            }
+        }
+
+        // ✅ safe ItemID lookup
+       
+
+
+
         private void Accountvalidation()
         {
             int account = (int)cmbxAccID.SelectedValue;
@@ -216,24 +263,9 @@ namespace SalesMngmt.Invoice
         {
 
         }
-        public void FillCombo<T>(ComboBox comboBox, IEnumerable<T> obj, String Name, String ID, int selected = 1)
-        {
-            try
-            {
-                if (obj.Count() > 0)
-                {
-                    comboBox.DataSource = obj;
-                    comboBox.DisplayMember = Name; // Column Name
-                    comboBox.ValueMember = ID;  // Column Name
-                    comboBox.SelectedIndex = selected;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+       
+      
+        
         private void cmbxItems_Leave(object sender, EventArgs e)
         {
 
@@ -1278,16 +1310,48 @@ namespace SalesMngmt.Invoice
             }
         }
 
-        private void cmbxAccID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var dsa = Convert.ToInt32(cmbxAccID.SelectedIndex);
-            if (dsa >= 1)
-            {
-                int value = Convert.ToInt32(cmbxAccID.SelectedValue);
-                var vendor = db.COA_D.AsNoTracking().Where(x => x.CAC_Code == value && x.CompanyID == compID && x.InActive == false).ToList();
-                FillCombo(cmbxvendor, vendor, "AC_Title", "AC_Code", 0);
+        // cache vendors and balances
+        private Dictionary<int, List<COA_D>> _vendorCache = new Dictionary<int, List<COA_D>>();
+        private Dictionary<int, double> _balanceCache = new Dictionary<int, double>();
 
-                int account = (int)cmbxAccID.SelectedValue;
+        private bool _isLoading = false; // prevent re-entry
+
+
+
+        private async void cmbxAccID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = cmbxAccID.SelectedIndex;
+                if (selectedIndex <= 0)
+                {
+                    // reset vendor dropdown
+                    FillCombo(cmbxvendor, new List<COA_D> { new COA_D { AC_Code = 0, AC_Title = "--Select--" } }, "AC_Title", "AC_Code", 0);
+                    lblAccountBalance.Text = "0";   // 🔹 set zero
+                    calculation();
+                    return;
+                }
+
+                int accValue = Convert.ToInt32(cmbxAccID.SelectedValue);
+
+                // 🔹 load vendors from cache or DB
+                if (!_vendorCache.ContainsKey(accValue))
+                {
+                    var vendors = await db.COA_D
+                        .AsNoTracking()
+                        .Where(x => x.CAC_Code == accValue && x.CompanyID == compID && x.InActive == false)
+                        .ToListAsync();
+
+                    _vendorCache[accValue] = vendors;
+                }
+
+                FillCombo(cmbxvendor, _vendorCache[accValue], "AC_Title", "AC_Code", 0);
+
+                // 🔹 don’t load balance here
+                lblAccountBalance.Text = "0";
+
+                // 🔹 Grand Total (with zero balance)
+                int account = Convert.ToInt32(cmbxAccID.SelectedValue);
                 if (account == 1)
                 {
                     lblGrandTotal.Text = "0";
@@ -1295,144 +1359,71 @@ namespace SalesMngmt.Invoice
                 }
                 else
                 {
-
-
-                    lblGrandTotal.Text = (Convert.ToDouble(lblAccountBalance.Text.DefaultZero()) + Convert.ToDouble(txtNetAm.Text.DefaultZero())).ToString();
+                    lblGrandTotal.Text = (Convert.ToDouble(lblAccountBalance.Text.DefaultZero()) +
+                                          Convert.ToDouble(txtNetAm.Text.DefaultZero())).ToString("0.##");
                 }
 
-
-                if (value == 3)
-                {
-
-                    //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //vebdorid = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, Vendorcode);
-                    //int a = 1;
-
-                    //double credit = (double)previosBalance.Rows[0]["credit"];
-                    //double debit = (double)previosBalance.Rows[0]["debit"];
-                    //double balance = debit - credit;
-
-
-                    double balance = 0;
-                    int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, Vendorcode);
-                    int a = 1;
-
-                    double credit = (double)previosBalance.Rows[0]["credit"];
-                    double debit = (double)previosBalance.Rows[0]["debit"];
-                    balance = debit - credit;
-                    if (balance != 0)
-                    {
-
-
-                    }
-                    SaleManagerEntities db1 = new SaleManagerEntities();
-
-                    var getdata = ReportsController.getcustomerLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
-
-
-
-                    foreach (DataRow rows in getdata.Rows)
-                    {
-
-
-                        balance = balance - (double)rows["credit"];
-                        balance = balance + (double)rows["debit"];
-
-
-
-
-
-
-
-
-                    }
-
-
-
-
-                    lblAccountBalance.Text = balance.ToString();
-
-
-                }
-
-
-                if (value == 9)
-                {
-                    //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //vebdorid = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, Vendorcode);
-                    //int a = 1;
-
-                    //double credit = (double)previosBalance.Rows[0]["credit"];
-                    //double debit = (double)previosBalance.Rows[0]["debit"];
-                    //double balance = credit - debit;
-
-
-
-
-
-                    double balance = 0;
-                    int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    var previosBalance = ReportsController.getVendorPreviousBalance(DateTime.Now, Vendorcode);
-                    int a = 1;
-
-                    double credit = (double)previosBalance.Rows[0]["credit"];
-                    double debit = (double)previosBalance.Rows[0]["debit"];
-                    balance = credit - debit;
-                    if (balance != 0)
-                    {
-
-
-                    }
-                    SaleManagerEntities db1 = new SaleManagerEntities();
-
-                    var getdata = ReportsController.getVendorLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
-
-
-
-                    foreach (DataRow rows in getdata.Rows)
-                    {
-
-
-                        balance = balance + (double)rows["credit"];
-                        balance = balance - (double)rows["debit"];
-
-
-
-
-
-
-                    }
-
-
-                    lblAccountBalance.Text = balance.ToString();
-
-                }
-
-
+                calculation();
             }
-            else if (dsa == 0)
+            catch (Exception ex)
             {
-
-                //   int value = Convert.ToInt32(cmbxAccID.SelectedValue);
-                //var vendor = db.COA_D.Where(x => x.CAC_Code == 1 && x.CompanyID == compID && x.InActive == false).ToList();
-                //FillCombo(cmbxvendor, vendor, "AC_Title", "CAC_Code", 0);
-
-                List<COA_D> parties = new List<COA_D>();
-                parties.Add(new COA_D { AC_Code = 0, AC_Title = "--Select--" });
-                FillCombo(cmbxvendor, parties, "AC_Title", "AC_Code", 0);
-                FillCombo(cmbxvendor, parties, "AC_Title", "AC_Code", 0);
-                FillCombo(cmbxvendor, parties, "AC_Title", "AC_Code", 0);
-
+                MessageBox.Show("Error: " + ex.Message);
             }
-            calculation();
-
-
-
         }
 
+        private async void btnLoadBalance_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbxAccID.SelectedIndex <= 0 || cmbxvendor.SelectedIndex <= 0)
+                {
+                    MessageBox.Show("Please select Account and Vendor first.");
+                    return;
+                }
+
+                int accValue = Convert.ToInt32(cmbxAccID.SelectedValue);
+                int vendorCode = Convert.ToInt32(cmbxvendor.SelectedValue);
+
+                double balance = 0;
+
+                if (accValue == 3) // customer
+                {
+                    var prev = ReportsController.getCustomerPreviousBalance(DateTime.Now, vendorCode);
+                    double credit = Convert.ToDouble(prev.Rows[0]["credit"]);
+                    double debit = Convert.ToDouble(prev.Rows[0]["debit"]);
+                    balance = debit - credit;
+
+                    var ledger = ReportsController.getcustomerLedgerSummaryByDate(DateTime.Now, DateTime.Now, vendorCode);
+                    foreach (DataRow row in ledger.Rows)
+                    {
+                        balance -= Convert.ToDouble(row["credit"]);
+                        balance += Convert.ToDouble(row["debit"]);
+                    }
+                }
+                else if (accValue == 9) // vendor
+                {
+                    var prev = ReportsController.getVendorPreviousBalance(DateTime.Now, vendorCode);
+                    double credit = Convert.ToDouble(prev.Rows[0]["credit"]);
+                    double debit = Convert.ToDouble(prev.Rows[0]["debit"]);
+                    balance = credit - debit;
+
+                    var ledger = ReportsController.getVendorLedgerSummaryByDate(DateTime.Now, DateTime.Now, vendorCode);
+                    foreach (DataRow row in ledger.Rows)
+                    {
+                        balance += Convert.ToDouble(row["credit"]);
+                        balance -= Convert.ToDouble(row["debit"]);
+                    }
+                }
+
+                // 🔹 Update UI
+                lblAccountBalance.Text = balance.ToString("0.##");
+                lblGrandTotal.Text = (balance + Convert.ToDouble(txtNetAm.Text.DefaultZero())).ToString("0.##");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
 
         //if (cmbxAccID.SelectedValue.ToString() != null)
         //{
@@ -1622,159 +1613,60 @@ namespace SalesMngmt.Invoice
                 //txtSaleRate.Text = String.Format("{0:0.00}", (Convert.ToDouble(txtSaleP.Text.DefaultZero()) / Pcs));
             }
         }
+       
+
+
+       
+
         public void calculation()
         {
-            var ID = Convert.ToInt32(lblItemID.Text.DefaultZero());
-            var itemID = ItemID(ID);
-            var item = db.Items.Where(x => x.IID == itemID).FirstOrDefault();
-            if (item != null)
+            if (string.IsNullOrWhiteSpace(lblItemID.Text)) return;
+
+            int itemId = ItemID(Convert.ToInt32(lblItemID.Text.DefaultZero()));
+            var item = db.Items.AsNoTracking().FirstOrDefault(x => x.IID == itemId);
+            if (item == null) return;
+
+            double rate = txtRate.Text.DefaultZero().ToDoubleOrZero();
+            double discVal = txtDisc.Text.DefaultZero().ToDoubleOrZero();
+            double discPer = txtDisPer.Text.DefaultZero().ToDoubleOrZero();
+            double pcs = txtpcs.Text.DefaultZero().ToDoubleOrZero(0);
+            double ctn = txtctn.Text.DefaultZero().ToDoubleOrZero(0);
+            double ctnPack = item.CTN_PCK.DefaultZero().ToDoubleOrZero(1);
+
+            // 🔹 Calculate total pieces (convert cartons to pieces if ctnPack > 0)
+            double totalCtn = (ctnPack > 0) ? ctn * ctnPack : ctn;
+
+            double ctnValue, pcsValue;
+            if (cmbxPackaging.SelectedIndex == 0) // carton-based pricing
             {
-
-                if (txtRate.Text == "" || txtRate.Text == "0")
-                {
-
-                    txtRate.Text = item.SalesPrice.DefaultZero();
-                }
-                if (txtDisc.Text == "" || txtDisc.Text == "0")
-                {
-                    txtDisc.Text = item.DisR.DefaultZero();
-                }
-
-                if (txtDisPer.Text == "" || txtDisPer.Text == "0")
-                {
-                    txtDisPer.Text = item.DisP.DefaultZero();
-                }
-
-                if (txtpcs.Text == "" || txtpcs.Text == "0")
-                {
-                    txtpcs.Text = 0.ToString();
-
-                }
-
-
-                if (txtctn.Text == "" || txtctn.Text == "0")
-                {
-                    txtctn.Text = 0.ToString();
-
-                }
-
-
-                var ctn = (Convert.ToDouble(txtctn.Text.DefaultZero()) * Convert.ToDouble(item.CTN_PCK.DefaultZero()));
-
-                if (ctn == 0)
-                {
-                    ctn = Convert.ToDouble(txtctn.Text.DefaultZero());
-                }
-              
-
-                if (cmbxPackaging.SelectedIndex == 0)
-                {
-
-
-                    var ctnValue = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble(ctn));
-
-                    var pcs = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble(txtpcs.Text.DefaultZero()));
-
-                    txtNet.Text = (ctnValue + pcs).ToString();
-
-                    // txtNet.Text = txtRate.Text;
-                    //  txtSaleP.Text = (ctnValue + pcs).ToString();
-                    txtTotalAmount.Text = (ctnValue + pcs).ToString();
-                    var DiscPercValue = Convert.ToDouble(Convert.ToDouble(txtDisPer.Text.DefaultZero()) / 100 * Convert.ToDouble(txtNet.Text.DefaultZero()));
-
-                    var DiscValue = Convert.ToDouble(txtDisc.Text.DefaultZero());
-
-
-                    txtNet.Text = (Convert.ToDouble(txtNet.Text.DefaultZero()) - (DiscPercValue + DiscValue)).ToString();
-
-                    //    txtSaleP.Text = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble((ctn + Convert.ToDouble(txtpcs.Text.DefaultZero())))).ToString();
-
-
-
-                    txtPcsRate.Text = (Convert.ToDouble(txtNet.Text.DefaultZero()) / (ctn + Convert.ToDouble(txtpcs.Text.DefaultZero()))).ToString();
-                    if (txtPcsRate.Text == "NaN") {
-
-
-                        txtPcsRate.Text = "0";
-                    }
-                   
-                 
-                    txtSaleRate.Text = (Convert.ToDouble(txtSaleP.Text.DefaultZero())).ToString(); /*/ (ctn + Convert.ToDouble(txtpcs.Text.DefaultZero()))).ToString();*/
-
-                    lblGrandTotal.Text = (Convert.ToDouble(lblAccountBalance.Text.DefaultZero()) + Convert.ToDouble(txtNetAm.Text.DefaultZero())).ToString();
-                }
-
-                else {
-
-                    var ctnValue = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble(txtctn.Text.DefaultZero()));
-
-                    var pcs = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble(txtpcs.Text.DefaultZero()));
-                    if (txtpcs.Text == "" || txtpcs.Text == "0")
-                    {
-
-
-                    }
-
-                    else {
-
-                        if (item.CTN_PCK == 0 || item.CTN_PCK == null)
-                        {
-                            pcs = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble(txtpcs.Text.DefaultZero()));
-
-
-
-                        }
-                        else { 
-                        var total=( Convert.ToDouble(txtRate.Text.DefaultZero()) / Convert.ToDouble(item.CTN_PCK.DefaultZero()));
-                        pcs= ((total) * Convert.ToDouble(txtpcs.Text.DefaultZero()));
-
-                        }
-                     
-
-                    }
-  
-
-                    txtNet.Text = (ctnValue + pcs).ToString();
-
-                    // txtNet.Text = txtRate.Text;
-                    //  txtSaleP.Text = (ctnValue + pcs).ToString();
-                    txtTotalAmount.Text = (ctnValue + pcs).ToString();
-                    var DiscPercValue = Convert.ToDouble(Convert.ToDouble(txtDisPer.Text.DefaultZero()) / 100 * Convert.ToDouble(txtNet.Text.DefaultZero()));
-
-                    var DiscValue = Convert.ToDouble(txtDisc.Text.DefaultZero());
-
-
-                    txtNet.Text = (Convert.ToDouble(txtNet.Text.DefaultZero()) - (DiscPercValue + DiscValue)).ToString();
-
-                    //    txtSaleP.Text = (Convert.ToDouble(txtRate.Text.DefaultZero()) * Convert.ToDouble((ctn + Convert.ToDouble(txtpcs.Text.DefaultZero())))).ToString();
-
-
-
-                    txtPcsRate.Text = ((Convert.ToDouble(txtNet.Text.DefaultZero()) / (ctn + Convert.ToDouble(txtpcs.Text.DefaultZero())))).ToString();
-
-                    if (txtPcsRate.Text == "NaN")
-                    {
-
-
-                        txtPcsRate.Text = "0";
-                    }
-
-                    txtSaleRate.Text = (Convert.ToDouble(txtSaleP.Text.DefaultZero())).ToString(); /*/ (ctn + Convert.ToDouble(txtpcs.Text.DefaultZero()))).ToString();*/
-
-                    lblGrandTotal.Text = (Convert.ToDouble(lblAccountBalance.Text.DefaultZero()) + Convert.ToDouble(txtNetAm.Text.DefaultZero())).ToString();
-
-
-
-                }
-
-                if (txtPcsRate.Text == "NaN")
-                {
-                    MessageBox.Show("please select Quantity");
-
-
-                }
+                ctnValue = rate * totalCtn;
+                pcsValue = rate * pcs;
             }
+            else // piece-based pricing
+            {
+                ctnValue = rate * ctn;
+                pcsValue = (ctnPack > 0) ? (rate / ctnPack) * pcs : rate * pcs;
+            }
+
+            double gross = ctnValue + pcsValue;
+
+            // 🔹 Apply discount
+            double discount = (discPer / 100 * gross) + discVal;
+            double net = gross - discount;
+
+            // 🔹 Update UI
+            txtNet.Text = net.ToString("0.##");
+            txtTotalAmount.Text = gross.ToString("0.##");
+
+            double denominator = totalCtn + pcs;
+            txtPcsRate.Text = (denominator > 0) ? (net / denominator).ToString("0.##") : "0";
+
+            txtSaleRate.Text = txtSaleP.Text.DefaultZero();
+
+            lblGrandTotal.Text = (lblAccountBalance.Text.DefaultZero().ToDoubleOrZero() +
+                                  txtNetAm.Text.DefaultZero().ToDoubleOrZero()).ToString("0.##");
         }
+
 
         private void txtPcsRate_Leave(object sender, EventArgs e)
         {
@@ -1809,33 +1701,39 @@ namespace SalesMngmt.Invoice
                 panel1.Visible = false;
                 return;
             }
-            string Query = @"SELECT TOP 10 Items.IID , ISNULL(ArticleNo, '0') as Article, 
-                           Items.IName Product, ISNULL(Color, 0) as Color, ISNULL(Size, 0) as Size
-                          ,ISNULL(IComp_M.Comp , '') as Comp,ISNULL(Items.Formula , '') as Formula
-                          ,ISNULL(Items.Cabinet , '') as Cabinet , ISNULL(vw.total,0) as Stock                 
-                          FROM Items
-                            left join Article on Items.IID = Article.ProductID
-                            left join Colors on Items.Color = Colors.ColorID
-                            left join Sizes on Items.Size = Sizes.SizeID
-                            left join getWarehouseStocks_vw vw on vw.IID = Items.IID AND vw.CompanyID = @company AND vw.WID = @warehouseId
-                            left join IComp_M on Items.CompID = IComp_M.CompID
-                            where
-                                 Items.CompanyID=@company
-				AND Items.isDeleted='false'	
-				And(Items.IName like '%'+ @Param +'%'
-								 OR Article.ArticleNo like '%'+ @Param +'%'
-                                 OR Colors.Name like '%'+ @Param +'%'
-								 OR Sizes.SizeName like '%'+ @Param +'%'
-                                 OR IComp_M.Comp like '%'+ @Param +'%'
-								 OR Items.Formula like '%'+ @Param +'%'
-                                 OR Items.Cabinet like '%'+ @Param +'%')";
+            string Query =  @"
+SELECT TOP 10 
+    Items.IID,
+    ISNULL(ArticleNo, '0') AS Article, 
+    Items.IName AS Product, 
+    ISNULL(Color, 0) AS Color, 
+    ISNULL(Size, 0) AS Size,
+    ISNULL(IComp_M.Comp, '') AS Comp,
+    ISNULL(Items.Formula, '') AS Formula,
+    ISNULL(Items.Cabinet, '') AS Cabinet
+FROM Items
+    LEFT JOIN Article ON Items.IID = Article.ProductID
+    LEFT JOIN Colors ON Items.Color = Colors.ColorID
+    LEFT JOIN Sizes ON Items.Size = Sizes.SizeID
+    LEFT JOIN IComp_M ON Items.CompID = IComp_M.CompID
+WHERE Items.CompanyID = @company
+  AND Items.isDeleted = 'false'
+  AND (
+        Items.IName LIKE '%' + @Param + '%'
+     OR Article.ArticleNo LIKE '%' + @Param + '%'
+     OR Colors.Name LIKE '%' + @Param + '%'
+     OR Sizes.SizeName LIKE '%' + @Param + '%'
+     OR IComp_M.Comp LIKE '%' + @Param + '%'
+     OR Items.Formula LIKE '%' + @Param + '%'
+     OR Items.Cabinet LIKE '%' + @Param + '%'
+  )"; ;
 
 
             SqlCommand cmd = new SqlCommand(Query, SqlHelper.DefaultSqlConnection);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@Param", SqlDbType.NVarChar).Value = cmbxItems.Text;
             cmd.Parameters.Add("@company", SqlDbType.Int).Value = compID;
-            cmd.Parameters.Add("@warehouseId", SqlDbType.Int).Value = (int)cmbxWareHouse.SelectedValue;
+         //   cmd.Parameters.Add("@warehouseId", SqlDbType.Int).Value = (int)cmbxWareHouse.SelectedValue;
             cmd.Parameters.Add("@Delete", SqlDbType.Bit).Value = false;
 
             //cmd.Parameters.AddWithValue("@Param", "shahzaib");
@@ -1939,61 +1837,62 @@ namespace SalesMngmt.Invoice
                     }
 
 
-                    else
-                    {
+                    #region// this comment i will work on
+                    //else
+                    //{
 
-                        int Vendorcode = Convert.ToInt32(customer.AC_Code);
-                        double balance = 0;
+                    //    int Vendorcode = Convert.ToInt32(customer.AC_Code);
+                    //    double balance = 0;
 
-                        var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, Vendorcode);
-                        int a = 1;
+                    //    var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, Vendorcode);
+                    //    int a = 1;
 
-                        double credit = (double)previosBalance.Rows[0]["credit"];
-                        double debit = (double)previosBalance.Rows[0]["debit"];
-                        balance = debit - credit;
-                        if (balance != 0)
-                        {
-
-
-                        }
-                        SaleManagerEntities db1 = new SaleManagerEntities();
-
-                        var getdata = ReportsController.getcustomerLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
+                    //    double credit = (double)previosBalance.Rows[0]["credit"];
+                    //    double debit = (double)previosBalance.Rows[0]["debit"];
+                    //    balance = debit - credit;
+                    //    if (balance != 0)
+                    //    {
 
 
+                    //    }
+                    //    SaleManagerEntities db1 = new SaleManagerEntities();
 
-                        foreach (DataRow rows in getdata.Rows)
-                        {
-
-
-                            balance = balance - (double)rows["credit"];
-                            balance = balance + (double)rows["debit"];
+                    //    var getdata = ReportsController.getcustomerLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
 
 
 
+                    //    foreach (DataRow rows in getdata.Rows)
+                    //    {
+
+
+                    //        balance = balance - (double)rows["credit"];
+                    //        balance = balance + (double)rows["debit"];
 
 
 
 
 
-                        }
 
 
 
-                        //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                        // vebdorid= Convert.ToInt32(cmbxvendor.SelectedValue);
-                        //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Today.AddDays(1), Vendorcode);
-                        //int a = 1;
-
-                        //double credit = (double)previosBalance.Rows[0]["credit"];
-                        //double debit = (double)previosBalance.Rows[0]["debit"];
-                        //double balance = debit - credit;
-
-                        lblAccountBalance.Text = balance.ToString();
+                    //    }
 
 
-                    }
 
+                    //    //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
+                    //    // vebdorid= Convert.ToInt32(cmbxvendor.SelectedValue);
+                    //    //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Today.AddDays(1), Vendorcode);
+                    //    //int a = 1;
+
+                    //    //double credit = (double)previosBalance.Rows[0]["credit"];
+                    //    //double debit = (double)previosBalance.Rows[0]["debit"];
+                    //    //double balance = debit - credit;
+
+                    //    lblAccountBalance.Text = balance.ToString();
+
+
+                    //}
+                    #endregion
 
 
                 }
@@ -2012,66 +1911,66 @@ namespace SalesMngmt.Invoice
 
                     }
 
+                    #region// this comment i will work on
+                    //else
+                    //{
 
-                    else
-                    {
+                    //    int Vendorcode = Convert.ToInt32(customer.AC_Code);
 
-                        int Vendorcode = Convert.ToInt32(customer.AC_Code);
+                    //    double balance = 0;
 
-                        double balance = 0;
+                    //    var previosBalance = ReportsController.getVendorPreviousBalance(DateTime.Now, Vendorcode);
+                    //    int a = 1;
 
-                        var previosBalance = ReportsController.getVendorPreviousBalance(DateTime.Now, Vendorcode);
-                        int a = 1;
-
-                        double credit = (double)previosBalance.Rows[0]["credit"];
-                        double debit = (double)previosBalance.Rows[0]["debit"];
-                        balance = credit - debit;
-                        if (balance != 0)
-                        {
-
-
-                        }
-                        SaleManagerEntities db1 = new SaleManagerEntities();
-
-                        var getdata = ReportsController.getVendorLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
+                    //    double credit = (double)previosBalance.Rows[0]["credit"];
+                    //    double debit = (double)previosBalance.Rows[0]["debit"];
+                    //    balance = credit - debit;
+                    //    if (balance != 0)
+                    //    {
 
 
+                    //    }
+                    //    SaleManagerEntities db1 = new SaleManagerEntities();
 
-                        foreach (DataRow rows in getdata.Rows)
-                        {
-
-
-                            balance = balance + (double)rows["credit"];
-                            balance = balance - (double)rows["debit"];
+                    //    var getdata = ReportsController.getVendorLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
 
 
+
+                    //    foreach (DataRow rows in getdata.Rows)
+                    //    {
+
+
+                    //        balance = balance + (double)rows["credit"];
+                    //        balance = balance - (double)rows["debit"];
 
 
 
 
-                        }
+
+
+                    //    }
 
 
 
 
-                        //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                        //vebdorid = Convert.ToInt32(cmbxvendor.SelectedValue);
-                        //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Today.AddDays(1), Vendorcode);
-                        //int a = 1;
+                    //    //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
+                    //    //vebdorid = Convert.ToInt32(cmbxvendor.SelectedValue);
+                    //    //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Today.AddDays(1), Vendorcode);
+                    //    //int a = 1;
 
-                        //double credit = (double)previosBalance.Rows[0]["credit"];
-                        //double debit = (double)previosBalance.Rows[0]["debit"];
-                        //double balance = credit - debit;
+                    //    //double credit = (double)previosBalance.Rows[0]["credit"];
+                    //    //double debit = (double)previosBalance.Rows[0]["debit"];
+                    //    //double balance = credit - debit;
 
-                        lblAccountBalance.Text = balance.ToString();
+                    //    lblAccountBalance.Text = balance.ToString();
 
-                        vebdorid = Convert.ToInt32(customer.AC_Code);
-
-
-
-                    }
+                    //    vebdorid = Convert.ToInt32(customer.AC_Code);
 
 
+
+                    //}
+
+                    #endregion
 
                 }
                 if (account == 1)
@@ -2122,141 +2021,75 @@ namespace SalesMngmt.Invoice
             {
                 int account = Convert.ToInt32(cmbxAccID.SelectedValue);
 
-
-
-
-
-
-                if (account == 3)
+                // 🔹 For customer (3) and vendor (9), skip balance calculation
+                if (account == 3 || account == 9)
                 {
-
-                    double balance = 0;
-                    int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, Vendorcode);
-                    int a = 1;
-
-                    double credit = (double)previosBalance.Rows[0]["credit"];
-                    double debit = (double)previosBalance.Rows[0]["debit"];
-                    balance = debit - credit;
-                    if (balance != 0)
-                    {
-
-
-                    }
-                    SaleManagerEntities db1 = new SaleManagerEntities();
-
-                    var getdata = ReportsController.getcustomerLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
-
-
-
-                    foreach (DataRow rows in getdata.Rows)
-                    {
-
-
-                        balance = balance - (double)rows["credit"];
-                        balance = balance + (double)rows["debit"];
-
-
-
-
-
-
-
-
-                    }
-
-
-
-                    //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    // vebdorid= Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Today.AddDays(1), Vendorcode);
-                    //int a = 1;
-
-                    //double credit = (double)previosBalance.Rows[0]["credit"];
-                    //double debit = (double)previosBalance.Rows[0]["debit"];
-                    //double balance = debit - credit;
-
-                    lblAccountBalance.Text = balance.ToString();
-
-
-                }
-
-
-                if (account == 9)
-                {
-
-                    double balance = 0;
-                    int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    var previosBalance = ReportsController.getVendorPreviousBalance(DateTime.Now, Vendorcode);
-                    int a = 1;
-
-                    double credit = (double)previosBalance.Rows[0]["credit"];
-                    double debit = (double)previosBalance.Rows[0]["debit"];
-                    balance = credit - debit;
-                    if (balance != 0)
-                    {
-
-
-                    }
-                    SaleManagerEntities db1 = new SaleManagerEntities();
-
-                    var getdata = ReportsController.getVendorLedgerSummaryByDate(DateTime.Now, DateTime.Now, Vendorcode);//db.getVendorLedgerBYDate(dtTo.Value, dtFrom.Value,;
-
-
-
-                    foreach (DataRow rows in getdata.Rows)
-                    {
-
-
-                        balance = balance + (double)rows["credit"];
-                        balance = balance - (double)rows["debit"];
-
-
-
-
-
-
-                    }
-
-
-
-
-                    //int Vendorcode = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //vebdorid = Convert.ToInt32(cmbxvendor.SelectedValue);
-                    //var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Today.AddDays(1), Vendorcode);
-                    //int a = 1;
-
-                    //double credit = (double)previosBalance.Rows[0]["credit"];
-                    //double debit = (double)previosBalance.Rows[0]["debit"];
-                    //double balance = credit - debit;
-
-                    lblAccountBalance.Text = balance.ToString();
-
+                    lblAccountBalance.Text = "0"; // ignored for now
                 }
 
                 if (account == 1)
                 {
                     lblGrandTotal.Text = "0";
                     vebdorid = Convert.ToInt32(cmbxvendor.SelectedValue);
-
                 }
-                if (account == 0)
+                else if (account == 0)
                 {
-
                     lblGrandTotal.Text = "0";
-
                 }
-
                 else
                 {
-
-
-                    lblGrandTotal.Text = (Convert.ToDouble(lblAccountBalance.Text.DefaultZero()) + Convert.ToDouble(txtNetAm.Text.DefaultZero())).ToString();
+                    lblGrandTotal.Text = (
+                        Convert.ToDouble(lblAccountBalance.Text.DefaultZero()) +
+                        Convert.ToDouble(txtNetAm.Text.DefaultZero())
+                    ).ToString("0.##");
                 }
-
             }
-            calculation();
 
+            calculation();
+        }
+
+
+        private double CalculateBalanceofCustomerAndVendor(int account, int vendorCode)
+        {
+            double balance = 0;
+
+            try
+            {
+                if (account == 3) // Customer
+                {
+                    var previosBalance = ReportsController.getCustomerPreviousBalance(DateTime.Now, vendorCode);
+                    double credit = Convert.ToDouble(previosBalance.Rows[0]["credit"]);
+                    double debit = Convert.ToDouble(previosBalance.Rows[0]["debit"]);
+                    balance = debit - credit;
+
+                    var getdata = ReportsController.getcustomerLedgerSummaryByDate(DateTime.Now, DateTime.Now, vendorCode);
+                    foreach (DataRow row in getdata.Rows)
+                    {
+                        balance -= Convert.ToDouble(row["credit"]);
+                        balance += Convert.ToDouble(row["debit"]);
+                    }
+                }
+                else if (account == 9) // Vendor
+                {
+                    var previosBalance = ReportsController.getVendorPreviousBalance(DateTime.Now, vendorCode);
+                    double credit = Convert.ToDouble(previosBalance.Rows[0]["credit"]);
+                    double debit = Convert.ToDouble(previosBalance.Rows[0]["debit"]);
+                    balance = credit - debit;
+
+                    var getdata = ReportsController.getVendorLedgerSummaryByDate(DateTime.Now, DateTime.Now, vendorCode);
+                    foreach (DataRow row in getdata.Rows)
+                    {
+                        balance += Convert.ToDouble(row["credit"]);
+                        balance -= Convert.ToDouble(row["debit"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error calculating balance: " + ex.Message);
+            }
+
+            return balance;
         }
 
         private void metroPanel1_Paint(object sender, PaintEventArgs e)
@@ -2290,12 +2123,26 @@ namespace SalesMngmt.Invoice
         }
     }
 
+    public static class Extensions
+    {
+        public static double ToDoubleOrZero(this string input, string fallback = "0")
+            => double.TryParse(string.IsNullOrEmpty(input) ? fallback : input, out var val) ? val : 0;
+
+        public static double ToDoubleOrZero(this string input, double fallback)
+            => double.TryParse(string.IsNullOrEmpty(input) ? fallback.ToString() : input, out var val) ? val : fallback;
+
+        public static string ToSafeString(this double value)
+            => double.IsNaN(value) ? "0" : value.ToString("0.##");
+
+        public static string DefaultZero(this string input) => string.IsNullOrEmpty(input) ? "0" : input;
+    }
+
     public class PurchaseItems
     {
         public int IID { get; set; }
         public string Article { get; set; }
         public String Product { get; set; }
-        public double Stock { get; set; }
+      //  public double Stock { get; set; }
         public int Color { get; set; }
         public int Size { get; set; }
         public String Comp { get; set; }

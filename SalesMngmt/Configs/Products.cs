@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalesMngmt.Configs
@@ -26,46 +27,76 @@ namespace SalesMngmt.Configs
             InitializeComponent();
             db = new SaleManagerEntities();
             compID = comID;
+            this.Shown += Products_Shown;
 
 
-           // ProductsDataGridView.Visible = false;
-           // ProdBindingNavigator.Visible = false;
+            // ProductsDataGridView.Visible = false;
+            // ProdBindingNavigator.Visible = false;
             //pnlMain.Show();
             //label3.Text = "ADD";
         }
 
-        private void Products_Load(object sender, EventArgs e)
+        private async void Products_Shown(object sender, EventArgs e)
         {
+            // Show form immediately (UI is responsive)
+            // Disable the whole form while loading
+            this.Enabled = false;
             pnlMain.Hide();
-            list = db.Items.AsNoTracking().Where(x => x.CompanyID == compID).ToList();
 
+            try
+            {
+                // Load product list in background
+                var list = await Task.Run(() => db.Items.AsNoTracking()
+                                                        .Where(x => x.CompanyID == compID)
+                                                        .ToList());
+                ProdBindingSource.DataSource = list;
 
+                // Load all combos
+                await LoadCombosAsync();
+            }
+            finally
+            {
+                // Re-enable form after everything is ready
+                this.Enabled = true;
+            }
+        }
 
-
-            ProdBindingSource.DataSource = list;
-
-            List<I_Unit> unitList = new List<I_Unit>
+        private async Task LoadCombosAsync()
         {
-            new I_Unit { IUnit = "PCS", unit_id = 1 },
-            new I_Unit { IUnit = "CTN", unit_id = 2 }
-        };
-
-             FillCombo(cmbcUni, unitList, "IUnit", "unit_id", 1);
+            // Units (static, no DB call)
+            List<I_Unit> unitList = new List<I_Unit>
+    {
+        new I_Unit { IUnit = "PCS", unit_id = 1 },
+        new I_Unit { IUnit = "CTN", unit_id = 2 }
+    };
+            FillCombo(cmbcUni, unitList, "IUnit", "unit_id", 1);
             cmbcUni.SelectedIndex = 0;
 
-            FillCombo(cmbxCat, db.Items_Cat.Where(x => x.CompanyID == compID && x.isDeleted == false).ToList(), "Cat", "CatID", 1);
-            FillCombo(cmbxMak, db.Item_Maker.Where(x => x.CompanyID == compID && x.IsDelete == false).ToList(), "Name", "MakerId", 1);
-            FillCombo(cmbxSizes, db.Sizes.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList(), "SizeName", "SizeID", 1);
-            FillCombo(cmbxArticle, db.Article.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDelete == false).ToList(), "ArticleNo", "ProductID", 1);
-            FillCombo(cmbxColor, db.Colors.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList(), "Name", "ColorID", 1);
-            FillCombo(CmbxStylr, db.Styles.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList(), "StyleName", "StyleID", 1);
-            FillCombo(cmbxArticalType, db.ArticleTypes.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList(), "ArticleTypeName", "ArticleTypeID", 1);
-            FillCombo(cmbxWareHouse, db.tbl_Warehouse.AsNoTracking().Where(x => x.CompanyID == compID && x.isDelete == false).ToList(), "Warehouse", "WID", 1);
+            // Database lookups in background
+            var categories = await Task.Run(() => db.Items_Cat.Where(x => x.CompanyID == compID && x.isDeleted == false).ToList());
+            var makers = await Task.Run(() => db.Item_Maker.Where(x => x.CompanyID == compID && x.IsDelete == false).ToList());
+            var sizes = await Task.Run(() => db.Sizes.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
+            var articles = await Task.Run(() => db.Article.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDelete == false).ToList());
+            var colors = await Task.Run(() => db.Colors.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
+            var styles = await Task.Run(() => db.Styles.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
+            var articleTypes = await Task.Run(() => db.ArticleTypes.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
+            var warehouses = await Task.Run(() => db.tbl_Warehouse.AsNoTracking().Where(x => x.CompanyID == compID && x.isDelete == false).ToList());
 
-            //  cmbxCat.AutoCompleteMode = AutoCompleteMode.Suggest;
-            // cmbxCat.AutoCompleteSource = AutoCompleteSource.ListItems;
+            // Now update UI (on main thread)
+            FillCombo(cmbxCat, categories, "Cat", "CatID", 1);
+            FillCombo(cmbxMak, makers, "Name", "MakerId", 1);
+            FillCombo(cmbxSizes, sizes, "SizeName", "SizeID", 1);
+            FillCombo(cmbxArticle, articles, "ArticleNo", "ProductID", 1);
+            FillCombo(cmbxColor, colors, "Name", "ColorID", 1);
+            FillCombo(CmbxStylr, styles, "StyleName", "StyleID", 1);
+            FillCombo(cmbxArticalType, articleTypes, "ArticleTypeName", "ArticleTypeID", 1);
+            FillCombo(cmbxWareHouse, warehouses, "Warehouse", "WID", 1);
+        }
 
 
+        private void Products_Load(object sender, EventArgs e)
+        {
+         
         }
 
         private void lblAdd_Click(object sender, EventArgs e)
@@ -75,6 +106,8 @@ namespace SalesMngmt.Configs
             txtProdName.Focus();
             label3.Text = "ADD";
             cmbcUni.SelectedIndex = 0;
+            chkNonInventory.Checked = false;
+            chkIsActive.Checked = false;
             string path = Application.StartupPath + "\\Img\\124444444.png";
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = Image.FromFile(path);
@@ -110,6 +143,8 @@ namespace SalesMngmt.Configs
                 //string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10)) + "\\Img\\" + obj.BarCode_ID;
                 openFileDialog1.FileName = path;
                 label21.Text = obj.BarCode_ID;
+                chkNonInventory.Checked =Convert.ToBoolean( item.Inv_YN);
+                chkIsActive.Checked = Convert.ToBoolean(item.isDeleted);
                 pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                 // pictureBox1.Image = Image.FromFile(path);
                 pictureBox1.Image = Utillityfunctions.LoadImage(item.Img);
@@ -124,22 +159,27 @@ namespace SalesMngmt.Configs
         private void btnCancel_Click(object sender, EventArgs e)
         {
             pnlMain.Hide();
-            Lib.Entity.Items us = (Lib.Entity.Items)ProdBindingSource.Current;
-            if (us.IID == 0)
-            {
-                ProdBindingSource.RemoveCurrent();
-                ProdBindingSource.Clear();
-                list = db.Items.AsNoTracking().Where(x => x.CompanyID == compID).ToList();
-                ProdBindingSource.DataSource = list;
-            }
-            else
-            {
 
-                ProdBindingSource.Clear();
-                list = db.Items.AsNoTracking().Where(x => x.CompanyID == compID).ToList();
-                ProdBindingSource.DataSource = list;
+            pnlMain.Hide();
 
-            }
+            // Cancel edits on the current item (go back to original values)
+            ProdBindingSource.CancelEdit();
+            //Lib.Entity.Items us = (Lib.Entity.Items)ProdBindingSource.Current;
+            //if (us.IID == 0)
+            //{
+            //    ProdBindingSource.RemoveCurrent();
+            //    ProdBindingSource.Clear();
+            //    list = db.Items.AsNoTracking().Where(x => x.CompanyID == compID).ToList();
+            //    ProdBindingSource.DataSource = list;
+            //}
+            //else
+            //{
+
+            //    ProdBindingSource.Clear();
+            //    list = db.Items.AsNoTracking().Where(x => x.CompanyID == compID).ToList();
+            //    ProdBindingSource.DataSource = list;
+
+            //}
 
         }
         public string GenerateRandomNo()
@@ -712,6 +752,8 @@ namespace SalesMngmt.Configs
                     txtProdName.Focus();
                    label3.Text = "ADD";
                     cmbcUni.SelectedIndex = 0;
+                    chkNonInventory.Checked = false;
+                    chkIsActive.Checked = false;
                     string paths = Application.StartupPath + "\\Img\\124444444.png";
                     pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                     pictureBox1.Image = Image.FromFile(paths);
