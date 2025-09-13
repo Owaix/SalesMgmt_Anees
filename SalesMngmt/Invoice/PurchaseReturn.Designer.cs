@@ -1,4 +1,6 @@
-﻿namespace SalesMngmt.Invoice
+﻿using System.Windows.Forms;
+
+namespace SalesMngmt.Invoice
 {
     partial class PurchaseReturn
     {
@@ -29,6 +31,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.label29 = new System.Windows.Forms.Label();
             this.lblInvN = new System.Windows.Forms.Label();
@@ -197,9 +201,10 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(84, 180);
+            this.panel1.Location = new System.Drawing.Point(112, 222);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(645, 0);
+            this.panel1.Size = new System.Drawing.Size(860, 0);
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
             // 
@@ -208,12 +213,21 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 0);
+            this.dataGridView1.Size = new System.Drawing.Size(860, 0);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
