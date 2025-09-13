@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SalesMngmt.Utility
 {
@@ -66,5 +67,44 @@ namespace SalesMngmt.Utility
             }
             return text.ToString();
         }
+
+
+        public static double ToDoubleOrZero(this TextBox textBox)
+        {
+            if (textBox == null || string.IsNullOrWhiteSpace(textBox.Text))
+                return 0.0;
+
+            return double.TryParse(textBox.Text, out double value) ? value : 0.0;
+        }
+
+        // Convert TextBox.Text to int safely
+        public static int ToIntOrZero(this TextBox textBox)
+        {
+            if (textBox == null || string.IsNullOrWhiteSpace(textBox.Text))
+                return 0;
+
+            return int.TryParse(textBox.Text, out int value) ? value : 0;
+        }
+
+        // Set default value if empty
+        public static void SetDefaultIfEmpty(this TextBox textBox, string defaultValue)
+        {
+            if (textBox == null) return;
+            if (string.IsNullOrWhiteSpace(textBox.Text) || textBox.Text == "0")
+                textBox.Text = defaultValue;
+        }
+
+        // For your existing DefaultZero() replacement on objects
+        public static double DefaultZeroD(this object value)
+        {
+            if (value == null) return 0.0;
+            return double.TryParse(value.ToString(), out double result) ? result : 0.0;
+        }
+
+   
+
     }
+
+
+
 }
