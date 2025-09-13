@@ -1072,7 +1072,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Purchase Invoice</Value>
+                  <Value>Sale Invoice</Value>
                   <Style>
                     <FontFamily>monotype Corsiva</FontFamily>
                     <FontSize>16pt</FontSize>
