@@ -242,6 +242,7 @@ namespace SalesMngmt.Reporting
                 {
                     SaleInvoice orders = new SaleInvoice();
                     orders.InvoiceID = order.InvNo;
+                    orders.user = order.Rem;
                     orders.Client = db.COA_D.Where(x => x.AC_Code == order.AC_Code).FirstOrDefault().AC_Title;
                     //   orders.user = txtReference.Text.ToString();
 
@@ -299,6 +300,7 @@ namespace SalesMngmt.Reporting
                 {
                     SaleInvoice orders = new SaleInvoice();
                     orders.InvoiceID = order.InvNo;
+                    orders.user = order.Rem;
                     orders.Client = db.COA_D.Where(x => x.AC_Code == order.AC_Code).FirstOrDefault().AC_Title;
 
                     var clientNAmeAndCity = db.COA_D.Where(x => x.AC_Code == order.AC_Code).FirstOrDefault();
@@ -389,6 +391,7 @@ namespace SalesMngmt.Reporting
 
                 orders1.GrossAmt = TotalGross;
                 orders1.DiscountTotal = Amount;
+                orders1.user= order.Rem; 
               //  string refer = txtReference.Text.ToString();
               //  orders1.user = refer;
 
@@ -431,7 +434,7 @@ namespace SalesMngmt.Reporting
 
 
 
-
+                
 
                 Silent silent = new Silent();
                 ReportViewer reportViewer1 = new ReportViewer();

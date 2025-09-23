@@ -1043,7 +1043,7 @@ namespace SalesMngmt.Invoice
 
                     else { sale.InvNo = txtInvoiceCustom.Text; }
                     sale.InvDT = dtpInvoice.Value;
-                    sale.ReferenceNo = txtReference.Text;
+                    
                     sale.EDate = dtpInvoice.Value;
                 }
                 else
@@ -1051,7 +1051,7 @@ namespace SalesMngmt.Invoice
                     var RID = Convert.ToInt32(InvoiceNo);
                     sale = db.Sales_M.Where(x => x.RID == RID).FirstOrDefault();
                     sale.Edit_Date = DateTime.Now;
-                    sale.ReferenceNo = txtReference.Text;
+                   
                     sale.EDate = dtpInvoice.Value;
                 }
 
@@ -1478,7 +1478,7 @@ namespace SalesMngmt.Invoice
                 {
                     SaleInvoice orders = new SaleInvoice();
                     orders.InvoiceID = order.InvNo;
-
+                    orders.user = order.Rem;
                     int accountCode = (int)cmbxAccID.SelectedValue;
                     if (accountCode == 1)
                     {
@@ -1626,7 +1626,7 @@ namespace SalesMngmt.Invoice
                 {
                     SaleInvoice orders = new SaleInvoice();
                     orders.InvoiceID = order.InvNo;
-
+                    orders.user = order.Rem;
                     int accountCode = (int)cmbxAccID.SelectedValue;
                     if (accountCode == 1)
                     {
@@ -1728,7 +1728,7 @@ namespace SalesMngmt.Invoice
                     }
 
 
-                    orders.user = txtReference.Text.ToString();
+                  
                     //Pending
                     //    orders.SNO = 
                     //orders.item = db.Items.AsNoTracking().Where(x => x.IID == itemName.IID).FirstOrDefault().IName;
@@ -1773,7 +1773,7 @@ namespace SalesMngmt.Invoice
 
                     orders1.GrossAmt = TotalGross;
                     orders1.DiscountTotal = Amount;
-                    string refer = txtReference.Text.ToString();
+                    string refer = txtRemarks.Text.ToString();
                     orders1.user = refer;
 
                     // orders1.TotalDiscount =  Convert.ToDecimal(DiscountDifference) + Convert.ToDecimal(order.DisAmt);  //(Convert.ToDecimal(itemName.SalesPriceP) * Convert.ToDecimal( TOtalValue))- Convert.ToDecimal(itemName.Amt);
@@ -1928,7 +1928,7 @@ namespace SalesMngmt.Invoice
 
                 txtInvoiceCustom.Text = "";
 
-
+                
 
                 if (printInvoice)
                 {

@@ -67,7 +67,7 @@ namespace Lib
                 AddCompany(new CompaniesModel { CompanyID = 1021, CompanyTitle = "Riksha Biryani", CompanyAddress = "Gari khata chock Qilla ki chahari Shelter Plaza Wali shop", CompanyPhone = "03127660027 03352716657" });
                 AddCompany(new CompaniesModel { CompanyID = 1022, CompanyTitle = "ZR ELECTRONICS", CompanyAddress = "Shop # 42,43 Ground Floor, Digital center,Rahat Cinema Road,Hyd", CompanyPhone = "0222-784362 0311-2426987 0300-9379180 0333-2637260" });
                 AddCompany(new CompaniesModel { CompanyID = 1023, CompanyTitle = "Mon-o-salwa", CompanyAddress = "Shop # 13,3 chicken market latifabad # 7 Hyd", CompanyPhone = "0313-3106722" });
-                AddCompany(new CompaniesModel { CompanyID = 1027, CompanyTitle = "IMRAN AUTOS", CompanyAddress = "Station Road Gari khata hyderabad", CompanyPhone = "03193028155 03332887655" });
+                AddCompany(new CompaniesModel { CompanyID = 1024, CompanyTitle = "IMRAN AUTOS", CompanyAddress = "Station Road Gari khata hyderabad", CompanyPhone = "03193028155 03332887655" });
                 AddCompany(new CompaniesModel { CompanyID = 1028, CompanyTitle = "DASTAGIR PAINT HOUSE", CompanyAddress = "Shop No 1 Qazi Zaheer Height Near Muhammadi Masjid Unit No 10 Latifabad,Hyderabad", CompanyPhone = "03163878829" });
                 AddCompany(new CompaniesModel { CompanyID = 1029, CompanyTitle = "MATT INTERNATIONAL", CompanyAddress = "BANGLOW NO A/2/C BLOCK E UNIT NO 6 lATIFABAD", CompanyPhone = "03130017000" });
                 AddCompany(new CompaniesModel { CompanyID = 1019, CompanyTitle = "Raksha Biryani", CompanyAddress = "Shop No 22, opp: Nagori Milk shop Unit no 8 Latifabad", CompanyPhone = "03127660027 03352716657" });
