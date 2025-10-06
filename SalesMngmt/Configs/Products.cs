@@ -74,14 +74,14 @@ namespace SalesMngmt.Configs
 
             // Database lookups in background
             var categories = await Task.Run(() => db.Items_Cat.Where(x => x.CompanyID == compID && x.isDeleted == false).ToList());
-            var makers = await Task.Run(() => db.Item_Maker.Where(x => x.CompanyID == compID && x.IsDelete == false).ToList());
+            //var makers = await Task.Run(() => );
             var sizes = await Task.Run(() => db.Sizes.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
             var articles = await Task.Run(() => db.Article.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDelete == false).ToList());
             var colors = await Task.Run(() => db.Colors.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
             var styles = await Task.Run(() => db.Styles.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
             var articleTypes = await Task.Run(() => db.ArticleTypes.AsNoTracking().Where(x => x.CompanyID == compID && x.IsDeleted == false).ToList());
             var warehouses = await Task.Run(() => db.tbl_Warehouse.AsNoTracking().Where(x => x.CompanyID == compID && x.isDelete == false).ToList());
-
+            var makers = db.Item_Maker.Where(x => x.CompanyID == compID && x.IsDelete == false).ToList();
             // Now update UI (on main thread)
             FillCombo(cmbxCat, categories, "Cat", "CatID", 1);
             FillCombo(cmbxMak, makers, "Name", "MakerId", 1);
@@ -96,7 +96,7 @@ namespace SalesMngmt.Configs
 
         private void Products_Load(object sender, EventArgs e)
         {
-         
+
         }
 
         private void lblAdd_Click(object sender, EventArgs e)
@@ -143,7 +143,9 @@ namespace SalesMngmt.Configs
                 //string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10)) + "\\Img\\" + obj.BarCode_ID;
                 openFileDialog1.FileName = path;
                 label21.Text = obj.BarCode_ID;
-                chkNonInventory.Checked =Convert.ToBoolean( item.Inv_YN);
+                cmbxCat.SelectedValue = obj.SCatID;
+                cmbxMak.SelectedValue = obj.CompID;
+                chkNonInventory.Checked = Convert.ToBoolean(item.Inv_YN);
                 chkIsActive.Checked = Convert.ToBoolean(item.isDeleted);
                 pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                 // pictureBox1.Image = Image.FromFile(path);
@@ -209,18 +211,19 @@ namespace SalesMngmt.Configs
                 save();
                 return true;
             }
-            else {
+            else
+            {
                 return false;
             }
 
         }
 
 
-            public void save()
+        public void save()
         {
 
-            List<GL> itemGL=new List<GL>();
-            
+            List<GL> itemGL = new List<GL>();
+
             double checkStockQuantity;
             bool isAdd = true;
             SqlConnection con = null;
@@ -325,7 +328,7 @@ namespace SalesMngmt.Configs
 
                         if (obj.IName == "")
                         {
-                            bool isCodeempty = list.Any(record =>
+                            bool isCodeempty = db.Items.Any(record =>
                                              record.IName == obj.IName &&
                                              record.IID != obj.IID
                                              && record.CompanyID == compID);
@@ -351,7 +354,8 @@ namespace SalesMngmt.Configs
                         //           record.IID != obj.IID
                         //           && record.CompanyID == compID);
 
-                        bool BarcodeNo = list.Any(record =>
+
+                        bool BarcodeNo = db.Items.Any(record =>
                                            record.BarcodeNo == obj.BarcodeNo &&
                                            record.IID != obj.IID
                                            && record.CompanyID == compID);
@@ -359,7 +363,7 @@ namespace SalesMngmt.Configs
 
                         if (obj.IName == "")
                         {
-                            bool isCodeempty = list.Any(record =>
+                            bool isCodeempty = db.Items.Any(record =>
                                              record.IName == obj.IName &&
                                              record.IID != obj.IID
                                              && record.CompanyID == compID);
@@ -422,7 +426,7 @@ namespace SalesMngmt.Configs
                         }
                     }
 
-                  
+
 
                     if (obj.IID > 0)
                     {
@@ -524,7 +528,7 @@ namespace SalesMngmt.Configs
                     }
                     else
                     {
-                      
+
                         var gl = db.GL.FirstOrDefault(x => x.AC_Code == obj.AC_Code_Inv && x.TypeCode == 0 && x.CompID == compID);
                         // comment kr hy ishae     
 
@@ -586,7 +590,7 @@ namespace SalesMngmt.Configs
                         obj.WareHouseID = (int)warehouse;
                         obj.Cabinet = txtCabinet.Text;
                         obj.Meter = Convert.ToDouble(txtMeter.Text.DefaultZero());
-                        obj.RetailPOne= Convert.ToDecimal(txtDistribution.Text.DefaultZero());
+                        obj.RetailPOne = Convert.ToDecimal(txtDistribution.Text.DefaultZero());
                         db.Items.Add(obj);
                     }
                     else
@@ -602,13 +606,10 @@ namespace SalesMngmt.Configs
                             {
                                 result.OP_Qty = Convert.ToInt32(txtOpenQ.Text.DefaultZero());
                                 result.OP_Price = Convert.ToDouble(txtPurchase.Text.DefaultZero());
-                                result.PurPrice = Convert.ToDouble(txtPurchase.Text.DefaultZero());
                             }
                             // upper tak
 
-
-
-
+                            result.PurPrice = Convert.ToDouble(txtPurchase.Text.DefaultZero());
                             result.CompID = Convert.ToInt32(cmbxMak.SelectedValue);
                             result.CompanyID = compID;
                             result.SCatID = Convert.ToInt32(cmbxCat.SelectedValue);
@@ -677,7 +678,7 @@ namespace SalesMngmt.Configs
                         {
                             var checkItemAvailable = db.Itemledger.AsNoTracking().Where(x => x.IID == obj.IID && x.TypeCode == 0).ToList();
 
-                       
+
                             if (checkItemAvailable == null)
                             {
                                 Itemledger itemledger = new Itemledger();
@@ -710,7 +711,7 @@ namespace SalesMngmt.Configs
                                 db.SaveChanges();
 
                                 // Remove the entity
-                        
+
 
                                 Itemledger itemledger = new Itemledger();
                                 itemledger.EDate = System.DateTime.Now;
@@ -730,7 +731,7 @@ namespace SalesMngmt.Configs
                                 itemledger.WID = (int)warehouse;
                                 db.Itemledger.Add(itemledger);
 
-                              
+
 
 
                             }
@@ -748,15 +749,15 @@ namespace SalesMngmt.Configs
 
                     MessageBox.Show("Product Add Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ProdBindingSource.AddNew();
-                    pnlMain.Show();
                     txtProdName.Focus();
-                   label3.Text = "ADD";
+                    label3.Text = "ADD";
                     cmbcUni.SelectedIndex = 0;
                     chkNonInventory.Checked = false;
                     chkIsActive.Checked = false;
                     string paths = Application.StartupPath + "\\Img\\124444444.png";
                     pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                     pictureBox1.Image = Image.FromFile(paths);
+                    pnlMain.Hide();
 
                 }
 
