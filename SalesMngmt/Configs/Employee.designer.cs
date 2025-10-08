@@ -95,14 +95,15 @@
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(20, 60);
+            this.metroPanel1.HorizontalScrollbarSize = 12;
+            this.metroPanel1.Location = new System.Drawing.Point(27, 74);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(760, 370);
+            this.metroPanel1.Size = new System.Drawing.Size(1013, 455);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroPanel1.VerticalScrollbarSize = 13;
             // 
             // pnlMain
             // 
@@ -120,23 +121,25 @@
             this.pnlMain.Controls.Add(this.btnSave);
             this.pnlMain.HorizontalScrollbarBarColor = true;
             this.pnlMain.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnlMain.HorizontalScrollbarSize = 10;
-            this.pnlMain.Location = new System.Drawing.Point(207, 39);
+            this.pnlMain.HorizontalScrollbarSize = 12;
+            this.pnlMain.Location = new System.Drawing.Point(276, 48);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(369, 312);
+            this.pnlMain.Size = new System.Drawing.Size(492, 384);
             this.pnlMain.TabIndex = 5;
             this.pnlMain.UseCustomBackColor = true;
             this.pnlMain.VerticalScrollbarBarColor = true;
             this.pnlMain.VerticalScrollbarHighlightOnWheel = false;
-            this.pnlMain.VerticalScrollbarSize = 10;
+            this.pnlMain.VerticalScrollbarSize = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 152);
+            this.label5.Location = new System.Drawing.Point(19, 187);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 15);
+            this.label5.Size = new System.Drawing.Size(103, 18);
             this.label5.TabIndex = 14;
             this.label5.Text = "Allow Tables";
             // 
@@ -146,9 +149,10 @@
             // 
             // 
             this.txtallowtable.CustomButton.Image = null;
-            this.txtallowtable.CustomButton.Location = new System.Drawing.Point(76, 1);
+            this.txtallowtable.CustomButton.Location = new System.Drawing.Point(140, 2);
+            this.txtallowtable.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtallowtable.CustomButton.Name = "";
-            this.txtallowtable.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtallowtable.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtallowtable.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtallowtable.CustomButton.TabIndex = 1;
             this.txtallowtable.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -156,7 +160,8 @@
             this.txtallowtable.CustomButton.Visible = false;
             this.txtallowtable.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblEmployeeBindingSource, "AllowTable", true));
             this.txtallowtable.Lines = new string[0];
-            this.txtallowtable.Location = new System.Drawing.Point(106, 148);
+            this.txtallowtable.Location = new System.Drawing.Point(141, 182);
+            this.txtallowtable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtallowtable.MaxLength = 32767;
             this.txtallowtable.Name = "txtallowtable";
             this.txtallowtable.PasswordChar = '\0';
@@ -165,7 +170,7 @@
             this.txtallowtable.SelectionLength = 0;
             this.txtallowtable.SelectionStart = 0;
             this.txtallowtable.ShortcutsEnabled = true;
-            this.txtallowtable.Size = new System.Drawing.Size(98, 23);
+            this.txtallowtable.Size = new System.Drawing.Size(131, 28);
             this.txtallowtable.TabIndex = 13;
             this.txtallowtable.UseSelectable = true;
             this.txtallowtable.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -179,26 +184,29 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 83);
+            this.label4.Location = new System.Drawing.Point(20, 102);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 15);
+            this.label4.Size = new System.Drawing.Size(69, 18);
             this.label4.TabIndex = 12;
             this.label4.Text = "Account";
             // 
             // cmbxParty
             // 
             this.cmbxParty.FormattingEnabled = true;
-            this.cmbxParty.Location = new System.Drawing.Point(105, 83);
+            this.cmbxParty.Location = new System.Drawing.Point(140, 102);
+            this.cmbxParty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbxParty.Name = "cmbxParty";
-            this.cmbxParty.Size = new System.Drawing.Size(231, 21);
+            this.cmbxParty.Size = new System.Drawing.Size(307, 24);
             this.cmbxParty.TabIndex = 11;
             // 
             // chkIsActive
             // 
             this.chkIsActive.AutoSize = true;
-            this.chkIsActive.Location = new System.Drawing.Point(108, 181);
+            this.chkIsActive.Location = new System.Drawing.Point(144, 223);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(15, 14);
+            this.chkIsActive.Size = new System.Drawing.Size(18, 17);
             this.chkIsActive.TabIndex = 10;
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
@@ -206,9 +214,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 180);
+            this.label2.Location = new System.Drawing.Point(20, 222);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 15);
+            this.label2.Size = new System.Drawing.Size(71, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Is Active";
             // 
@@ -218,8 +227,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 62);
+            this.panel1.Size = new System.Drawing.Size(492, 76);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -228,9 +238,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(127, 12);
+            this.label3.Location = new System.Drawing.Point(169, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 33);
+            this.label3.Size = new System.Drawing.Size(124, 42);
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             // 
@@ -239,9 +250,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(193, 271);
+            this.btnCancel.Location = new System.Drawing.Point(257, 334);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 32);
+            this.btnCancel.Size = new System.Drawing.Size(125, 39);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -254,9 +266,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 118);
+            this.label1.Location = new System.Drawing.Point(20, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 15);
+            this.label1.Size = new System.Drawing.Size(40, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Title";
             // 
@@ -266,9 +279,10 @@
             // 
             // 
             this.txtCOA.CustomButton.Image = null;
-            this.txtCOA.CustomButton.Location = new System.Drawing.Point(209, 1);
+            this.txtCOA.CustomButton.Location = new System.Drawing.Point(376, 2);
+            this.txtCOA.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCOA.CustomButton.Name = "";
-            this.txtCOA.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCOA.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtCOA.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCOA.CustomButton.TabIndex = 1;
             this.txtCOA.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -276,7 +290,8 @@
             this.txtCOA.CustomButton.Visible = false;
             this.txtCOA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblEmployeeBindingSource, "EmployeName", true));
             this.txtCOA.Lines = new string[0];
-            this.txtCOA.Location = new System.Drawing.Point(105, 114);
+            this.txtCOA.Location = new System.Drawing.Point(140, 140);
+            this.txtCOA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCOA.MaxLength = 32767;
             this.txtCOA.Name = "txtCOA";
             this.txtCOA.PasswordChar = '\0';
@@ -285,7 +300,7 @@
             this.txtCOA.SelectionLength = 0;
             this.txtCOA.SelectionStart = 0;
             this.txtCOA.ShortcutsEnabled = true;
-            this.txtCOA.Size = new System.Drawing.Size(231, 23);
+            this.txtCOA.Size = new System.Drawing.Size(308, 28);
             this.txtCOA.TabIndex = 3;
             this.txtCOA.UseSelectable = true;
             this.txtCOA.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -296,9 +311,10 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(93, 271);
+            this.btnSave.Location = new System.Drawing.Point(124, 334);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 32);
+            this.btnSave.Size = new System.Drawing.Size(125, 39);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -348,7 +364,8 @@
             this.COADataGridView.EnableHeadersVisualStyles = false;
             this.COADataGridView.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.COADataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.COADataGridView.Location = new System.Drawing.Point(0, 25);
+            this.COADataGridView.Location = new System.Drawing.Point(0, 27);
+            this.COADataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.COADataGridView.MultiSelect = false;
             this.COADataGridView.Name = "COADataGridView";
             this.COADataGridView.ReadOnly = true;
@@ -362,16 +379,18 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.COADataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.COADataGridView.RowHeadersVisible = false;
+            this.COADataGridView.RowHeadersWidth = 51;
             this.COADataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.COADataGridView.RowTemplate.Height = 30;
             this.COADataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.COADataGridView.Size = new System.Drawing.Size(760, 345);
+            this.COADataGridView.Size = new System.Drawing.Size(1013, 428);
             this.COADataGridView.TabIndex = 3;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
@@ -379,6 +398,7 @@
             // 
             this.EmployeName.DataPropertyName = "EmployeName";
             this.EmployeName.HeaderText = "EmployeName";
+            this.EmployeName.MinimumWidth = 6;
             this.EmployeName.Name = "EmployeName";
             this.EmployeName.ReadOnly = true;
             // 
@@ -386,6 +406,7 @@
             // 
             this.AllowTable.DataPropertyName = "AllowTable";
             this.AllowTable.HeaderText = "Allow Table";
+            this.AllowTable.MinimumWidth = 6;
             this.AllowTable.Name = "AllowTable";
             this.AllowTable.ReadOnly = true;
             // 
@@ -393,6 +414,7 @@
             // 
             this.PyteTypeID.DataPropertyName = "PyteTypeID";
             this.PyteTypeID.HeaderText = "PyteTypeID";
+            this.PyteTypeID.MinimumWidth = 6;
             this.PyteTypeID.Name = "PyteTypeID";
             this.PyteTypeID.ReadOnly = true;
             // 
@@ -400,6 +422,7 @@
             // 
             this.ACCode.DataPropertyName = "ACCode";
             this.ACCode.HeaderText = "ACCode";
+            this.ACCode.MinimumWidth = 6;
             this.ACCode.Name = "ACCode";
             this.ACCode.ReadOnly = true;
             // 
@@ -407,6 +430,7 @@
             // 
             this.companyID.DataPropertyName = "companyID";
             this.companyID.HeaderText = "companyID";
+            this.companyID.MinimumWidth = 6;
             this.companyID.Name = "companyID";
             this.companyID.ReadOnly = true;
             // 
@@ -443,7 +467,7 @@
             this.COABindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousCOA;
             this.COABindingNavigator.Name = "COABindingNavigator";
             this.COABindingNavigator.PositionItem = this.bindingNavigatorPositionCOA;
-            this.COABindingNavigator.Size = new System.Drawing.Size(760, 25);
+            this.COABindingNavigator.Size = new System.Drawing.Size(1013, 27);
             this.COABindingNavigator.TabIndex = 4;
             this.COABindingNavigator.Text = "bindingNavigator1";
             // 
@@ -454,7 +478,7 @@
             // bindingNavigatorCountCOA
             // 
             this.bindingNavigatorCountCOA.Name = "bindingNavigatorCountCOA";
-            this.bindingNavigatorCountCOA.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountCOA.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountCOA.Text = "of {0}";
             this.bindingNavigatorCountCOA.ToolTipText = "Total number of COA";
             // 
@@ -463,7 +487,7 @@
             this.bindingNavigatorMoveFirstCOA.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstCOA.Name = "bindingNavigatorMoveFirstCOA";
             this.bindingNavigatorMoveFirstCOA.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstCOA.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstCOA.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstCOA.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousCOA
@@ -471,34 +495,35 @@
             this.bindingNavigatorMovePreviousCOA.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousCOA.Name = "bindingNavigatorMovePreviousCOA";
             this.bindingNavigatorMovePreviousCOA.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousCOA.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousCOA.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousCOA.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionCOA
             // 
             this.bindingNavigatorPositionCOA.AccessibleName = "Position";
             this.bindingNavigatorPositionCOA.AutoSize = false;
+            this.bindingNavigatorPositionCOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionCOA.Name = "bindingNavigatorPositionCOA";
-            this.bindingNavigatorPositionCOA.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionCOA.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionCOA.Text = "0";
             this.bindingNavigatorPositionCOA.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextCOA
             // 
             this.bindingNavigatorMoveNextCOA.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextCOA.Name = "bindingNavigatorMoveNextCOA";
             this.bindingNavigatorMoveNextCOA.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextCOA.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextCOA.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextCOA.Text = "Move next";
             // 
             // bindingNavigatorMoveLastCOA
@@ -506,42 +531,43 @@
             this.bindingNavigatorMoveLastCOA.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastCOA.Name = "bindingNavigatorMoveLastCOA";
             this.bindingNavigatorMoveLastCOA.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastCOA.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastCOA.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastCOA.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // lblAdd
             // 
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(29, 22);
+            this.lblAdd.Size = new System.Drawing.Size(37, 24);
             this.lblAdd.Text = "Add";
             this.lblAdd.Click += new System.EventHandler(this.lblAdd_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // lblEdit
             // 
             this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(27, 22);
+            this.lblEdit.Size = new System.Drawing.Size(35, 24);
             this.lblEdit.Text = "Edit";
             this.lblEdit.Click += new System.EventHandler(this.lblEdit_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripTextBoxFind
             // 
+            this.toolStripTextBoxFind.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxFind.Name = "toolStripTextBoxFind";
-            this.toolStripTextBoxFind.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBoxFind.Size = new System.Drawing.Size(132, 27);
             this.toolStripTextBoxFind.Leave += new System.EventHandler(this.toolStripTextBoxFind_Leave);
             // 
             // toolStripButton1
@@ -549,24 +575,25 @@
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(32, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(39, 25);
             this.toolStripLabel1.Text = "COA";
             this.toolStripLabel1.Visible = false;
             // 
             // ddlCOA
             // 
+            this.ddlCOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ddlCOA.Name = "ddlCOA";
-            this.ddlCOA.Size = new System.Drawing.Size(121, 25);
+            this.ddlCOA.Size = new System.Drawing.Size(160, 28);
             this.ddlCOA.Visible = false;
             this.ddlCOA.SelectedIndexChanged += new System.EventHandler(this.ddlCOA_SelectedIndexChanged);
             // 
@@ -576,11 +603,13 @@
             // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.metroPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Employee";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.COA_Load);
             this.metroPanel1.ResumeLayout(false);

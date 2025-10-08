@@ -88,14 +88,15 @@
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(20, 60);
+            this.metroPanel1.HorizontalScrollbarSize = 12;
+            this.metroPanel1.Location = new System.Drawing.Point(27, 74);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(760, 370);
+            this.metroPanel1.Size = new System.Drawing.Size(1013, 455);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroPanel1.VerticalScrollbarSize = 13;
             // 
             // pnlMain
             // 
@@ -109,23 +110,25 @@
             this.pnlMain.Controls.Add(this.btnSave);
             this.pnlMain.HorizontalScrollbarBarColor = true;
             this.pnlMain.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnlMain.HorizontalScrollbarSize = 10;
-            this.pnlMain.Location = new System.Drawing.Point(196, 29);
+            this.pnlMain.HorizontalScrollbarSize = 12;
+            this.pnlMain.Location = new System.Drawing.Point(261, 36);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(369, 312);
+            this.pnlMain.Size = new System.Drawing.Size(492, 384);
             this.pnlMain.TabIndex = 7;
             this.pnlMain.UseCustomBackColor = true;
             this.pnlMain.VerticalScrollbarBarColor = true;
             this.pnlMain.VerticalScrollbarHighlightOnWheel = false;
-            this.pnlMain.VerticalScrollbarSize = 10;
+            this.pnlMain.VerticalScrollbarSize = 13;
             // 
             // chkIsActive
             // 
             this.chkIsActive.AutoSize = true;
             this.chkIsActive.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.colorBindingSource, "IsDeleted", true));
-            this.chkIsActive.Location = new System.Drawing.Point(108, 142);
+            this.chkIsActive.Location = new System.Drawing.Point(144, 175);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(15, 14);
+            this.chkIsActive.Size = new System.Drawing.Size(18, 17);
             this.chkIsActive.TabIndex = 10;
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
@@ -137,11 +140,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 140);
+            this.label2.Location = new System.Drawing.Point(20, 172);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 15);
+            this.label2.Size = new System.Drawing.Size(104, 23);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Is Active";
+            this.label2.Text = "Is Deleted";
             // 
             // panel1
             // 
@@ -149,8 +153,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 62);
+            this.panel1.Size = new System.Drawing.Size(492, 76);
             this.panel1.TabIndex = 7;
             // 
             // label3
@@ -158,9 +163,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(127, 12);
+            this.label3.Location = new System.Drawing.Point(169, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 33);
+            this.label3.Size = new System.Drawing.Size(124, 42);
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             // 
@@ -169,9 +175,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(193, 271);
+            this.btnCancel.Location = new System.Drawing.Point(257, 334);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 32);
+            this.btnCancel.Size = new System.Drawing.Size(125, 39);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -184,9 +191,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 108);
+            this.label1.Location = new System.Drawing.Point(20, 133);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
+            this.label1.Size = new System.Drawing.Size(52, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Name";
             // 
@@ -196,9 +204,10 @@
             // 
             // 
             this.txtcat.CustomButton.Image = null;
-            this.txtcat.CustomButton.Location = new System.Drawing.Point(209, 1);
+            this.txtcat.CustomButton.Location = new System.Drawing.Point(376, 2);
+            this.txtcat.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtcat.CustomButton.Name = "";
-            this.txtcat.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtcat.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtcat.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtcat.CustomButton.TabIndex = 1;
             this.txtcat.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -206,7 +215,8 @@
             this.txtcat.CustomButton.Visible = false;
             this.txtcat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.colorBindingSource, "Name", true));
             this.txtcat.Lines = new string[0];
-            this.txtcat.Location = new System.Drawing.Point(105, 104);
+            this.txtcat.Location = new System.Drawing.Point(140, 128);
+            this.txtcat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtcat.MaxLength = 32767;
             this.txtcat.Name = "txtcat";
             this.txtcat.PasswordChar = '\0';
@@ -215,7 +225,7 @@
             this.txtcat.SelectionLength = 0;
             this.txtcat.SelectionStart = 0;
             this.txtcat.ShortcutsEnabled = true;
-            this.txtcat.Size = new System.Drawing.Size(231, 23);
+            this.txtcat.Size = new System.Drawing.Size(308, 28);
             this.txtcat.TabIndex = 3;
             this.txtcat.UseSelectable = true;
             this.txtcat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -226,9 +236,10 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(93, 271);
+            this.btnSave.Location = new System.Drawing.Point(124, 334);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 32);
+            this.btnSave.Size = new System.Drawing.Size(125, 39);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -266,7 +277,7 @@
             this.CategorysDataGridView.DataSource = this.colorBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Unicode MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tan;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -274,14 +285,15 @@
             this.CategorysDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.CategorysDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CategorysDataGridView.EnableHeadersVisualStyles = false;
-            this.CategorysDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.CategorysDataGridView.Location = new System.Drawing.Point(0, 27);
+            this.CategorysDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CategorysDataGridView.Name = "CategorysDataGridView";
             this.CategorysDataGridView.ReadOnly = true;
             this.CategorysDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.CategorysDataGridView.RowHeadersVisible = false;
             this.CategorysDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.CategorysDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CategorysDataGridView.Size = new System.Drawing.Size(760, 345);
+            this.CategorysDataGridView.Size = new System.Drawing.Size(1013, 428);
             this.CategorysDataGridView.TabIndex = 6;
             this.CategorysDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategorysDataGridView_CellContentClick);
             // 
@@ -289,71 +301,89 @@
             // 
             this.colorIDDataGridViewTextBoxColumn.DataPropertyName = "ColorID";
             this.colorIDDataGridViewTextBoxColumn.HeaderText = "ColorID";
+            this.colorIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.colorIDDataGridViewTextBoxColumn.Name = "colorIDDataGridViewTextBoxColumn";
             this.colorIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.colorIDDataGridViewTextBoxColumn.Visible = false;
+            this.colorIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // shortNameDataGridViewTextBoxColumn
             // 
             this.shortNameDataGridViewTextBoxColumn.DataPropertyName = "ShortName";
             this.shortNameDataGridViewTextBoxColumn.HeaderText = "ShortName";
+            this.shortNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.shortNameDataGridViewTextBoxColumn.Name = "shortNameDataGridViewTextBoxColumn";
             this.shortNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.shortNameDataGridViewTextBoxColumn.Visible = false;
+            this.shortNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // branchIDDataGridViewTextBoxColumn
             // 
             this.branchIDDataGridViewTextBoxColumn.DataPropertyName = "BranchID";
             this.branchIDDataGridViewTextBoxColumn.HeaderText = "BranchID";
+            this.branchIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.branchIDDataGridViewTextBoxColumn.Name = "branchIDDataGridViewTextBoxColumn";
             this.branchIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.branchIDDataGridViewTextBoxColumn.Visible = false;
+            this.branchIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // createdDateDataGridViewTextBoxColumn
             // 
             this.createdDateDataGridViewTextBoxColumn.DataPropertyName = "CreatedDate";
             this.createdDateDataGridViewTextBoxColumn.HeaderText = "CreatedDate";
+            this.createdDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.createdDateDataGridViewTextBoxColumn.Name = "createdDateDataGridViewTextBoxColumn";
             this.createdDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.createdDateDataGridViewTextBoxColumn.Visible = false;
+            this.createdDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // createdByDataGridViewTextBoxColumn
             // 
             this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
             this.createdByDataGridViewTextBoxColumn.HeaderText = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
             this.createdByDataGridViewTextBoxColumn.ReadOnly = true;
             this.createdByDataGridViewTextBoxColumn.Visible = false;
+            this.createdByDataGridViewTextBoxColumn.Width = 125;
             // 
             // modifiedByDataGridViewTextBoxColumn
             // 
             this.modifiedByDataGridViewTextBoxColumn.DataPropertyName = "ModifiedBy";
             this.modifiedByDataGridViewTextBoxColumn.HeaderText = "ModifiedBy";
+            this.modifiedByDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.modifiedByDataGridViewTextBoxColumn.Name = "modifiedByDataGridViewTextBoxColumn";
             this.modifiedByDataGridViewTextBoxColumn.ReadOnly = true;
             this.modifiedByDataGridViewTextBoxColumn.Visible = false;
+            this.modifiedByDataGridViewTextBoxColumn.Width = 125;
             // 
             // modifiedDateDataGridViewTextBoxColumn
             // 
             this.modifiedDateDataGridViewTextBoxColumn.DataPropertyName = "ModifiedDate";
             this.modifiedDateDataGridViewTextBoxColumn.HeaderText = "ModifiedDate";
+            this.modifiedDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.modifiedDateDataGridViewTextBoxColumn.Name = "modifiedDateDataGridViewTextBoxColumn";
             this.modifiedDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.modifiedDateDataGridViewTextBoxColumn.Visible = false;
+            this.modifiedDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // isDeletedDataGridViewTextBoxColumn
             // 
             this.isDeletedDataGridViewTextBoxColumn.DataPropertyName = "IsDeleted";
             this.isDeletedDataGridViewTextBoxColumn.HeaderText = "IsDeleted";
+            this.isDeletedDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.isDeletedDataGridViewTextBoxColumn.Name = "isDeletedDataGridViewTextBoxColumn";
             this.isDeletedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.isDeletedDataGridViewTextBoxColumn.Width = 125;
             // 
             // CategoryBindingNavigator
             // 
@@ -361,6 +391,7 @@
             this.CategoryBindingNavigator.BindingSource = this.CategoryBindingSource;
             this.CategoryBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.CategoryBindingNavigator.DeleteItem = null;
+            this.CategoryBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.CategoryBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -384,7 +415,7 @@
             this.CategoryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.CategoryBindingNavigator.Name = "CategoryBindingNavigator";
             this.CategoryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.CategoryBindingNavigator.Size = new System.Drawing.Size(760, 25);
+            this.CategoryBindingNavigator.Size = new System.Drawing.Size(1013, 27);
             this.CategoryBindingNavigator.TabIndex = 4;
             this.CategoryBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -395,7 +426,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of Category";
             // 
@@ -404,7 +435,7 @@
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -412,34 +443,35 @@
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -447,42 +479,43 @@
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // lblAdd
             // 
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(29, 22);
+            this.lblAdd.Size = new System.Drawing.Size(37, 24);
             this.lblAdd.Text = "Add";
             this.lblAdd.Click += new System.EventHandler(this.lblAdd_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // lblEdit
             // 
             this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(27, 22);
+            this.lblEdit.Size = new System.Drawing.Size(35, 24);
             this.lblEdit.Text = "Edit";
             this.lblEdit.Click += new System.EventHandler(this.lblEdit_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripTextBoxFind
             // 
+            this.toolStripTextBoxFind.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxFind.Name = "toolStripTextBoxFind";
-            this.toolStripTextBoxFind.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBoxFind.Size = new System.Drawing.Size(132, 27);
             this.toolStripTextBoxFind.Leave += new System.EventHandler(this.toolStripTextBoxFind_Leave);
             // 
             // toolStripButton1
@@ -490,15 +523,17 @@
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
             // 
             // Colour
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.metroPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Colour";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Colour";
             this.Load += new System.EventHandler(this.Category_Load);
             this.metroPanel1.ResumeLayout(false);
